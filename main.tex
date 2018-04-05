@@ -1,0 +1,197 @@
+%----------------------------------------------------------------------------------
+% Exemplo do uso da classe tcc.cls. Veja o arquivo .cls
+% para mais detalhes e instruções.
+%----------------------------------------------------------------------------------
+
+% Seleção de idioma da monografia. Por enquanto as únicas opções
+% suportadas são 'portuguese' e 'english'
+% Para impressão em frente e verso, use a opção 'twoside'. Da
+% mesma forma, use 'oneside' para impressão em um lado apenas.
+\documentclass[portuguese,oneside]{tcc}
+
+%----------------------------------------------------------------
+% Coloque seus pacotes abaixo.
+%
+% Obs.: muitos pacotes de uso comum do LaTeX, como amsmath,
+% geometry e url já são automaticamente incluídos pela classe
+% (veja o arquivo .cls). Isso torna obrigatória a presença destes
+% no sistema para o uso desta classe, mas ao mesmo tempo o uso se
+% torna mais simples.  Recomendo a instalação da versão mais
+% recente da distribuição TeXLive (para Windows e UNIXes):
+% www.tug.org/texlive/
+%
+% Pacotes e opções já incluídas automaticamente:
+%
+% \RequirePackage[T1]{fontenc}[2005/09/27]
+% \RequirePackage[utf8x]{inputenc}[2008/03/30]
+% \RequirePackage[english,brazil]{babel}[2008/07/06]
+% \RequirePackage[a4paper]{geometry}[2010/09/12]
+% \RequirePackage{textcomp}[2005/09/27]
+% \RequirePackage{lmodern}[2009/10/30]
+% \RequirePackage{indentfirst}[1995/11/23]
+% \RequirePackage{setspace}[2000/12/01]
+% \RequirePackage{textcase}[2004/10/07]
+% \RequirePackage{float}[2001/11/08]
+% \RequirePackage{amsmath}[2000/07/18]
+% \RequirePackage{amssymb}[2009/06/22]
+% \RequirePackage{amsfonts}[2009/06/22]
+% \RequirePackage{url}
+% \RequirePackage[table]{xcolor}[2007/01/21]
+%----------------------------------------------------------------
+% Para inserção de figuras.
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{longtable}
+% Utilize a opção 'pdftex' se você estiver usando o pdflatex (que
+% permite figuras em formatos como .jpg ou .png)
+%\usepackage[pdftex]{graphicx}
+
+% Para tabelas com elementos ocupando mais de uma linha
+\usepackage{multirow}
+% Para frações na mesma linha (ex. ⅓).
+\usepackage{nicefrac}
+% Para inserir figuras lado a lado.
+% \usepackage{subfigure}
+% Para formatar algoritmos.
+% A opção [algo2e] é necessária para evitar conflitos
+% com as definições da classe.
+%\usepackage[algo2e]{algorithm2e}
+\usepackage{algorithmic}
+% Um float do tipo algoritmo. No momento
+% este pacote é incompatível com a classe.
+%\usepackage{algorithm}
+\usepackage{esint}
+%----------------------------------------------------------------
+% Autor (OBRIGATÓRIO)
+%----------------------------------------------------------------
+\author{Felipe Brizola Bergues Duro}
+
+%----------------------------------------------------------------
+% Título (OBRIGATÓRIO). Devem ser passados DOIS parâmetros,
+% o título em português E o inglês, não importando o idioma
+% escolhido. Os títulos são utilizados para a montagem da capa,
+% resumo e abstract mais tarde.
+%----------------------------------------------------------------
+\title{Mapeamento de recursos sob computação em névoa}
+      {Mapping resources under the fog computing}
+
+%----------------------------------------------------------------
+% Opções para o tipo de trabalho (OBRIGATÓRIO)
+%----------------------------------------------------------------
+\tipotrabalho{\ptci}         % Proposta de Trabalho de Conclusão
+%\tipotrabalho{\tci}         % Trabalho de Conclusão I
+%\tipotrabalho{\tcii}        % Trabalho de Conclusão II
+
+%----------------------------------------------------------------
+% Seleção do curso ("este trabalho é um requisito parcial para
+% obtenção do grau de (mestre ou doutor) em Ciência da Computação").
+%----------------------------------------------------------------
+\curso{\cc} % Ciência da Computação
+%\curso{\si} % Sistemas de Informação
+%\curso{\es} % Engenharia de Software
+
+%----------------------------------------------------------------
+% Orientador (e Co-orientador, caso haja um). É OBRIGATÓRIO
+% informar pelo menos o orientador.
+%----------------------------------------------------------------
+\orientador{Prof. Dr. Sérgio Johann Filho}
+%\coorientador{Ciclano de Farias}
+
+%----------------------------------------------------------------
+% A capa é inserida automaticamente. Por isso não é necessário
+% chamar \maketitle
+%----------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------
+% Depois da capa vem a dedicatória e a epígrafe.
+%----------------------------------------------------------------
+%  \dedicatoria{Dedicamos este trabalho a nossos pais. Sem eles, certamente, não teríamos a oportunidade de chegar até aqui. A educação que nos foi dada. com certeza, será para o resto da vida. }
+
+\epigrafe{Frase de impacto.}
+         {Nome de Alguem}
+
+%----------------------------------------------------------------
+% Também dá para fazer as duas na mesma página:
+%----------------------------------------------------------------
+% \dedigrafe{Dedico este trabalho a meus pais.}
+%           {Just because something doesn’t do what you planned it to do doesn’t mean it’s useless.}
+%           {Thomas Edison}
+
+%----------------------------------------------------------------
+% A seguir, a página de agradecimentos (OPCIONAL):
+%----------------------------------------------------------------
+  \begin{agradecimentos}
+Agradeço a XYZ pessoas por bla bla bla  \end{agradecimentos}
+
+%----------------------------------------------------------------
+% Resumo, com as palavras-chave passadas por parâmetro
+% (OBRIGATÓRIO, ao menos para teses e dissertações)
+%----------------------------------------------------------------
+\begin{resumo}{mapeamento de recursos, computação em névoa, internet das coisas...}
+
+Computação em névoa... .Este trabalho propõe desenvolver um protocolo no qual seja possível mapear recursos de dispositivos conectados a rede local.
+
+\end{resumo}
+
+%----------------------------------------------------------------
+% Abstract, com as palavras-chave passadas por parâmetro
+% (OBRIGATÓRIO, ao menos para teses e dissertações)
+%----------------------------------------------------------------
+\begin{abstract}{resource mapping, fog computing, internet of things...}
+Traducao do resumo\end{abstract}
+
+%----------------------------------------------------------------
+% Listas e sumário, nessa ordem. Somente o sumário é obrigatório,
+% portanto, comente as outras listas, caso sejam desnecessárias.
+%----------------------------------------------------------------
+\listoffigures       % Lista de figuras      (OPCIONAL)
+%\listoftables        % Lista de tabelas      (OPCIONAL)
+\listofalgorithms    % Lista de algoritmos   (OPCIONAL)
+\listofacronyms      % Lista de siglas       (OPCIONAL)
+%\listofabbreviations % Lista de abreviaturas (OPCIONAL)
+%\listofsymbols    % Lista de símbolos   (OPCIONAL)
+\tableofcontents     % Sumário               (OBRIGATÓRIO)
+
+%----------------------------------------------------------------
+% Aqui começa o desenvolvimento do trabalho. Para uma melhor
+% organização do documento, separe-o em arquivos,
+% um para cada capítulo. Para isso, utilize o comando \include,
+% como mostrado abaixo.
+%----------------------------------------------------------------
+\include{cap1} %intro
+\include{cap2} %ref teorico. estado da arte
+\include{cap3} %proposta
+\include{cap4} %como foi feito e metodologia experimental
+%\include{cap5} %resultados e analise
+%\include{cap6} %conclusao e trabs futuros
+
+%----------------------------------------------------------------
+% Aqui vai a bibliografia. Existem 3 estilos de citação: use
+% 'tcc-alpha' para citações do tipo [Abc+] ou [XYZ] (em ordem
+% alfabética na bibliografia), 'tcc-num' para citações
+% numéricas do tipo [1], [20], etc., em ordem de referência e
+% 'tcc-alpha-full' para citações estilo 'alpha' mas com nomes completos.
+%----------------------------------------------------------------
+%\bibliographystyle{tcc-alpha-full}
+\bibliographystyle{tcc-num}
+\bibliography{bibliography}
+
+%----------------------------------------------------------------
+% Após \appendix, se iniciam os capítulos de Apêndice, com
+% numeração alfabética.
+%----------------------------------------------------------------
+% \appendix
+% \chapter{Meu primeiro apêndice}
+% \chapter{My second appendix}
+
+%----------------------------------------------------------------
+% Aqui vão os "capítulos" de anexos. Cada anexo deve
+% ser considerado um capítulo.
+%----------------------------------------------------------------
+% \anexos
+% \chapter{Meu primeiro anexo}
+% \chapter{My second attachment}
+
+% E aqui (para a felicidade de todos) termina o documento.
+\end{document}

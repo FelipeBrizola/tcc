@@ -1,0 +1,91 @@
+%----------------------------------------------------------------------------------
+% Exemplo do uso da classe tcc.cls. Veja o arquivo .cls
+% para mais detalhes e instruções.
+%----------------------------------------------------------------------------------
+\chapter{\label{chap:intro}Introdução}
+
+%%%%%%%%% TEM QUE ESTAR EM ORDEM ALFABETICA %%%%%%%%%%
+
+%\sigla{CC}{Cloud Computing}
+
+\sigla{BGP}{Border Gateway Protocol}
+\sigla{IaaS}{Infrastructure as a Service}
+\sigla{IP}{Internet Protocol}
+\sigla{NIST}{National Institute of Standards and Technology}
+\sigla{PaaS}{Platform as a Service}
+\sigla{SaaS}{Software as a Service}
+\sigla{TCC}{Trabalho de Conclusão de Curso}
+\sigla{TCP}{Transmission Control Protocol}
+\sigla{UDP}{User Datagram Protocol}
+
+% Comando para inserir abreviaturas.
+%
+%\abrev{Abrev}{Abreviatura}
+% \abrev{Inform}{Informática}
+%
+% Comando para inserir símbolos. Estes irão aparecer em ordem
+% de ocorrência, já que o número da página está presente na lista
+% de símbolos.
+% \simbolo{Hz}{Hertz}
+% \simbolo{$\pi$}{Constante com valor aproximado de $3.1415926$}%
+%
+% bom site sobre BRTs
+%http://www.brtdata.org/location/latin_america/mexico/mexico_city
+%
+
+\section{Contextualização do problema}
+
+A computação em nuvem tem sido amplamente adotada nos últimos anos por vários tipos de empresas, pois além de disponibilizar diversos tipos de modelos de serviços como SaaS, PaaS e IaaS, provê modelos de implantação de infraestrutura em nuvem privada, comunitária, publica e híbrida.
+
+Ainda temos, segundo definição de computação em nuvem adotada pelo NIST\cite{Mell:2011}: "computação em nuvem é um modelo que permite acesso a um conjunto compartilhado de recursos computacionais configuráveis (por exemplo, redes, servidores, armazenamento, aplicativos e serviços) que podem ser provisionados e liberados  com um pequeno esforço de gerenciamento ou interação com provedor de acesso".
+Essa flexibilidade, tanto de modelo de serviços quando nos modelos de implatações, pode justificar o aumento no emprego desse modelo de computação.
+
+Como a computação em nuvem não é Panacéia\footnote{Mecanismos ou práticas que, hipoteticamente, são capazes de solucionar os problemas e/ou dificuldades.}, podemos utilizar a definição de  Bonomi, Milito, Zhu e Addepalli\cite{Bonomi:2012} que diz: "a computação em nuvem libera as empresas e os usuários finais de muitos detalhes de especificações. Essa facilidade torna-se um problema para aplicações sensíveis à latência, que requerem que nós próximos atendam suas necessidades de forma eficiente". 
+Como a interação entre os nós e os servidores na nuvem ocorrem através da internet, a baixa latência torna-se indispensável para aplicações que requerem eficiência na comunicação entre nós (por exemplo Robôs, drones, e carros de autônomos).
+Portanto há uma lacuna entre aplicações que já utilizam modelos de computação em nuvem e aplicações que necessitam de baixa latência de rede e comunicação entre nós próximos, e é nesse hiato que a computação em névoa surge.
+
+A computação em névoa é um assunto relativamente novo e teve sua primeira definição, dada pela cisco 2012, como uma extensão do paradigma de computação em nuvem provendo armazenamento, computação e serviços de rede entre dispositivos finais e os servidores na nuvem\cite{DBLP:journals/corr/RomanLM16}.
+
+Atualmente a computação em névoa tornou-se um paradigma próprio e não mais uma mera extensão da computação em nuvem.
+Esse paradigma criou o conceito de fog nodes que abrangem desde dispositivos finais com baixa capacidade computacional até servidores poderosos na nuvem. Assim, os fog nodes passam a fazer parte da implementação dos serviços em nuvem.
+O que torna a computação em névoa interessante é a capacidade dessa variedade de dispositivos cooperarem uns com os outros de forma distribuída.
+Temos, então, a névoa como uma arquitetura de três camadas (clientes <-> fog nodes <-> servidores centrais) na qual os servidores centrais podem coexistir com os fog nodes, todavia esses servidores não são essenciais para a execução dos serviços em névoa \cite{DBLP:journals/corr/RomanLM16}.
+
+\section{Motivação e justificativa}
+
+Descoberta e sincronização, computação e limite de armazenamento, gerenciamento, segurança, padronização, monetização e programabilidade serão os sete desafios que a computação em névoa deverá enfrentar para tornar-se realidade, segundo Vaquero e Rodero-Merino\cite{Vaquero:2014}.
+
+Padronização, descoberta e sincronização serão os desafios explorados neste trabalho, pois hoje não há mecanismos padronizados no qual um membro da rede, seja ele uma raspberry-pi gerenciando sensores ou um computador, anuncie seus recursos ou consuma informações de outros nodos.
+
+\section{Objetivo}
+                                                                                                                        
+Partindo do pressuposto de que cada nodo desta névoa estará executando um middleware que gerencie seus recursos locais, o objetivo principal deste trabalho de conclusão é construir um protocolo de rede que seja capaz de: descobrir, sincronizar e utilizar recursos de nodos em uma rede sob computação em névoa.       
+
+
+
+% Lapidar esse exemplo.
+% Imagem ilustrando fog
+%Exemplificando uma aplicação em névoa podemos imaginar o seguinte cenário: sensores no alto dos postes de luz capazes de detectar luzes de emergencia de ambulâncias.
+%Estes sensores enviam dados para um “fog node”.
+%Os semáforos desta cidade podem sem abertos ou fechados remotamente. 
+%Enquanto a ambulância estiver em deslocamento, os sensores dos postes podem enviar dados para o “fog node”, e este deve acionar os semáforos que estiverem na rota da ambulância. Por fim, quando a ambulância chegar ao hospital o fog node de lá pode enviar os dados para a nuvem.
+%Imaginando que todo fog node é um dispositivo com conexão LAN(Local Area Network) e que precisa interagir com seus nós próximos
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
