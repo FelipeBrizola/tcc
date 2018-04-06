@@ -16,6 +16,11 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{#2}
 
+\bibitem{rfc1163}
+\enquote{{Border Gateway Protocol (BGP)}}.
+  \urlprefix\url{https://rfc-editor.org/rfc/rfc1163.txt}, \bbljun{}~1990.
+\bibAnnoteFile{rfc1163}
+
 \bibitem{Bonomi:2012}
 Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   role in the internet of things}. \capitalize{\bblin{}}: Proceedings of the

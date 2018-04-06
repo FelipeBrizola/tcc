@@ -1,13 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  4 APR 2018 22:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  5 APR 2018 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/mapeamento-
-de-recursos/main.tex"
-
-(/Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/mapeamento-de
--recursos/main.tex
+**"/Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/tcc/main.te
+x"
+(/Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/tcc/main.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (./tcc.cls
@@ -1142,18 +1140,22 @@ Underfull \hbox (badness 10000) detected at line 1
  []
 
 
-Underfull \hbox (badness 10000) detected at line 10
+Underfull \hbox (badness 10000) detected at line 6
 \T1/phv/b/n/12 2.1
  []
 
-) [12
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 16.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)) [12
 
 
 
 ]
 \openout2 = `cap3.aux'.
 
- (./cap3.tex
+
+(./cap3.tex
 3.
 
 Underfull \hbox (badness 10000) detected at line 1
@@ -1209,15 +1211,10 @@ Underfull \hbox (badness 10000) detected at line 110
 \T1/phv/b/n/12 3.5
  []
 
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 113.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-) [15]) [16]
+[15]) [16]
 \openout2 = `cap4.aux'.
 
-
-(./cap4.tex
+ (./cap4.tex
 4.
 
 Underfull \hbox (badness 10000) detected at line 1
@@ -1235,15 +1232,15 @@ Package pdftex.def Info: fig3.pdf used on input line 8.
 
  <./fig3.pdf>] (./main.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 38.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
 
-Underfull \hbox (badness 1769) in paragraph at lines 48--52
+Underfull \hbox (badness 1769) in paragraph at lines 53--57
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fo
 g: Towards a
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 48--52
+Underfull \hbox (badness 1147) in paragraph at lines 53--57
 \T1/phv/m/n/12 comprehensive definition of fog computing'', \T1/phv/m/sl/12 SIG
 COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
  []
@@ -1253,19 +1250,19 @@ COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
 
 ] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6728 strings out of 492995
- 89287 string characters out of 6132704
- 171667 words of memory out of 5000000
- 10011 multiletter control sequences out of 15000+600000
+ 6730 strings out of 492995
+ 89246 string characters out of 6132704
+ 171671 words of memory out of 5000000
+ 10012 multiletter control sequences out of 15000+600000
  49453 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,8n,37p,665b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,8n,37p,646b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local
 /texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 778725 bytes).
+Output written on main.pdf (18 pages, 779381 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

@@ -1,8 +1,8 @@
-PWD /Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/mapeamento-de-recursos
+PWD /Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/tcc
 INPUT /usr/local/texlive/2017/texmf.cnf
 INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/mapeamento-de-recursos/main.tex
+INPUT /Users/felipebrizola/Documents/Ciencia da computacao/TCC I/Latex/tcc/main.tex
 OUTPUT main.log
 INPUT tcc.cls
 INPUT tcc.cls
@@ -269,6 +269,10 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 OUTPUT cap2.aux
 INPUT cap2.tex
 INPUT cap2.tex
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 OUTPUT cap3.aux
 INPUT cap3.tex
 INPUT cap3.tex
@@ -279,10 +283,6 @@ INPUT fig2.pdf
 INPUT ./fig2.pdf
 INPUT ./fig2.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 OUTPUT cap4.aux
 INPUT cap4.tex
 INPUT cap4.tex

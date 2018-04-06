@@ -9,49 +9,51 @@ The style file: tcc-num.bst
 Database file #1: bibliography.bib
 Warning--entry type for "socketPython" isn't style-file defined
 --line 82 of file bibliography.bib
+Warning--to sort, need author or key in rfc1163
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty author in rfc1163
 Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty numpages in tanenbaum2011redes
-You've used 6 entries,
+You've used 7 entries,
             2900 wiz_defined-function locations,
-            685 strings with 6919 characters,
-and the built_in function-call counts, 3026 in all, are:
-= -- 234
-> -- 87
+            693 strings with 7041 characters,
+and the built_in function-call counts, 3489 in all, are:
+= -- 282
+> -- 88
 < -- 4
-+ -- 36
++ -- 37
 - -- 30
-* -- 203
-:= -- 364
-add.period$ -- 15
-call.type$ -- 6
-change.case$ -- 33
+* -- 235
+:= -- 403
+add.period$ -- 17
+call.type$ -- 7
+change.case$ -- 36
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 291
-empty$ -- 257
+cite$ -- 19
+duplicate$ -- 345
+empty$ -- 305
 format.name$ -- 35
-if$ -- 620
+if$ -- 723
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 65
-newline$ -- 43
+int.to.str$ -- 7
+missing$ -- 70
+newline$ -- 47
 num.names$ -- 12
-pop$ -- 133
+pop$ -- 161
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 29
 quote$ -- 0
-skip$ -- 89
+skip$ -- 100
 stack$ -- 0
-substring$ -- 144
-swap$ -- 143
+substring$ -- 191
+swap$ -- 156
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
-warning$ -- 3
-while$ -- 21
-width$ -- 7
-write$ -- 76
-(There were 4 warnings)
+type$ -- 26
+warning$ -- 5
+while$ -- 22
+width$ -- 8
+write$ -- 84
+(There were 6 warnings)
