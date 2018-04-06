@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  5 APR 2018 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  5 APR 2018 23:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1144,7 +1144,7 @@ Underfull \hbox (badness 10000) detected at line 6
 \T1/phv/b/n/12 2.1
  []
 
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 16.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 13.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )) [12
@@ -1232,15 +1232,15 @@ Package pdftex.def Info: fig3.pdf used on input line 8.
 
  <./fig3.pdf>] (./main.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 42.
 
-Underfull \hbox (badness 1769) in paragraph at lines 53--57
+Underfull \hbox (badness 1769) in paragraph at lines 52--56
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fo
 g: Towards a
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 53--57
+Underfull \hbox (badness 1147) in paragraph at lines 52--56
 \T1/phv/m/n/12 comprehensive definition of fog computing'', \T1/phv/m/sl/12 SIG
 COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
  []
@@ -1251,7 +1251,7 @@ COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
 ] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
  6730 strings out of 492995
- 89246 string characters out of 6132704
+ 89256 string characters out of 6132704
  171671 words of memory out of 5000000
  10012 multiletter control sequences out of 15000+600000
  49453 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1262,7 +1262,7 @@ Here is how much of TeX's memory you used:
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 779381 bytes).
+Output written on main.pdf (18 pages, 779349 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

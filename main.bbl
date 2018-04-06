@@ -16,11 +16,6 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{#2}
 
-\bibitem{rfc1163}
-\enquote{{Border Gateway Protocol (BGP)}}.
-  \urlprefix\url{https://rfc-editor.org/rfc/rfc1163.txt}, \bbljun{}~1990.
-\bibAnnoteFile{rfc1163}
-
 \bibitem{Bonomi:2012}
 Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   role in the internet of things}. \capitalize{\bblin{}}: Proceedings of the
@@ -37,6 +32,10 @@ Foundation, P.~S. \enquote{socket — low-level networking interface}.
 Mell, P.~M.; Grance, T. \enquote{Sp 800-145. the nist definition of cloud
   computing}, \bbltechrep{}, Gaithersburg, MD, United States, 2011.
 \bibAnnoteFile{Mell:2011}
+
+\bibitem{Rekhter:1995}
+Rekhter, Y.; Li, T. \enquote{A border gateway protocol 4 (bgp-4)}, 1995.
+\bibAnnoteFile{Rekhter:1995}
 
 \bibitem{DBLP:journals/corr/RomanLM16}
 Roman, R.; Lopez, J.; Mambo, M. \enquote{Mobile edge computing, fog et al.: {A}

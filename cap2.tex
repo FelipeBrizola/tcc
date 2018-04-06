@@ -1,6 +1,6 @@
 \chapter{\label{chap:chap2} Fundamentação Teórica}
 
-Este capítulo apresentará uma breve descrição de alguns trabalhos relacionados a área de computação em névoa, bem como seus protocolos de comunicação.
+Este capítulo apresentará uma breve descrição de alguns trabalhos relacionados a área de computação em névoa, bem como protocolos de comunicação que servirão de apoio para este TCC.
 
 
 \section{Trabalhos relacionados}
@@ -9,38 +9,12 @@ Este capítulo apresentará uma breve descrição de alguns trabalhos relacionad
 O protocolo BGP está situado na quinta camada, a camada de aplicação, do modelo de referência TCP/IP\cite{tanenbaum2011redes}.
 Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protocolo que embasarão o restante deste trabalho.
 
-A responsabilidade deste protocolo é manter a troca de informações sobre roteamentos entre sistemas autônomos\cite{rfc1163}.
-De forma sucinta, a troca de informações ocorre da seguinte forma: 
-
 \begin{itemize}
-    \item O roteador ao entrar na rede pela primeira vez deve-se conectar ao seu vizinho. Após a conexão estabelecida, os roteadores compartilham entre sí suas tabelas de roteamento\cite{rfc1163}.
-    \item Posteriormente, as atualizações nas tabelas dos roteadores dão-se de forma incremental à medida que as mudanças na rotas ocorrem\cite{rfc1163}.
-    \item Mensagens de keep alive são trocadas periodicamente a fim de garantir conectividade entre os roteadores\cite{rfc1163}.
+    \item A responsabilidade deste protocolo é manter a troca de informações sobre roteamentos entre sistemas autônomos\cite{Rekhter:1995}.
+    \item O roteador ao entrar na rede pela primeira vez deve-se conectar ao seu vizinho. Após a conexão estabelecida, os roteadores compartilham entre sí suas tabelas de roteamento\cite{Rekhter:1995}.
+    \item Posteriormente, as atualizações nas tabelas dos roteadores dão-se de forma incremental à medida que as mudanças na rotas ocorrem\cite{Rekhter:1995}.
+    \item Mensagens de keep alive são trocadas periodicamente a fim de garantir conectividade entre os roteadores\cite{Rekhter:1995}.
 \end{itemize}
 
-
-
-
-
-
-
-
-% Fog protocol nao é distribuido. assim as mensagens trocadas entre 2 pontos sempre passam por um ponto de controle central.
-% Esse ponto em comum analisa a mensagem e envia para o destino
-
-% Usam mensagem do tipo rest, query evento.
-
-
-
-% Em 2015, Spencer Lewson descreveu em sua tese de mestrado um protocolo capaz de realizar a comunicação entre nodes em uma névoa. 
-% Esse protocolo 
-
-% No que diz respeito a protocolo de comunicação 
-
-% Spencer Lewson escreveu em sua tese de mestrado entitulada "Fog Protocol and FogKit: A JSON-Based Protocol and Framework for Communica- tion Between Bluetooth-Enabled Wearable Internet of Things Devices"
-
-% Podemos tomar como ponto de partida o a tese de mestrado de Spencer Lewson 
-
-% Segundo abc..
 
 
