@@ -9,52 +9,58 @@ The style file: tcc-num.bst
 Database file #1: bibliography.bib
 Warning--entry type for "socketPython" isn't style-file defined
 --line 82 of file bibliography.bib
+Warning--entry type for "ciscoSystems" isn't style-file defined
+--line 90 of file bibliography.bib
+Warning--entry type for "definition:panaceia" isn't style-file defined
+--line 98 of file bibliography.bib
 Warning--entry type for "Rekhter:1995" isn't style-file defined
---line 100 of file bibliography.bib
+--line 116 of file bibliography.bib
+Warning--to sort, need author or key in definition:panaceia
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty author in definition:panaceia
 Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 7 entries,
+You've used 9 entries,
             2900 wiz_defined-function locations,
-            692 strings with 7027 characters,
-and the built_in function-call counts, 3442 in all, are:
-= -- 266
-> -- 99
+            700 strings with 7219 characters,
+and the built_in function-call counts, 4132 in all, are:
+= -- 325
+> -- 107
 < -- 4
-+ -- 42
-- -- 34
-* -- 228
-:= -- 415
-add.period$ -- 17
-call.type$ -- 7
-change.case$ -- 38
++ -- 46
+- -- 36
+* -- 269
+:= -- 491
+add.period$ -- 22
+call.type$ -- 9
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 331
-empty$ -- 296
-format.name$ -- 40
-if$ -- 706
+cite$ -- 24
+duplicate$ -- 401
+empty$ -- 371
+format.name$ -- 42
+if$ -- 858
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 73
-newline$ -- 47
-num.names$ -- 14
-pop$ -- 159
+int.to.str$ -- 9
+missing$ -- 85
+newline$ -- 55
+num.names$ -- 16
+pop$ -- 199
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 36
 quote$ -- 0
-skip$ -- 100
+skip$ -- 122
 stack$ -- 0
-substring$ -- 162
-swap$ -- 157
+substring$ -- 196
+swap$ -- 180
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 26
-warning$ -- 4
-while$ -- 24
-width$ -- 8
-write$ -- 84
-(There were 6 warnings)
+type$ -- 34
+warning$ -- 6
+while$ -- 28
+width$ -- 10
+write$ -- 101
+(There were 10 warnings)

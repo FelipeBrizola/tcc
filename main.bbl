@@ -16,6 +16,11 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{#2}
 
+\bibitem{definition:panaceia}
+\enquote{Significado de panaceia.}
+  \urlprefix\url{https://www.dicio.com.br/panaceia/}, 2018.
+\bibAnnoteFile{definition:panaceia}
+
 \bibitem{Bonomi:2012}
 Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   role in the internet of things}. \capitalize{\bblin{}}: Proceedings of the
@@ -42,6 +47,12 @@ Roman, R.; Lopez, J.; Mambo, M. \enquote{Mobile edge computing, fog et al.: {A}
   survey and analysis of security threats and challenges}, \textit{CoRR},
   \bblvol{} abs/1602.00484, 2016, \eprint{1602.00484}.
 \bibAnnoteFile{DBLP:journals/corr/RomanLM16}
+
+\bibitem{ciscoSystems}
+Rouse, M. \enquote{Cisco systems, inc.}
+  \urlprefix\url{https://whatis.techtarget.com/definition/Cisco-Systems-Inc},
+  2018.
+\bibAnnoteFile{ciscoSystems}
 
 \bibitem{tanenbaum2011redes}
 Tanenbaum, A.; Wetherall, D.; Translations, O. \enquote{Redes de computadores}.

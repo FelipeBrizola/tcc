@@ -11,9 +11,9 @@
 \contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{13}
 \contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{14}
 \contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{14}
-\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descobrimento e sincroniza\IeC {\c c}\IeC {\~a}o}}{14}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{15}
-\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{15}
+\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descobrimento e sincroniza\IeC {\c c}\IeC {\~a}o}}{15}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{16}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{16}
 \contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{16}
 \contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{17}
 \contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{18}

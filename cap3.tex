@@ -1,14 +1,12 @@
 \chapter{\label{chap:chap3} Proposta de trabalho}
 
+Seguindo a organização arquitetural da Figura \ref{fig:fig1}, a proposta deste trabalho é fazer com que um \textit{fog node} consiga interagir com os \textit{edges devices} de seus vizinhos.
+Assim, o nodo que controla a temperatura poderia utilizar recursos do \textit{edge device} que comanda o sensor de chuva, por exemplo.
 
 Podemos observar na topologia da Figura \ref{fig:fig1}, que os nodos não possuem um ponto centralizado de contato.
 Em razão da topologia distribuida, se for necessário escalarmos a quantadidade de nodos na rede, a mesma não deverá sofrer impactos significativos de performance.
-% Antes de sair falando sobre a figura seria interessante incluir um parágrafo introduzindo a proposta do trabalho.
-% O que são os nodos? qual a ligação entre eles (relação) e qual a ligação entre os nodos e sensores? Podes falar um pouco da tecnologia de comunicação, da tecnologia empregada para construção dos nodos e sensores...
 
-
-Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que compõem o projeto.
-
+Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que compõem o projeto, bem como resultados esperados, validações e cenários de teste. 
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.75\textwidth]{fig1.pdf}
@@ -18,8 +16,10 @@ Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que comp
 
 \section{Arquitetura}
 
+Esta seção define a pilha de protocolos a serem utilizados neste projeto, bem como a justifica pela escolha dos mesmos.
+A pilha de protocolos atuará em conjunto com a organização arquitetural previamente definida na Figura \ref{fig:fig1}.
+
 A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fig:fig2} explicita a pilha de protocolos que o projeto fará uso para implementar as funcionalidades propostas.
-% Arquitetura do que? denovo, deves explicar que tu irá definir uma pilha de protocolos que será utilizada juntamente com uma estrutura de organização arquitetural já previamente definida.
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.75\textwidth]{fig2.pdf}
@@ -27,14 +27,18 @@ A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fi
     {\label{fig:fig2} Pilha de protocolos utilizada na implementação do projeto.}
 \end{figure}
 
-Dispondo do modelo de referência TCP/IP\cite{tanenbaum2011redes}, constituido de cinco camadas: física, enlace, rede, transporte e aplicação, este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
+Dispondo do modelo de referência TCP/IP, constituido de cinco camadas: física, enlace, rede, transporte e aplicação \cite{tanenbaum2011redes}, este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
 
 A utilização de IPv6 na camada de rede justifica-se pela grande quantidade de endereços válidos na internet que o protocolo provê, pois após o firmamento da internet das coisas é possível que cada dispositivo tenha um endereço IP único.
 Sendo assim, a escalabilidade, no que diz respeito a quantidade de endereços, está garantida.
 
 Manter todos os nodos conectados, utilizando TCP por exemplo, despenderia uma quantidade de trafego significativo na rede. Além disso, o intuito desta implementação é transitar uma pequena quantidade de dados a cada requisição.
 Portanto a utilização de datagramas UDP faz sentido neste projeto.
-% Justificar o teu modelo proposto dizendo que manter o estado global de recursos acessível a todos os nodos é algo dificil e que um protocolo leve deve ser usado com o objetivo de permitir a escalabilidade com relação ao desempenho da solução.
+
+O protocolo proposto, entitulado \textit{Resource Mapping} na Figura \ref{fig:fig2}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
+Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos e e garantir que o desempanho seja satisfatório com o objetivo permitir a escalabilidade da solução.
+
+
 
 
 \section{Módulos}
@@ -46,21 +50,9 @@ Consequentemente, o detalhamento de alguns módulos não serão abordados de for
 
 \subsection{Middleware}
 
-O middleware utilizado neste trabalho realizará o mapeamento local nos nodos e descobrirá quais são os recursos disponíveis a serem compartilhados na névoa.
+O \textit{middleware} utilizado neste trabalho realizará o mapeamento local nos nodos e descobrirá quais são os recursos disponíveis a serem compartilhados na névoa.
 Utilizaremos uma simulação para realizar tal mapeamento local, portanto o mapeamento de fato não pertence ao escopo deste projeto.
 
-
-%Apesar de não fazer parte do protocolo em sí, o middleware de mapeamento fornecerá interfaces de suma importância ao projeto.
-%Este middleware implementará métodos de monitoramento e gerenciamento dos recursos.
-
-%Abaixo elencaremos as principais funcionalidades que o middleware deverá implementar.
-%\begin{itemize}
-%   \item getLocalResources() - este método deverá retornar uma lista com id e nome dos recursos que estão interagindo com o nodo.
-%  Também, deverá ser executado de forma continua pelo middleware, pois além de ser necessário que a lista de recursos locais sempre esteja atualizada é possível que um dos recursos pare de funcionar como o esperado.
-%    \item getGlobalResources(ip) - este método utilizará o protocolo de mapeamento para obter a lista com id e nome dos recursos de um determinado IP.
-%    \item getGlobalResourceValue(ip, resourceId) - este método utilizará o protocolo de mapeamento para obter o valor do recurso de um determinado IP.
-%    \item setGlobalResource(ip, resourceId, newValue) - este método utilizará o protocolo de mapeamento para alterar o valor do recurso de um determinado IP.   
-%\end{itemize}
 
 \subsection{Descobrimento e sincronização}
 
@@ -97,7 +89,7 @@ saber quando remover um IP da lista de recursos globais. Portanto, para manter a
 
 No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços unicasts indicando quais são os seus recursos existentes no momento.
 O nodo solicitado percebe que este recurso não esta mais disponível porque recebeu na requisição o id do recurso, e este não está em sua lista local.
-Lembrando que o nodo requisitado está consciente desta divergência em virtude da execução continua do método getLocalResources. Portanto, o gatilho para a atualização dos recursos na névoa
+Lembrando que o nodo requisitado está consciente desta divergência em virtude da execução continua dos métodos providos pelo \textit{middleware}. Portanto, o gatilho para a atualização dos recursos na névoa
 é disparado pelo primeiro nodo que requisitar um recurso inválido.
 
 
@@ -110,7 +102,7 @@ Além disso, temos como objetivo fazer com que a névoa configure-se de forma au
 \section{Validação}
 
 Para validarmos o funcionamento do protocolo, utilizaremos um simulador de dispositivos a ser definido no decorrer deste TCC.
-Estes dispositivos executarão o middleware citado no item 3.2.1 deste trabalho.
+Estes dispositivos executarão o \textit{middleware} citado no item 3.2.1 deste trabalho.
 
 \section{Cenários de teste}
 

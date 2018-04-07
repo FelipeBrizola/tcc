@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  7 APR 2018 11:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  7 APR 2018 18:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1111,21 +1111,23 @@ Underfull \hbox (badness 10000) detected at line 5
  []
 
 
-Underfull \hbox (badness 10000) detected at line 36
+Underfull \hbox (badness 10000) detected at line 33
 \T1/phv/b/n/12 1.1
  []
 
-
-Underfull \hbox (badness 10000) detected at line 60
-\T1/phv/b/n/12 1.2
- []
-
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 47.
 [10
 
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 68
+Underfull \hbox (badness 10000) detected at line 55
+\T1/phv/b/n/12 1.2
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 61
 \T1/phv/b/n/12 1.3
  []
 
@@ -1162,17 +1164,17 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 3. 
  []
 
-<fig1.pdf, id=42, 631.81143pt x 314.38254pt>
+<fig1.pdf, id=43, 631.81143pt x 314.38254pt>
 File: fig1.pdf Graphic file (type pdf)
  <use fig1.pdf>
-Package pdftex.def Info: fig1.pdf used on input line 14.
+Package pdftex.def Info: fig1.pdf used on input line 12.
 (pdftex.def)             Requested size: 362.77264pt x 180.51909pt.
 
-Underfull \hbox (badness 10000) detected at line 19
+Underfull \hbox (badness 10000) detected at line 17
 \T1/phv/b/n/12 3.1
  []
 
-<fig2.pdf, id=43, 548.02042pt x 114.42148pt>
+<fig2.pdf, id=44, 548.02042pt x 114.42148pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
 Package pdftex.def Info: fig2.pdf used on input line 25.
@@ -1181,37 +1183,37 @@ Package pdftex.def Info: fig2.pdf used on input line 25.
 
 
 
- <./fig1.pdf> <./fig2.pdf>]
-Underfull \hbox (badness 10000) detected at line 40
+ <./fig1.pdf>]
+Underfull \hbox (badness 10000) detected at line 44
 \T1/phv/b/n/12 3.2
  []
 
 
-Underfull \hbox (badness 10000) detected at line 47
+Underfull \hbox (badness 10000) detected at line 51
 \T1/phv/m/n/12 3.2.1
  []
 
 
-Underfull \hbox (badness 10000) detected at line 65
+Underfull \hbox (badness 10000) detected at line 57
 \T1/phv/m/n/12 3.2.2
  []
 
-[14]
-Underfull \hbox (badness 10000) detected at line 104
+[14 <./fig2.pdf>]
+Underfull \hbox (badness 10000) detected at line 96
 \T1/phv/b/n/12 3.3
  []
 
-
-Underfull \hbox (badness 10000) detected at line 110
+[15]
+Underfull \hbox (badness 10000) detected at line 102
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 115
+Underfull \hbox (badness 10000) detected at line 107
 \T1/phv/b/n/12 3.5
  []
 
-[15]) [16]
+) [16]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1221,7 +1223,7 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 4. 
  []
 
-<fig3.pdf, id=105, 1113.15875pt x 276.03125pt>
+<fig3.pdf, id=106, 1113.15875pt x 276.03125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
 Package pdftex.def Info: fig3.pdf used on input line 8.
@@ -1231,16 +1233,13 @@ Package pdftex.def Info: fig3.pdf used on input line 8.
 
 
  <./fig3.pdf>] (./main.bbl
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 42.
-
-Underfull \hbox (badness 1769) in paragraph at lines 52--56
+Underfull \hbox (badness 1769) in paragraph at lines 63--67
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fo
 g: Towards a
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 52--56
+Underfull \hbox (badness 1147) in paragraph at lines 63--67
 \T1/phv/m/n/12 comprehensive definition of fog computing'', \T1/phv/m/sl/12 SIG
 COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
  []
@@ -1250,19 +1249,19 @@ COMM Comput. Commun. Rev.\T1/phv/m/n/12 ,
 
 ] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6730 strings out of 492995
- 89256 string characters out of 6132704
- 171671 words of memory out of 5000000
- 10012 multiletter control sequences out of 15000+600000
+ 6734 strings out of 492995
+ 89322 string characters out of 6132704
+ 171679 words of memory out of 5000000
+ 10014 multiletter control sequences out of 15000+600000
  49453 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,8n,37p,648b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,8n,37p,563b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local
 /texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/t
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 778901 bytes).
+Output written on main.pdf (18 pages, 781751 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
