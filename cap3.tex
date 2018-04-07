@@ -3,6 +3,9 @@
 
 Podemos observar na topologia da Figura \ref{fig:fig1}, que os nodos não possuem um ponto centralizado de contato.
 Em razão da topologia distribuida, se for necessário escalarmos a quantadidade de nodos na rede, a mesma não deverá sofrer impactos significativos de performance.
+% Antes de sair falando sobre a figura seria interessante incluir um parágrafo introduzindo a proposta do trabalho.
+% O que são os nodos? qual a ligação entre eles (relação) e qual a ligação entre os nodos e sensores? Podes falar um pouco da tecnologia de comunicação, da tecnologia empregada para construção dos nodos e sensores...
+
 
 Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que compõem o projeto.
 
@@ -16,6 +19,7 @@ Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que comp
 \section{Arquitetura}
 
 A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fig:fig2} explicita a pilha de protocolos que o projeto fará uso para implementar as funcionalidades propostas.
+% Arquitetura do que? denovo, deves explicar que tu irá definir uma pilha de protocolos que será utilizada juntamente com uma estrutura de organização arquitetural já previamente definida.
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.75\textwidth]{fig2.pdf}
@@ -30,6 +34,7 @@ Sendo assim, a escalabilidade, no que diz respeito a quantidade de endereços, e
 
 Manter todos os nodos conectados, utilizando TCP por exemplo, despenderia uma quantidade de trafego significativo na rede. Além disso, o intuito desta implementação é transitar uma pequena quantidade de dados a cada requisição.
 Portanto a utilização de datagramas UDP faz sentido neste projeto.
+% Justificar o teu modelo proposto dizendo que manter o estado global de recursos acessível a todos os nodos é algo dificil e que um protocolo leve deve ser usado com o objetivo de permitir a escalabilidade com relação ao desempenho da solução.
 
 
 \section{Módulos}
@@ -100,7 +105,7 @@ Lembrando que o nodo requisitado está consciente desta divergência em virtude 
 
 Espera-se que este trabalho resulte em um protocolo funcional a nível de prova de conceito e que seja capaz de descobrir, sincronizar e consumir recursos de dispositivos sob computação em névoa.
 Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma devará manter-se coerente.
-
+% O que mais?
 
 \section{Validação}
 
@@ -116,6 +121,7 @@ Estes dispositivos executarão o middleware citado no item 3.2.1 deste trabalho.
     \item Desligamento de recursos de algum dispositivo da rede, e posterior a isso, a tentativa de acesso a esse recurso por algum nodo.
     O equipamento que perdeu o recurso deverá anunciar seus novos recursos atualizando a lista global dos outros nodos da névoa.
 \end{itemize}
+
 
 
 
