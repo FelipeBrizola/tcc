@@ -10,8 +10,8 @@ Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que comp
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.75\textwidth]{fig1.pdf}
-    \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig1} Nodos da névoa.}
+    \caption
+    {\label{fig:fig1} Organização arquitetural.} \cite{archfog:2017}
 \end{figure}
 
 \section{Arquitetura}
@@ -24,7 +24,7 @@ A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fi
 \begin{figure}[htb!]
     \centering\includegraphics[width=.75\textwidth]{fig2.pdf}
     \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig2} Pilha de protocolos utilizada na implementação do projeto.}
+    {\label{fig:fig2} Pilha de protocolos.}
 \end{figure}
 
 Dispondo do modelo de referência TCP/IP, constituido de cinco camadas: física, enlace, rede, transporte e aplicação \cite{tanenbaum2011redes}, este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
@@ -37,7 +37,6 @@ Portanto a utilização de datagramas UDP faz sentido neste projeto.
 
 O protocolo proposto, entitulado \textit{Resource Mapping} na Figura \ref{fig:fig2}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
 Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos e e garantir que o desempanho seja satisfatório com o objetivo permitir a escalabilidade da solução.
-
 
 
 
@@ -97,7 +96,7 @@ Lembrando que o nodo requisitado está consciente desta divergência em virtude 
 
 Espera-se que este trabalho resulte em um protocolo funcional a nível de prova de conceito e que seja capaz de descobrir, sincronizar e consumir recursos de dispositivos sob computação em névoa.
 Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma devará manter-se coerente.
-% O que mais?
+
 
 \section{Validação}
 

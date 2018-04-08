@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \pretolerance=2500
 \hyphenpenalty=10000
 \tolerance=200
@@ -15,6 +15,12 @@
   \begin{quotation}\noindent\textsc{Key:} #1\\
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{#2}
+
+\bibitem{archfog:2017}
+\enquote{Should you consider fog computing for your iiot?.}
+  \urlprefix\url{https://www.moxa.com/newsletter/connection/2017/11/feat_02.htm},
+  2018.
+\bibAnnoteFile{archfog:2017}
 
 \bibitem{definition:panaceia}
 \enquote{Significado de panaceia.}
