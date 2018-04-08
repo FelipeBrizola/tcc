@@ -22,49 +22,51 @@ Warning--to sort, need author or key in archfog:2017
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in archfog:2017
 Warning--empty author in definition:panaceia
+Warning--empty journal in Spencer:2015
+Warning--empty volume and number in Spencer:2015
 Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 10 entries,
+You've used 11 entries,
             2900 wiz_defined-function locations,
-            703 strings with 7342 characters,
-and the built_in function-call counts, 4452 in all, are:
-= -- 353
-> -- 108
+            709 strings with 7527 characters,
+and the built_in function-call counts, 4870 in all, are:
+= -- 385
+> -- 115
 < -- 4
-+ -- 47
-- -- 36
-* -- 290
-:= -- 522
-add.period$ -- 24
-call.type$ -- 10
-change.case$ -- 48
++ -- 50
+- -- 38
+* -- 318
+:= -- 570
+add.period$ -- 26
+call.type$ -- 11
+change.case$ -- 52
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 434
-empty$ -- 408
-format.name$ -- 42
-if$ -- 930
+cite$ -- 32
+duplicate$ -- 483
+empty$ -- 448
+format.name$ -- 44
+if$ -- 1014
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 90
-newline$ -- 59
-num.names$ -- 16
-pop$ -- 218
+int.to.str$ -- 11
+missing$ -- 99
+newline$ -- 63
+num.names$ -- 18
+pop$ -- 242
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 41
 quote$ -- 0
-skip$ -- 133
+skip$ -- 142
 stack$ -- 0
-substring$ -- 213
-swap$ -- 190
+substring$ -- 239
+swap$ -- 206
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
-warning$ -- 8
-while$ -- 29
-width$ -- 12
-write$ -- 109
-(There were 13 warnings)
+type$ -- 42
+warning$ -- 10
+while$ -- 32
+width$ -- 13
+write$ -- 117
+(There were 15 warnings)

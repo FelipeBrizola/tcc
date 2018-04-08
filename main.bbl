@@ -39,6 +39,12 @@ Foundation, P.~S. \enquote{socket — low-level networking interface}.
   \urlprefix\url{https://docs.python.org/3/library/socket.html}, 2018.
 \bibAnnoteFile{socketPython}
 
+\bibitem{Spencer:2015}
+Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
+  framework for communication between bluetooth-enabled wearable internet of
+  things devices}, 06~2015.
+\bibAnnoteFile{Spencer:2015}
+
 \bibitem{Mell:2011}
 Mell, P.~M.; Grance, T. \enquote{Sp 800-145. the nist definition of cloud
   computing}, \bbltechrep{}, Gaithersburg, MD, United States, 2011.

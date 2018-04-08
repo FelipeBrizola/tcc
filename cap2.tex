@@ -13,8 +13,21 @@ Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protoc
     \item A responsabilidade deste protocolo é manter a troca de informações sobre roteamentos entre sistemas autônomos \cite{Rekhter:1995}.
     \item O roteador ao entrar na rede pela primeira vez deve-se conectar ao seu vizinho. Após a conexão estabelecida, os roteadores compartilham entre sí suas tabelas de roteamento \cite{Rekhter:1995}.
     \item Posteriormente, as atualizações nas tabelas dos roteadores dão-se de forma incremental à medida que as mudanças na rotas ocorrem \cite{Rekhter:1995}.
-    \item Mensagens de keep alive são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
+    \item Mensagens de \textit{keep alive} são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
 \end{itemize}
+
+
+Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
+Os principais componentes deste trabalho são, além da implementação do protocolo em sí, o fato de que Spencer fazer uso de um \textit{middleware} que executa o gerenciamento dos recursos dos dispositivos \cite{Spencer:2015}.
+
+Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorre via \textit{Bluetooth LE}.
+A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
+Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
+Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
+
+
+
+
 
 
 
