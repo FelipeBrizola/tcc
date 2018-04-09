@@ -4,7 +4,7 @@ Seguindo a organização arquitetural da Figura \ref{fig:fig1}, a proposta deste
 Assim, o nodo que controla a temperatura poderia utilizar recursos do \textit{edge device} que comanda o sensor de chuva, por exemplo.
 
 Podemos observar na topologia da Figura \ref{fig:fig1}, que os nodos não possuem um ponto centralizado de contato.
-Em razão da topologia distribuida, se for necessário escalarmos a quantadidade de nodos na rede, a mesma não deverá sofrer impactos significativos de performance.
+Em razão da topologia distribuída, se for necessário escalarmos a quantidade de nodos na rede, a mesma não deverá sofrer impactos significativos de performance.
 
 Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que compõem o projeto, bem como resultados esperados, validações e cenários de teste. 
 
@@ -27,7 +27,8 @@ A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fi
     {\label{fig:fig2} Pilha de protocolos.}
 \end{figure}
 
-Dispondo do modelo de referência TCP/IP, constituido de cinco camadas: física, enlace, rede, transporte e aplicação \cite{tanenbaum2011redes}, este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
+Dispondo do modelo de referência TCP/IP, constituido de cinco camadas: física, enlace, rede, transporte e aplicação \cite{tanenbaum2011redes}.
+Este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
 
 A utilização de IPv6 na camada de rede justifica-se pela grande quantidade de endereços válidos na internet que o protocolo provê, pois após o firmamento da internet das coisas é possível que cada dispositivo tenha um endereço IP único.
 Sendo assim, a escalabilidade, no que diz respeito a quantidade de endereços, está garantida.
@@ -36,14 +37,14 @@ Manter todos os nodos conectados, utilizando TCP por exemplo, despenderia uma qu
 Portanto a utilização de datagramas UDP faz sentido neste projeto.
 
 O protocolo proposto, entitulado \textit{Resource Mapping} na Figura \ref{fig:fig2}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
-Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos e e garantir que o desempanho seja satisfatório com o objetivo permitir a escalabilidade da solução.
+Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos, e garantir que o desempenho seja satisfatório com o objetivo permitir a escalabilidade da solução.
 
 
 
 \section{Módulos}
 
 Nas próximas subseções esclareceremos as funcionalidades que o projeto deverá dispor.
-Vale enfatizar que a descrição dos módulos apresentados referem-se a proposta de TCC I.
+Vale enfatizar que a descrição dos submódulos apresentados referem-se a proposta de TCC I.
 Consequentemente, o detalhamento de alguns módulos não serão abordados de forma aprofundada neste momento.
 
 
@@ -58,7 +59,7 @@ Utilizaremos uma simulação para realizar tal mapeamento local, portanto o mape
 Cada nodo da rede deve manter uma lista com os endereços IP`s que fazem parte do mapeamento. Juntamente à cada endereço IP, deverá haver uma lista com os recursos providos por ele.
 Em vista disso, cada nodo da névoa possui um mapeamento global de recursos disponíveis na rede.
 
-Quando um nodo entrar na rede pela primeira vez, deverá enviar um pacote para os endereços unicasts indicando os recursos que disponibilizará.
+Quando um nodo entrar na rede pela primeira vez, deverá enviar um pacote para os endereços \textit{unicasts} indicando os recursos que disponibilizará.
 O Pseudocódigo \ref{alg:alg1} demonstra, de forma simplificada, a política de atualização que cada nodo deverá implementar.
 
 
@@ -82,11 +83,11 @@ A manutenibilidade da lista de recursos globais é relevante para que a implemen
 Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
 Esses controles são realizados em duas esferas, uma trata do desvinculamento do nodo da rede e outra quando um recurso deixa de fazer parte dela.
 
-O desvinculamento pode ser abordado de forma similar as mensagens de keep alive utilizadas no protocolo BGP, por exemplo.
+O desvinculamento pode ser abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
 Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão operação, pois sem esse procedimento seria difícil
 saber quando remover um IP da lista de recursos globais. Portanto, para manter a lista o mais atualizada possível, este protocolo implementará mensagens deste tipo.
 
-No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços unicasts indicando quais são os seus recursos existentes no momento.
+No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços \textit{unicasts} indicando quais são os seus recursos existentes no momento.
 O nodo solicitado percebe que este recurso não esta mais disponível porque recebeu na requisição o id do recurso, e este não está em sua lista local.
 Lembrando que o nodo requisitado está consciente desta divergência em virtude da execução continua dos métodos providos pelo \textit{middleware}. Portanto, o gatilho para a atualização dos recursos na névoa
 é disparado pelo primeiro nodo que requisitar um recurso inválido.
@@ -95,7 +96,7 @@ Lembrando que o nodo requisitado está consciente desta divergência em virtude 
 \section{Resultados esperados}
 
 Espera-se que este trabalho resulte em um protocolo funcional a nível de prova de conceito e que seja capaz de descobrir, sincronizar e consumir recursos de dispositivos sob computação em névoa.
-Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma devará manter-se coerente.
+Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma deverá manter-se coerente.
 
 
 \section{Validação}
@@ -107,11 +108,12 @@ Estes dispositivos executarão o \textit{middleware} citado no item 3.2.1 deste 
 
 \begin{itemize}
     \item Entrada de algum equipamento na rede e este anunciando seus recursos. 
-    \item Atulização das listas globais quando algum equipamento deixar de responder as mensagens de keep alive.
+    \item Atualização das listas globais quando algum equipamento deixar de responder as mensagens de \textit{keep alive}.
     \item Utilização de recursos de nodos da rede.
     \item Desligamento de recursos de algum dispositivo da rede, e posterior a isso, a tentativa de acesso a esse recurso por algum nodo.
     O equipamento que perdeu o recurso deverá anunciar seus novos recursos atualizando a lista global dos outros nodos da névoa.
 \end{itemize}
+
 
 
 

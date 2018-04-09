@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  8 APR 2018 18:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  9 APR 2018 09:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1175,32 +1175,32 @@ Package pdftex.def Info: fig2.pdf used on input line 25.
 
 
  <./fig1.pdf>]
-Underfull \hbox (badness 10000) detected at line 43
+Underfull \hbox (badness 10000) detected at line 44
 \T1/phv/b/n/12 3.2
  []
 
 
-Underfull \hbox (badness 10000) detected at line 50
+Underfull \hbox (badness 10000) detected at line 51
 \T1/phv/m/n/12 3.2.1
  []
 
 
-Underfull \hbox (badness 10000) detected at line 56
+Underfull \hbox (badness 10000) detected at line 57
 \T1/phv/m/n/12 3.2.2
  []
 
 [10 <./fig2.pdf>]
-Underfull \hbox (badness 10000) detected at line 95
+Underfull \hbox (badness 10000) detected at line 96
 \T1/phv/b/n/12 3.3
  []
 
 [11]
-Underfull \hbox (badness 10000) detected at line 101
+Underfull \hbox (badness 10000) detected at line 102
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 106
+Underfull \hbox (badness 10000) detected at line 107
 \T1/phv/b/n/12 3.5
  []
 
@@ -1230,7 +1230,7 @@ ngs devices'',
  []
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 75--79
+Underfull \hbox (badness 1325) in paragraph at lines 80--84
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fo
 g: Towards a
  []
@@ -1240,10 +1240,10 @@ g: Towards a
 
 ] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6738 strings out of 492995
- 89374 string characters out of 6132704
- 171683 words of memory out of 5000000
- 10016 multiletter control sequences out of 15000+600000
+ 6740 strings out of 492995
+ 89398 string characters out of 6132704
+ 171688 words of memory out of 5000000
+ 10017 multiletter control sequences out of 15000+600000
  49453 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,8n,37p,563b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1252,7 +1252,7 @@ Here is how much of TeX's memory you used:
 exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (14 pages, 781709 bytes).
+Output written on main.pdf (14 pages, 781846 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream

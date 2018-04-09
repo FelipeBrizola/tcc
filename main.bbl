@@ -66,6 +66,11 @@ Rouse, M. \enquote{Cisco systems, inc.}
   2018.
 \bibAnnoteFile{ciscoSystems}
 
+\bibitem{edgeDevices}
+Rouse, M. \enquote{Edge device.}
+  \urlprefix\url{https://whatis.techtarget.com/definition/edge-device}, 2018.
+\bibAnnoteFile{edgeDevices}
+
 \bibitem{tanenbaum2011redes}
 Tanenbaum, A.; Wetherall, D.; Translations, O. \enquote{Redes de computadores}.
   PRENTICE HALL BRASIL, 2011.
