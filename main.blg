@@ -30,45 +30,45 @@ Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 12 entries,
+You've used 17 entries,
             2900 wiz_defined-function locations,
-            713 strings with 7613 characters,
-and the built_in function-call counts, 5242 in all, are:
-= -- 416
-> -- 122
+            743 strings with 8437 characters,
+and the built_in function-call counts, 8069 in all, are:
+= -- 665
+> -- 217
 < -- 4
-+ -- 53
-- -- 40
-* -- 338
-:= -- 617
-add.period$ -- 29
-call.type$ -- 12
-change.case$ -- 56
++ -- 92
+- -- 74
+* -- 524
+:= -- 954
+add.period$ -- 44
+call.type$ -- 17
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 520
-empty$ -- 486
-format.name$ -- 46
-if$ -- 1094
+cite$ -- 44
+duplicate$ -- 797
+empty$ -- 721
+format.name$ -- 85
+if$ -- 1681
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 106
-newline$ -- 67
-num.names$ -- 20
-pop$ -- 263
+int.to.str$ -- 17
+missing$ -- 153
+newline$ -- 87
+num.names$ -- 30
+pop$ -- 424
 preamble$ -- 1
-purify$ -- 44
+purify$ -- 71
 quote$ -- 0
-skip$ -- 152
+skip$ -- 211
 stack$ -- 0
-substring$ -- 256
-swap$ -- 219
+substring$ -- 431
+swap$ -- 317
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
+type$ -- 66
 warning$ -- 10
-while$ -- 35
-width$ -- 14
-write$ -- 126
+while$ -- 50
+width$ -- 19
+write$ -- 171
 (There were 16 warnings)

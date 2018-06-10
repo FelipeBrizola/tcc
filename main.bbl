@@ -27,6 +27,12 @@
   \urlprefix\url{https://www.dicio.com.br/panaceia/}, 2018.
 \bibAnnoteFile{definition:panaceia}
 
+\bibitem{rfc3986}
+Berners-Lee, T.; Fielding, R.; Masinter, L. \enquote{Rfc 3986, uniform resource
+  identifier (uri): Generic syntax}.
+  \urlprefix\url{http://rfc.net/rfc3986.html}, 2005.
+\bibAnnoteFile{rfc3986}
+
 \bibitem{Bonomi:2012}
 Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   role in the internet of things}. \capitalize{\bblin{}}: Proceedings of the
@@ -34,10 +40,22 @@ Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   13--16.
 \bibAnnoteFile{Bonomi:2012}
 
+\bibitem{rfc2616}
+Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;
+  Berners-Lee, T. \enquote{Rfc 2616, hypertext transfer protocol -- http/1.1}.
+  \urlprefix\url{http://www.rfc.net/rfc2616.html}, 1999.
+\bibAnnoteFile{rfc2616}
+
 \bibitem{socketPython}
 Foundation, P.~S. \enquote{socket — low-level networking interface}.
   \urlprefix\url{https://docs.python.org/3/library/socket.html}, 2018.
 \bibAnnoteFile{socketPython}
+
+\bibitem{rfc2046}
+Freed, N.; Borenstein, D. N.~S. \enquote{{Multipurpose Internet Mail Extensions
+  (MIME) Part Two: Media Types}}.
+  \urlprefix\url{https://rfc-editor.org/rfc/rfc2046.txt}, \bblnov{}~1996.
+\bibAnnoteFile{rfc2046}
 
 \bibitem{Spencer:2015}
 Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
@@ -53,6 +71,12 @@ Mell, P.~M.; Grance, T. \enquote{Sp 800-145. the nist definition of cloud
 \bibitem{Rekhter:1995}
 Rekhter, Y.; Li, T. \enquote{A border gateway protocol 4 (bgp-4)}, 1995.
 \bibAnnoteFile{Rekhter:1995}
+
+\bibitem{rfc6347}
+Rescorla, E.; Modadugu, N. \enquote{{Datagram Transport Layer Security Version
+  1.2}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc6347.txt},
+  \bbljan{}~2012.
+\bibAnnoteFile{rfc6347}
 
 \bibitem{DBLP:journals/corr/RomanLM16}
 Roman, R.; Lopez, J.; Mambo, M. \enquote{Mobile edge computing, fog et al.: {A}
@@ -70,6 +94,12 @@ Rouse, M. \enquote{Cisco systems, inc.}
 Rouse, M. \enquote{Edge device.}
   \urlprefix\url{https://whatis.techtarget.com/definition/edge-device}, 2018.
 \bibAnnoteFile{edgeDevices}
+
+\bibitem{rfc7252}
+Shelby, Z.; Hartke, K.; Bormann, C. \enquote{{The Constrained Application
+  Protocol (CoAP)}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc7252.txt},
+  \bbljun{}~2014.
+\bibAnnoteFile{rfc7252}
 
 \bibitem{tanenbaum2011redes}
 Tanenbaum, A.; Wetherall, D.; Translations, O. \enquote{Redes de computadores}.

@@ -276,6 +276,9 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
+INPUT fig4.pdf
+INPUT ./fig4.pdf
+INPUT ./fig4.pdf
 OUTPUT cap3.aux
 INPUT cap3.tex
 INPUT cap3.tex

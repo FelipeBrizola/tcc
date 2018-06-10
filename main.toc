@@ -7,13 +7,16 @@
 \contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{7}
 \contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{8}
 \contentsline {section}{\numberline {2.1}\MakeTextUppercase {Trabalhos relacionados}}{8}
-\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{9}
-\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{9}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{10}
-\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{10}
-\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descobrimento e sincroniza\IeC {\c c}\IeC {\~a}o}}{11}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{12}
-\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{12}
-\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{12}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{13}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{14}
+\contentsline {subsection}{\numberline {2.1.1}\MakeTextUppercase {CoAP}}{9}
+\contentsline {subsection}{\numberline {2.1.2}\MakeTextUppercase {CoAP - URIs }}{10}
+\contentsline {subsection}{\numberline {2.1.3}\MakeTextUppercase {CoRE Resource Directory}}{10}
+\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{11}
+\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{11}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{12}
+\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{12}
+\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descobrimento e sincroniza\IeC {\c c}\IeC {\~a}o}}{13}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{14}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{14}
+\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{14}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{15}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{16}

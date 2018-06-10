@@ -16,17 +16,64 @@ Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protoc
     \item Mensagens de \textit{keep alive} são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
 \end{itemize}
 
-
 Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
-A especificação do protocolo e um \textit{middleware} capaz de realizar o gerenciamento dos recursos dos dispositivos são os principais componentes deste trabalho \cite{Spencer:2015}.
+A especificação do protocolo e um \textit{middleware}, capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
 
 Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorre via \textit{Bluetooth LE}.
 A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
 Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
 Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
 
+\subsection{CoAP}
+
+Especificado pela RFC-7252\cite{rfc7252}, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
+e tem como foco a transferência de documentos web entre nodos com recursos limitados em redes de baixa qualidade\cite{rfc7252}.
+
+O modelo de interação cliente/servidor é o padrão adotado pelo CoAP, entretanto,
+o fato do protocolo ter sido projetado para aplicações máquina-a-máquina faz com que os dispositivos comumente desempenhem o papel de cliente e servidor simultaneamente.
+
+Quando mensagens CoAP de requisição e resposta são trocadas, estas devem conter o código do método ou código da resposta, respectivamente.
+Além dos códigos, as mensagens podem conter outras informações, como o recurso que se deseja acessar e o tipo de mídia que se esta transportando.
+Por fim, um token é utilizado para que haja a correspondência entre requisição e resposta.
+
+A Figura \ref{fig:fig4} ilustra uma solicitação entre cliente e servidor no qual o cliente deseja obter a temperatura.
+Analisando a troca de mensagens, notamos que o cliente envia uma solicitação não confirmável com token 0x74 e código GET para acessar o recurso temperatura no servidor.
+O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o mesmo token que recebeu na solicitação do cliente e o valor 22.5 C.
+
+\begin{figure}[htb!]
+    \centering\includegraphics[height=.5\textwidth]{fig4.pdf}
+    \caption
+    {\label{fig:fig4} Requisição e resposta utilizando mensagens não confirmáveis.} \cite{rfc7252}
+\end{figure}
+
+A arquitetura REST, assim como no protocolo HTTP\cite{rfc2616}, foi utilizada na projetização do protocolo CoAP.
+Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para CoAP e vice-versa é bastante simples.
+Para realizar tal mapeamento basta utilizarmos o cross-proxy, definido na sessão 10 da própria RFC-7252\cite{rfc7252},
+que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
+
+Além de modelo de comunicação cliente/servidor e arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web
+como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc2046}.
+
+Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
+Entre as diferenças está a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
+Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
+Esquema CoAP-URI, que será abordado na sessão a seguir, possibilidade de envio de solicitacoes multicast e unicast, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
+estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
+
+\subsection{CoAP - URIs }
 
 
+
+% O esquema CoAP-URI suporta o prefixo "/.well-know/", definido da RFC-5785\cite{rfc5785}.
+% Este prefixo habilita a descoberta de políticas e outras informações sobre o servidor, como recursos disponíveis.
+
+% O protocolo CoAP prove suporte ao prefixo "/.well-know/" a em esquemas URI. 
+
+% This enables discovery of policy or other information about a
+%    host ("site-wide metadata"), such as hosted resources (see
+%    Section 7).
+
+\subsection{CoRE Resource Directory}
 
 
 
