@@ -57,23 +57,39 @@ como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc20
 Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
 Entre as diferenças está a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
 Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
-Esquema CoAP-URI, que será abordado na sessão a seguir, possibilidade de envio de solicitacoes multicast e unicast, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
+CoAP-URI schema e service discovery, que serão abordados nas sessões a seguir, possibilidade de envio de solicitacoes multicast e unicast, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
 \subsection{CoAP - URIs }
 
+De forma analoga ao "http" e o "https", o protocolo CoAP provê suporte aos esquemas do tipo "coap" e "coaps", este utilizando segurança DTLS.
+Estes esquemas são utilizados para identificar e localizar os recursos.
+Os recursos são organizados hierarquicamente e gerenciados por um servidor que fica escutando por requisições "coap" ou "coaps".
+A definicao sintatica, segundo Backus-Naur Form (ABNF) [RFC5234],  da coap-uri está definida abaixo
+
+coap-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]
+
+No coap-URI o campo "host" é obrigatorio e deve ser um endereco ip ou um nome que possa ser resolvido pelo DNS.
+O campo "path-abempty" identifica o recurso no escopo do host e port que se deseja acessar.
+Já o campo "query" é utilizado para realizar uma pesquisa no recurso e utiliza o padrao xxxx semelhante ao utilizado em querystrings no protocolo HTTP.
+
+O esquema CoAP-URI suporta o prefixo "/.well-know/", definido da RFC-5785\cite{rfc5785}.
+Este prefixo habilita a descoberta de políticas e outras informações sobre o servidor, como recursos disponíveis.
+
+O exemplo abaixa demostra um fluxo de requisicao e resposta utilizando o prefixo "/.well-know/".
+
+coap://example.net/.well-known/core
+
+resposta
+
+resposta
+
+resposta
+
+Notamos, entao, que o servidor nomeado example.net possui os recursos x,y e z disponíveis para serem utilizados via protocolo coap
 
 
-% O esquema CoAP-URI suporta o prefixo "/.well-know/", definido da RFC-5785\cite{rfc5785}.
-% Este prefixo habilita a descoberta de políticas e outras informações sobre o servidor, como recursos disponíveis.
-
-% O protocolo CoAP prove suporte ao prefixo "/.well-know/" a em esquemas URI. 
-
-% This enables discovery of policy or other information about a
-%    host ("site-wide metadata"), such as hosted resources (see
-%    Section 7).
-
-\subsection{CoRE Resource Directory}
+\subsection{CoAP - Service Discovery}
 
 
 

@@ -57,6 +57,12 @@ Freed, N.; Borenstein, D. N.~S. \enquote{{Multipurpose Internet Mail Extensions
   \urlprefix\url{https://rfc-editor.org/rfc/rfc2046.txt}, \bblnov{}~1996.
 \bibAnnoteFile{rfc2046}
 
+\bibitem{rfc5785}
+Hammer-Lahav, E.; Nottingham, M. \enquote{{Defining Well-Known Uniform Resource
+  Identifiers (URIs)}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc5785.txt},
+  \bblapr{}~2010.
+\bibAnnoteFile{rfc5785}
+
 \bibitem{Spencer:2015}
 Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
   framework for communication between bluetooth-enabled wearable internet of
