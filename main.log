@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  11 JUN 2018 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  13 JUN 2018 19:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1133,16 +1133,16 @@ Underfull \hbox (badness 10000) detected at line 1
  []
 
 
-Underfull \hbox (badness 10000) detected at line 6
+Underfull \hbox (badness 10000) detected at line 7
 \T1/phv/b/n/12 2.1
  []
 
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 13.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 14.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
-Underfull \hbox (badness 10000) detected at line 27
-\T1/phv/m/n/12 2.1.1
+Underfull \hbox (badness 10000) detected at line 20
+\T1/phv/b/n/12 2.2
  []
 
 [8
@@ -1152,19 +1152,22 @@ Underfull \hbox (badness 10000) detected at line 27
 ] <fig4.pdf, id=31, 256.92789pt x 250.90637pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 44.
+Package pdftex.def Info: fig4.pdf used on input line 40.
 (pdftex.def)             Requested size: 247.66725pt x 241.84843pt.
  [9 <./fig4.pdf>]
-Underfull \hbox (badness 10000) detected at line 63
-\T1/phv/m/n/12 2.1.2
+Underfull \hbox (badness 10000) detected at line 59
+\T1/phv/b/n/12 2.3
  []
 
-[10]
-Underfull \hbox (badness 10000) detected at line 92
-\T1/phv/m/n/12 2.1.3
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 67.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) detected at line 89
+\T1/phv/b/n/12 2.4
  []
 
-) [11]
+) [10] [11]
 \openout2 = `cap3.aux'.
 
  (./cap3.tex
@@ -1174,7 +1177,7 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 3. 
  []
 
-<fig1.pdf, id=58, 168.63pt x 95.6373pt>
+<fig1.pdf, id=59, 168.63pt x 95.6373pt>
 File: fig1.pdf Graphic file (type pdf)
  <use fig1.pdf>
 Package pdftex.def Info: fig1.pdf used on input line 12.
@@ -1184,7 +1187,7 @@ Underfull \hbox (badness 10000) detected at line 17
 \T1/phv/b/n/12 3.1
  []
 
-<fig2.pdf, id=59, 548.02042pt x 114.42148pt>
+<fig2.pdf, id=60, 548.02042pt x 114.42148pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
 Package pdftex.def Info: fig2.pdf used on input line 25.
@@ -1233,7 +1236,7 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 4. 
  []
 
-<fig3.pdf, id=107, 1113.15875pt x 276.03125pt>
+<fig3.pdf, id=108, 1113.15875pt x 276.03125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
 Package pdftex.def Info: fig3.pdf used on input line 8.
@@ -1243,13 +1246,13 @@ Package pdftex.def Info: fig3.pdf used on input line 8.
 
 
  <./fig3.pdf>] (./main.bbl
-Underfull \hbox (badness 1558) in paragraph at lines 67--71
+Underfull \hbox (badness 1558) in paragraph at lines 73--77
 \T1/phv/m/n/12 communication between bluetooth-enabled wearable internet of thi
 ngs devices'',
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 82--86
+Underfull \hbox (badness 1297) in paragraph at lines 88--92
 []\T1/phv/m/n/12 Rescorla, E.; Modadugu, N. ``Datagram Transport Layer Security
  Version 1.2''.
  []
@@ -1258,29 +1261,31 @@ Underfull \hbox (badness 1297) in paragraph at lines 82--86
 
 
 ]
-Underfull \hbox (badness 1325) in paragraph at lines 116--120
+Underfull \hbox (badness 1325) in paragraph at lines 122--126
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fo
 g: Towards a
  []
 
 ) [18] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6769 strings out of 492995
- 89739 string characters out of 6132704
- 172731 words of memory out of 5000000
- 10039 multiletter control sequences out of 15000+600000
- 49453 words of font info for 84 fonts, out of 8000000 for 9000
+ 6779 strings out of 492995
+ 90190 string characters out of 6132704
+ 172736 words of memory out of 5000000
+ 10044 multiletter control sequences out of 15000+600000
+ 49766 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,8n,37p,563b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
-local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2
-017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 870550 bytes).
+local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/lo
+cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2017/
+texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (18 pages, 903373 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

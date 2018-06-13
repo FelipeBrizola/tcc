@@ -1,9 +1,10 @@
 \chapter{\label{chap:chap2} Fundamentação Teórica}
 
-Este capítulo apresentará uma breve descrição de alguns trabalhos relacionados a área de computação em névoa, bem como protocolos de comunicação que servirão de apoio para este TCC.
+Este capítulo apresentará alguns protocolos de comunicação e técnicas que servirão de apoio para o desenvolvimento deste TCC. 
+Por fim, alguns trabalhos relacionados a área serão expostos, bem como o posicionamento deste trabalho perante aos demais.
 
 
-\section{Trabalhos relacionados}
+\section{BGP}
 
 
 O protocolo BGP está situado na quinta camada, a camada de aplicação, do modelo de referência TCP/IP \cite{tanenbaum2011redes}.
@@ -16,29 +17,24 @@ Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protoc
     \item Mensagens de \textit{keep alive} são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
 \end{itemize}
 
-Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
-A especificação do protocolo e um \textit{middleware}, capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
+\section{CoAP}
 
-Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorre via \textit{Bluetooth LE}.
-A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
-Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
-Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
-
-\subsection{CoAP}
-
-Especificado pela RFC-7252\cite{rfc7252}, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
+Especificado pela RFC-7252, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
 e tem como foco a transferência de documentos web entre nodos com recursos limitados em redes de baixa qualidade\cite{rfc7252}.
+
+% falar do service discovery e resource directory.
 
 O modelo de interação cliente/servidor é o padrão adotado pelo CoAP, entretanto,
 o fato do protocolo ter sido projetado para aplicações máquina-a-máquina faz com que os dispositivos comumente desempenhem o papel de cliente e servidor simultaneamente.
 
 Quando mensagens CoAP de requisição e resposta são trocadas, estas devem conter o código do método ou código da resposta, respectivamente.
-Além dos códigos, as mensagens podem conter outras informações, como o recurso que se deseja acessar e o tipo de mídia que se esta transportando.
+Além dos códigos, as mensagens podem conter outras informações, como o recurso que se deseja acessar e o tipo de mídia que se está transportando.
 Por fim, um token é utilizado para que haja a correspondência entre requisição e resposta.
 
-A Figura \ref{fig:fig4} ilustra uma solicitação entre cliente e servidor no qual o cliente deseja obter a temperatura.
+A Figura \ref{fig:fig4} ilustra uma solicitação entre cliente e servidor, na qual o cliente deseja obter a temperatura.
 Analisando a troca de mensagens, notamos que o cliente envia uma solicitação não confirmável com token 0x74 e código GET para acessar o recurso temperatura no servidor.
 O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o mesmo token que recebeu na solicitação do cliente e o valor 22.5 C.
+
 
 \begin{figure}[htb!]
     \centering\includegraphics[height=.5\textwidth]{fig4.pdf}
@@ -60,36 +56,47 @@ Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é 
 CoAP-URI schema e service discovery, que serão abordados nas sessões a seguir, possibilidade de envio de solicitacoes multicast e unicast, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
-\subsection{CoAP - URIs }
+\section{CoAP - URIs }
 
-De forma analoga ao "http" e o "https", o protocolo CoAP provê suporte aos esquemas do tipo "coap" e "coaps", este utilizando segurança DTLS.
-Estes esquemas são utilizados para identificar e localizar os recursos.
-Os recursos são organizados hierarquicamente e gerenciados por um servidor que fica escutando por requisições "coap" ou "coaps".
-A definicao sintatica, segundo Backus-Naur Form (ABNF) [RFC5234],  da coap-uri está definida abaixo
+De forma análoga ao HTTP  e o HTTPS, o protocolo CoAP provê suporte aos esquemas do tipo \textit{coap} e \textit{coaps}, este utilizando segurança DTLS.
+Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
+Portanto, servidores coap ficam aguardando por requisições que utilizem tal esquema.
 
-coap-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]
+A definição sintática, segundo Backus-Naur Form RFC-5234\cite{rfc5234},  do  CoAP-URI está definida abaixo:
 
-No coap-URI o campo "host" é obrigatorio e deve ser um endereco ip ou um nome que possa ser resolvido pelo DNS.
-O campo "path-abempty" identifica o recurso no escopo do host e port que se deseja acessar.
-Já o campo "query" é utilizado para realizar uma pesquisa no recurso e utiliza o padrao xxxx semelhante ao utilizado em querystrings no protocolo HTTP.
+\begin{verbatim}
+    CoAP-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]
+\end{verbatim}
 
-O esquema CoAP-URI suporta o prefixo "/.well-know/", definido da RFC-5785\cite{rfc5785}.
-Este prefixo habilita a descoberta de políticas e outras informações sobre o servidor, como recursos disponíveis.
+O esquema CoAP-URI suporta o prefixo \textit{/.well-known/} , definido na RFC-5785\cite{rfc5785}.
+Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
 
-O exemplo abaixa demostra um fluxo de requisicao e resposta utilizando o prefixo "/.well-know/".
+O exemplo abaixa demostra um fluxo de requisição e resposta utilizando o prefixo \textit{/.well-known/}.
 
-coap://example.net/.well-known/core
+\begin{verbatim}
+    REQ: GET coap://example.net/.well-known/core
+\end{verbatim}
 
-resposta
+\begin{verbatim}
+    RES: 2.05 Content
+    </sensors/temp>;if="sensor",
+    </sensors/light>;if="sensor"
+\end{verbatim}
 
-resposta
-
-resposta
-
-Notamos, entao, que o servidor nomeado example.net possui os recursos x,y e z disponíveis para serem utilizados via protocolo coap
+Notamos, então, que o servidor nomeado example.net possui os recursos \textit{temp} e \textit{light} disponíveis para serem utilizados através do protocolo coap.
 
 
-\subsection{CoAP - Service Discovery}
+\section{Trabalhos Relacionados}
+
+% iotivity
+
+Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
+A especificação do protocolo e um \textit{middleware}, capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
+
+Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorre via \textit{Bluetooth LE}.
+A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
+Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
+Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
 
 
 
