@@ -107,6 +107,11 @@ Rouse, M. \enquote{Edge device.}
   \urlprefix\url{https://whatis.techtarget.com/definition/edge-device}, 2018.
 \bibAnnoteFile{edgeDevices}
 
+\bibitem{rfc6690}
+Shelby, Z. \enquote{{Constrained RESTful Environments (CoRE) Link Format}}.
+  \urlprefix\url{https://rfc-editor.org/rfc/rfc6690.txt}, \bblaug{}~2012.
+\bibAnnoteFile{rfc6690}
+
 \bibitem{rfc7252}
 Shelby, Z.; Hartke, K.; Bormann, C. \enquote{{The Constrained Application
   Protocol (CoAP)}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc7252.txt},

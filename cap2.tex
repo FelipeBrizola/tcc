@@ -44,7 +44,7 @@ O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o
 
 A arquitetura REST, assim como no protocolo HTTP\cite{rfc2616}, foi utilizada na projetização do protocolo CoAP.
 Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para CoAP e vice-versa é bastante simples.
-Para realizar tal mapeamento basta utilizarmos o cross-proxy, definido na sessão 10 da própria RFC-7252\cite{rfc7252},
+Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na sessão 10 da própria RFC-7252\cite{rfc7252},
 que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
 
 Além de modelo de comunicação cliente/servidor e arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web
@@ -53,10 +53,21 @@ como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc20
 Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
 Entre as diferenças está a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
 Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
-CoAP-URI schema e service discovery, que serão abordados nas sessões a seguir, possibilidade de envio de solicitacoes multicast e unicast, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
+
+\textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na sessão a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
-\section{CoAP - URIs }
+
+
+\section{Constrained RESTful Environments (CoRE) Link Format}
+
+Segundo a RFC-6690, a finalidade deste especificação é realizar REST em nodos com recursos limitados sendo importante em aplicações maquina-a-maquina\cite{rfc6690}.
+Em aplicação deste tipo é muito importante que as configurações não dependam de interação de humanos.
+
+A principal função desta especificação é fornecer identificadores para os recursos hospedados no servidor complementado por atributos sobre estes recursos....
+
+
+
 
 De forma análoga ao HTTP  e o HTTPS, o protocolo CoAP provê suporte aos esquemas do tipo \textit{coap} e \textit{coaps}, este utilizando segurança DTLS.
 Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
@@ -67,6 +78,10 @@ A definição sintática, segundo Backus-Naur Form RFC-5234\cite{rfc5234},  do  
 \begin{verbatim}
     CoAP-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]
 \end{verbatim}
+
+
+
+
 
 O esquema CoAP-URI suporta o prefixo \textit{/.well-known/} , definido na RFC-5785\cite{rfc5785}.
 Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
@@ -84,7 +99,6 @@ O exemplo abaixa demostra um fluxo de requisição e resposta utilizando o prefi
 \end{verbatim}
 
 Notamos, então, que o servidor nomeado example.net possui os recursos \textit{temp} e \textit{light} disponíveis para serem utilizados através do protocolo coap.
-
 
 \section{Trabalhos Relacionados}
 

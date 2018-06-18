@@ -8,7 +8,7 @@
 \contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{8}
 \contentsline {section}{\numberline {2.1}\MakeTextUppercase {BGP}}{8}
 \contentsline {section}{\numberline {2.2}\MakeTextUppercase {CoAP}}{8}
-\contentsline {section}{\numberline {2.3}\MakeTextUppercase {CoAP - URIs }}{10}
+\contentsline {section}{\numberline {2.3}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{10}
 \contentsline {section}{\numberline {2.4}\MakeTextUppercase {Trabalhos Relacionados}}{10}
 \contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{12}
 \contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{12}
