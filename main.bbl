@@ -40,12 +40,6 @@ Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   13--16.
 \bibAnnoteFile{Bonomi:2012}
 
-\bibitem{rfc5234}
-Crocker, D.; Overell, P. \enquote{{Augmented BNF for Syntax Specifications:
-  ABNF}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc5234.txt},
-  \bbljan{}~2008.
-\bibAnnoteFile{rfc5234}
-
 \bibitem{rfc2616}
 Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;
   Berners-Lee, T. \enquote{Rfc 2616, hypertext transfer protocol -- http/1.1}.

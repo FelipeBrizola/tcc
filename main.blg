@@ -12,13 +12,13 @@ Warning--entry type for "socketPython" isn't style-file defined
 Warning--entry type for "ciscoSystems" isn't style-file defined
 --line 90 of file bibliography.bib
 Warning--entry type for "edgeDevices" isn't style-file defined
---line 98 of file bibliography.bib
+--line 107 of file bibliography.bib
 Warning--entry type for "definition:panaceia" isn't style-file defined
---line 106 of file bibliography.bib
+--line 115 of file bibliography.bib
 Warning--entry type for "archfog:2017" isn't style-file defined
---line 113 of file bibliography.bib
+--line 122 of file bibliography.bib
 Warning--entry type for "Rekhter:1995" isn't style-file defined
---line 131 of file bibliography.bib
+--line 140 of file bibliography.bib
 Warning--to sort, need author or key in definition:panaceia
 Warning--to sort, need author or key in archfog:2017
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -30,45 +30,45 @@ Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 20 entries,
+You've used 19 entries,
             2900 wiz_defined-function locations,
-            763 strings with 8850 characters,
-and the built_in function-call counts, 9718 in all, are:
-= -- 826
-> -- 248
+            756 strings with 8713 characters,
+and the built_in function-call counts, 9152 in all, are:
+= -- 771
+> -- 236
 < -- 4
-+ -- 105
-- -- 84
-* -- 627
-:= -- 1137
-add.period$ -- 53
-call.type$ -- 20
-change.case$ -- 102
++ -- 100
+- -- 80
+* -- 591
+:= -- 1074
+add.period$ -- 50
+call.type$ -- 19
+change.case$ -- 97
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 977
-empty$ -- 870
-format.name$ -- 97
-if$ -- 2032
+cite$ -- 48
+duplicate$ -- 916
+empty$ -- 820
+format.name$ -- 92
+if$ -- 1912
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 176
-newline$ -- 99
-num.names$ -- 36
-pop$ -- 520
+int.to.str$ -- 19
+missing$ -- 168
+newline$ -- 95
+num.names$ -- 34
+pop$ -- 487
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 78
 quote$ -- 0
-skip$ -- 240
+skip$ -- 230
 stack$ -- 0
-substring$ -- 572
-swap$ -- 369
+substring$ -- 525
+swap$ -- 351
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
+type$ -- 74
 warning$ -- 10
-while$ -- 59
-width$ -- 22
-write$ -- 198
+while$ -- 56
+width$ -- 21
+write$ -- 189
 (There were 16 warnings)

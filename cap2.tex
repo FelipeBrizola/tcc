@@ -62,31 +62,27 @@ estão entre as principais caracteristicas do protocolo de aplicação restrita,
 \section{Constrained RESTful Environments (CoRE) Link Format}
 
 Segundo a RFC-6690, a finalidade deste especificação é realizar REST em nodos com recursos limitados sendo importante em aplicações maquina-a-maquina\cite{rfc6690}.
-Em aplicação deste tipo é muito importante que as configurações não dependam de interação de humanos.
-
-A principal função desta especificação é fornecer identificadores para os recursos hospedados no servidor complementado por atributos sobre estes recursos....
+Em aplicação deste tipo é primordial que as configurações não dependam de interação de humanos, e portanto, que mantenham seu funcionamento sem configurações estáticas.
 
 
+A principal função desta especificação é fornecer identificadores, denominados URIs, para os recursos hospedados em servidores. 
+Para além, é possível que essas URIs possuam atributos relacionados aos recursos.
+Estes atributos dividem-se basicamente em dois sendo eles rt, \textit{resource type} e if \textit{interface description}.
 
+O primeiro é utilizado para para atribuir um nome que descreva de forma clara e enxuta um recurso,
+já o segundo tem por objetivo indicar uma interface especifica que interagirá com o recurso destino.
 
-De forma análoga ao HTTP  e o HTTPS, o protocolo CoAP provê suporte aos esquemas do tipo \textit{coap} e \textit{coaps}, este utilizando segurança DTLS.
-Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
-Portanto, servidores coap ficam aguardando por requisições que utilizem tal esquema.
-
-A definição sintática, segundo Backus-Naur Form RFC-5234\cite{rfc5234},  do  CoAP-URI está definida abaixo:
-
-\begin{verbatim}
-    CoAP-URI = "coap:" "//" host [ ":" port ] path-abempty [ "?" query ]
-\end{verbatim}
-
-
-
-
-
-O esquema CoAP-URI suporta o prefixo \textit{/.well-known/} , definido na RFC-5785\cite{rfc5785}.
+Um aspecto relevante ao CoRE, e de suma importancia para aplicações maquina-a-maquina, é o fato de possuir como URI padrão o prefixo \textit{/.well-known/core} , definido na RFC-5785\cite{rfc5785}.
 Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
 
-O exemplo abaixa demostra um fluxo de requisição e resposta utilizando o prefixo \textit{/.well-known/}.
+O protocolo CoAP preve suporte à CoRE e ao prefixo \textit{/.well-known/core}. Contanto com esses recursos, é possível traçarmos uma pequena analogia entre
+esquemas HTTP/HTTPS e \textit{coap}/\textit{coaps}, este utilizando segurança DTLS.
+
+Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
+Sendo assim, servidores coap ficam aguardando por requisições que utilizem tal esquema.
+
+Para exemplificarmos, abaixo esta um ciclo de requisição e resposta entre um cliente e um servidor com nomenclatura \textit{example.net}.
+Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e para tal utiliza o prefixo padrao \textit{/.well-known/core}.
 
 \begin{verbatim}
     REQ: GET coap://example.net/.well-known/core
@@ -98,7 +94,10 @@ O exemplo abaixa demostra um fluxo de requisição e resposta utilizando o prefi
     </sensors/light>;if="sensor"
 \end{verbatim}
 
-Notamos, então, que o servidor nomeado example.net possui os recursos \textit{temp} e \textit{light} disponíveis para serem utilizados através do protocolo coap.
+Analisando a resposta do servidor é fácil notar que este servidor possui dois recursos disponíveis,
+sendo ambos com interface do tipo sensor, porem um utilizado para medir temperatura e outro para medir intensidade de luz.
+
+
 
 \section{Trabalhos Relacionados}
 
