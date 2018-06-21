@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  21 JUN 2018 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  21 JUN 2018 18:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,23 +1021,18 @@ Underfull \vbox (badness 10000) detected at line 104
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 104--104
-\T1/phv/m/n/12 Proposta de Tra-ba-lho de Con-clu-são
+Underfull \hbox (badness 1337) in paragraph at lines 104--104
+\T1/phv/m/n/12 Trabalho de Con-clu-são I apre-sen-tado
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 104--104
-\T1/phv/m/n/12 apre-sen-tada como re-qui-sito par-cial
+\T1/phv/m/n/12 como re-qui-sito par-cial à ob-ten-ção
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 104--104
-\T1/phv/m/n/12 à ob-ten-ção do grau de Ba-cha-rel em
- []
-
-
-Underfull \hbox (badness 1910) in paragraph at lines 104--104
-\T1/phv/m/n/12 Ci-ên-cia da Com-pu-ta-ção na Pon-ti-fí-cia
+Underfull \hbox (badness 1622) in paragraph at lines 104--104
+\T1/phv/m/n/12 do grau de Ba-cha-rel em Ci-ên-cia da
  []
 
 
@@ -1047,13 +1042,14 @@ Overfull \vbox (113.81102pt too high) has occurred while \output is active []
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./main.lof
+[2
+
+] (./main.lof
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 4.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
-
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1070,25 +1066,25 @@ File: uesint.fd
 \tf@lof=\write3
 \openout3 = `main.lof'.
 
- [2
+ [3
 
 ] (./main.loa)
 \tf@loa=\write4
 \openout4 = `main.loa'.
 
- [3
+ [4
 
 ] (./main.los)
 \tf@los=\write5
 \openout5 = `main.los'.
 
- [4
+ [5
 
 ] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [5
+ [6
 
 ]
 \openout2 = `cap1.aux'.
@@ -1107,7 +1103,7 @@ Underfull \hbox (badness 10000) detected at line 37
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 52.
-[6
+[7
 
 
 
@@ -1121,7 +1117,7 @@ Underfull \hbox (badness 10000) detected at line 67
 \T1/phv/b/n/12 1.3
  []
 
-) [7]
+) [8]
 \openout2 = `cap2.aux'.
 
  (./cap2.tex
@@ -1144,16 +1140,16 @@ Underfull \hbox (badness 10000) detected at line 20
 \T1/phv/b/n/12 2.2
  []
 
-[8
+[9
 
 
 
-] <fig4.pdf, id=31, 256.92789pt x 250.90637pt>
+] <fig4.pdf, id=34, 256.92789pt x 250.90637pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
 Package pdftex.def Info: fig4.pdf used on input line 40.
 (pdftex.def)             Requested size: 247.66725pt x 241.84843pt.
- [9 <./fig4.pdf>]
+ [10 <./fig4.pdf>]
 Underfull \hbox (badness 10000) detected at line 62
 \T1/phv/b/n/12 2.3
  []
@@ -1166,7 +1162,7 @@ Underfull \hbox (badness 10000) detected at line 102
 \T1/phv/b/n/12 2.4
  []
 
-[10]) [11]
+[11]) [12]
 \openout2 = `cap3.aux'.
 
  (./cap3.tex
@@ -1176,7 +1172,7 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 3. 
  []
 
-<fig1.pdf, id=59, 168.63pt x 95.6373pt>
+<fig1.pdf, id=62, 168.63pt x 95.6373pt>
 File: fig1.pdf Graphic file (type pdf)
  <use fig1.pdf>
 Package pdftex.def Info: fig1.pdf used on input line 14.
@@ -1186,12 +1182,12 @@ Underfull \hbox (badness 10000) detected at line 19
 \T1/phv/b/n/12 3.1
  []
 
-<fig2.pdf, id=60, 548.02042pt x 114.42148pt>
+<fig2.pdf, id=63, 548.02042pt x 114.42148pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
 Package pdftex.def Info: fig2.pdf used on input line 27.
 (pdftex.def)             Requested size: 362.77264pt x 75.74536pt.
- [12
+ [13
 
 
 
@@ -1201,31 +1197,36 @@ Underfull \hbox (badness 10000) detected at line 46
  []
 
 
-Underfull \hbox (badness 10000) detected at line 57
+Underfull \hbox (badness 10000) detected at line 56
 \T1/phv/m/n/12 3.2.1
  []
 
-[13 <./fig2.pdf>]
-Underfull \hbox (badness 10000) detected at line 72
+[14 <./fig2.pdf>]
+Underfull \hbox (badness 10000) detected at line 73
 \T1/phv/m/n/12 3.2.2
  []
 
 
-Underfull \hbox (badness 10000) detected at line 123
+Underfull \hbox (badness 10000) detected at line 87
+\T1/phv/m/n/12 3.2.3
+ []
+
+[15]
+Underfull \hbox (badness 10000) detected at line 135
 \T1/phv/b/n/12 3.3
  []
 
 
-Underfull \hbox (badness 10000) detected at line 129
+Underfull \hbox (badness 10000) detected at line 141
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 134
+Underfull \hbox (badness 10000) detected at line 146
 \T1/phv/b/n/12 3.5
  []
 
-[14]) [15]
+) [16]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1235,12 +1236,12 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 4. 
  []
 
-<fig3.pdf, id=108, 1113.15875pt x 276.03125pt>
+<fig3.pdf, id=111, 1113.15875pt x 276.03125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
 Package pdftex.def Info: fig3.pdf used on input line 8.
 (pdftex.def)             Requested size: 483.69687pt x 119.94205pt.
-) [16
+) [17
 
 
 
@@ -1256,7 +1257,7 @@ Underfull \hbox (badness 1297) in paragraph at lines 82--86
  Version 1.2''.
  []
 
-[17
+[18
 
 
 ]
@@ -1265,12 +1266,12 @@ Underfull \hbox (badness 1325) in paragraph at lines 121--125
 g: Towards a
  []
 
-) [18] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
+) [19] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6745 strings out of 492995
- 89879 string characters out of 6132704
- 172725 words of memory out of 5000000
- 10010 multiletter control sequences out of 15000+600000
+ 6747 strings out of 492995
+ 89915 string characters out of 6132704
+ 172726 words of memory out of 5000000
+ 10012 multiletter control sequences out of 15000+600000
  48030 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,8n,37p,557b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1281,10 +1282,10 @@ cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 901947 bytes).
+Output written on main.pdf (19 pages, 903904 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 148 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

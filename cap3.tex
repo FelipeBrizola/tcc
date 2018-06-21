@@ -52,13 +52,28 @@ Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis
 O detalhamento das funcionalides que o projeto deverá dispor, bem como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
 
 
-%\subsection{Descobrimento e sincronização}
 
-\subsection{Descoberta e sincronização de recursos}
+\subsection{Middleware}
 
+Observando a Figura \ref{fig:fig1}, notamos que há comunicação entre um fog node e seus respectivos edge devices.
+A comunicação entre o fog node e seus edge devices não é o foco deste projeto e, portanto, será tratada de forma simulada
+Assim sendo, a simulação deverá prever alguns casos que, por vezes, possam suceder. Dentre alguns dos eventos possíveis está 
+o acréscimo ou remoção de um edge device vinculado à algum fog node.
 
+A manutenção dos recursos, acréscimo e remoção, transcorrerá utilizando o protocolo CoAP.
+Utilizar CoAP para estas funcionalidades faz sentido, uma vez que este prevê meios para vinculação de recursos à nodos.
+Então, para vincularmos um novo recurso a um nodo, devemos nomear uma URI para que este seja acessivel através da (CoRE) Link Format gerada.
 
-Como primeiro passo do mapeamento, devemos considerar a entrada de um novo nodo, com seus recursos, na rede.
+Segundo a definição de POST protocolo CoAP temos que "a função real executada pelo método POST é determinada pelo servidor de origem e depende do recurso de destino.
+Geralmente, resulta em um novo recurso sendo criado ou recurso de destino sendo atualizado"\cite{rfc7252}.
+Já a mesma RFC-7252 define o método DELETE como "o método DELETE solicita que o recurso identificado pelo solicitação URI ser excluída"\cite{rfc7252}.
+
+Nessa perspectiva, portanto, o uso dos métodos POST e DELETE do protocolo CoAP para gerencimanto de recursos tem fundamento.
+
+\subsection{Descoberta de recursos}
+
+Partindo do pressuposto que os nodos da névoa já possuem seus recursos devidamente criados e acessíveis via CoAP,
+como primeiro passo do mapeamento devemos considerar a entrada de um novo nodo, com seus recursos, na rede.
 No momento em que o nodo dispor de um endereço IP válido, este deverá enviar um pacote para o endereço de broadcast indicando que possui recursos a serem disponibilizados.
 
 %(tem como ou no broadcast deveria mandar ip junto?). interessados
@@ -66,17 +81,23 @@ Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais 
 unicast para o endereço de origem indicando tal intenção.
 
 Sendo assim, quem estiver interessado em obter os recursos do novo nodo, deverá realizar a query utilizando a URI \textit{/.well-known/core} do protocolo CoAP.
-Lembrando que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recurso ao solicitante.
+Lembrando que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
 
 
-\subsection{Middleware}
+\subsection{Gerenciamento de recursos}
 
-%Figura 3.1 
-%explicar como funcionara a comun entre edge e fog. explicitar q nao é o foco do trabalho
-% explicar que no coap tem q registar os recursos
+A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
+Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
+Esses controles são realizados em duas esferas, uma trata do desvinculamento do nodo da rede e outra quando um recurso deixa de fazer parte dela.
 
-O \textit{middleware} utilizado neste trabalho realizará o mapeamento local nos nodos e descobrirá quais são os recursos disponíveis a serem compartilhados na névoa.
-Utilizaremos uma simulação para realizar tal mapeamento local, portanto o mapeamento de fato não pertence ao escopo deste projeto.
+O desvinculamento pode ser abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
+Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois sem esse procedimento seria difícil
+saber quando remover um IP da lista de recursos globais. Portanto, para manter a lista o mais atualizada possível, este protocolo implementará mensagens deste tipo.
+
+
+%o que acontece quando nodo recebe resposta?
+
+
 
 
 % \subsection{Politica de cache}
@@ -104,15 +125,6 @@ Utilizaremos uma simulação para realizar tal mapeamento local, portanto o mape
 %         {\label{alg:alg1} Política de atualização de recursos.}%
 %     \end{algorithm}
 
-
-
-% A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
-% Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
-% Esses controles são realizados em duas esferas, uma trata do desvinculamento do nodo da rede e outra quando um recurso deixa de fazer parte dela.
-
-% O desvinculamento pode ser abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
-% Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois sem esse procedimento seria difícil
-% saber quando remover um IP da lista de recursos globais. Portanto, para manter a lista o mais atualizada possível, este protocolo implementará mensagens deste tipo.
 
 % No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços \textit{unicasts} indicando quais são os seus recursos existentes no momento.
 % O nodo solicitado percebe que este recurso não esta mais disponível porque recebeu na requisição o id do recurso, e este não está em sua lista local.
