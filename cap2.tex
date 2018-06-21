@@ -77,7 +77,6 @@ Este prefixo é utilizado para que o servidor exponha suas políticas e recursos
 
 O protocolo CoAP preve suporte à CoRE e ao prefixo \textit{/.well-known/core}. Contanto com esses recursos, é possível traçarmos uma pequena analogia entre
 esquemas HTTP/HTTPS e \textit{coap}/\textit{coaps}, este utilizando segurança DTLS.
-
 Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
 Sendo assim, servidores coap ficam aguardando por requisições que utilizem tal esquema.
 
@@ -90,18 +89,18 @@ Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e p
 
 \begin{verbatim}
     RES: 2.05 Content
-    </sensors/temp>;if="sensor",
-    </sensors/light>;if="sensor"
+        </sensors/temp>;if="sensor",
+        </sensors/light>;if="sensor"
 \end{verbatim}
 
-Analisando a resposta do servidor é fácil notar que este servidor possui dois recursos disponíveis,
-sendo ambos com interface do tipo sensor, porem um utilizado para medir temperatura e outro para medir intensidade de luz.
 
+Analisando a resposta é fácil notar que este servidor possui dois recursos disponíveis,
+sendo ambos com interface do tipo sensor, porem um utilizado para medir temperatura e outro para medir intensidade de luz.
+Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação transcorreu com sucesso.
 
 
 \section{Trabalhos Relacionados}
 
-% iotivity
 
 Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
 A especificação do protocolo e um \textit{middleware}, capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
@@ -110,6 +109,8 @@ Sua implementação requer que haja um ponto central de comunicação entre os n
 A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
 Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
 Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
+
+
 
 
 
