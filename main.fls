@@ -291,7 +291,6 @@ INPUT ./fig1.pdf
 INPUT fig2.pdf
 INPUT ./fig2.pdf
 INPUT ./fig2.pdf
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 OUTPUT cap4.aux
 INPUT cap4.tex
 INPUT cap4.tex

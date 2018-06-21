@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  21 JUN 2018 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  21 JUN 2018 13:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1201,31 +1201,31 @@ Underfull \hbox (badness 10000) detected at line 46
  []
 
 
-Underfull \hbox (badness 10000) detected at line 53
+Underfull \hbox (badness 10000) detected at line 57
 \T1/phv/m/n/12 3.2.1
  []
 
-
-Underfull \hbox (badness 10000) detected at line 59
+[13 <./fig2.pdf>]
+Underfull \hbox (badness 10000) detected at line 72
 \T1/phv/m/n/12 3.2.2
  []
 
-[13 <./fig2.pdf>]
-Underfull \hbox (badness 10000) detected at line 98
+
+Underfull \hbox (badness 10000) detected at line 123
 \T1/phv/b/n/12 3.3
  []
 
-[14]
-Underfull \hbox (badness 10000) detected at line 104
+
+Underfull \hbox (badness 10000) detected at line 129
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 109
+Underfull \hbox (badness 10000) detected at line 134
 \T1/phv/b/n/12 3.5
  []
 
-) [15]
+[14]) [15]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1267,13 +1267,13 @@ g: Towards a
 
 ) [18] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6779 strings out of 492995
- 90172 string characters out of 6132704
- 172736 words of memory out of 5000000
- 10044 multiletter control sequences out of 15000+600000
- 49766 words of font info for 85 fonts, out of 8000000 for 9000
+ 6745 strings out of 492995
+ 89879 string characters out of 6132704
+ 172725 words of memory out of 5000000
+ 10010 multiletter control sequences out of 15000+600000
+ 48030 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,8n,37p,557b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,8n,37p,557b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
 local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/lo
 cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
@@ -1281,7 +1281,7 @@ cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (18 pages, 903189 bytes).
+Output written on main.pdf (18 pages, 901947 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

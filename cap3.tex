@@ -33,10 +33,10 @@ Dispondo do modelo de referência TCP/IP, constituido de cinco camadas: física,
 Este projeto utilizará IPv6 no nível de rede e UDP no nível de transporte.
 
 [REVER] A utilização de IPv6 na camada de rede justifica-se pela grande quantidade de endereços válidos na internet que o protocolo provê, pois após o firmamento da internet das coisas é possível que cada dispositivo tenha um endereço IP único.
-Sendo assim, a escalabilidade, no que diz respeito a quantidade de endereços, está garantida.
+Sendo assim, a escalabilidade, no que diz respeito a quantidade de endereços, está garantida.[REVER]
 
 Manter todos os nodos conectados, utilizando TCP por exemplo, despenderia uma quantidade de trafego significativo na rede. Além disso, o intuito desta implementação é transitar uma pequena quantidade de dados a cada requisição.
-Portanto a utilização de datagramas UDP faz sentido neste projeto.[REVER]
+Portanto a utilização de datagramas UDP faz sentido neste projeto.
 
 O protocolo proposto, entitulado \textit{Resource Mapping} na Figura \ref{fig:fig2}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
 Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos, e garantir que o desempenho seja satisfatório com o objetivo permitir a escalabilidade da solução.
@@ -45,54 +45,79 @@ Os maiores desafios neste modelo proposto são manter o estado global dos recurs
 
 \section{Módulos}
 
-Nas próximas subseções esclareceremos as funcionalidades que o projeto deverá dispor.
-Vale enfatizar que a descrição dos submódulos apresentados referem-se a proposta de TCC I.
-Consequentemente, o detalhamento de alguns módulos não serão abordados de forma aprofundada neste momento.
+De forma geral, cada nodo da rede deverá manter uma lista com os endereços IP`s que fazem parte do mapeamento.
+Atrelado à cada endereço IP, deverá haver uma lista com os recursos providos por este.
+Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis na névoa.
+
+O detalhamento das funcionalides que o projeto deverá dispor, bem como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
+
+
+%\subsection{Descobrimento e sincronização}
+
+\subsection{Descoberta e sincronização de recursos}
+
+
+
+Como primeiro passo do mapeamento, devemos considerar a entrada de um novo nodo, com seus recursos, na rede.
+No momento em que o nodo dispor de um endereço IP válido, este deverá enviar um pacote para o endereço de broadcast indicando que possui recursos a serem disponibilizados.
+
+%(tem como ou no broadcast deveria mandar ip junto?). interessados
+Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma query
+unicast para o endereço de origem indicando tal intenção.
+
+Sendo assim, quem estiver interessado em obter os recursos do novo nodo, deverá realizar a query utilizando a URI \textit{/.well-known/core} do protocolo CoAP.
+Lembrando que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recurso ao solicitante.
 
 
 \subsection{Middleware}
+
+%Figura 3.1 
+%explicar como funcionara a comun entre edge e fog. explicitar q nao é o foco do trabalho
+% explicar que no coap tem q registar os recursos
 
 O \textit{middleware} utilizado neste trabalho realizará o mapeamento local nos nodos e descobrirá quais são os recursos disponíveis a serem compartilhados na névoa.
 Utilizaremos uma simulação para realizar tal mapeamento local, portanto o mapeamento de fato não pertence ao escopo deste projeto.
 
 
-\subsection{Descobrimento e sincronização}
-
-Cada nodo da rede deve manter uma lista com os endereços IP`s que fazem parte do mapeamento. Juntamente à cada endereço IP, deverá haver uma lista com os recursos providos por ele.
-Em vista disso, cada nodo da névoa possui um mapeamento global de recursos disponíveis na rede.
-
-Quando um nodo entrar na rede pela primeira vez, deverá enviar um pacote para os endereços \textit{unicasts} indicando os recursos que disponibilizará.
-O Pseudocódigo \ref{alg:alg1} demonstra, de forma simplificada, a política de atualização que cada nodo deverá implementar.
+% \subsection{Politica de cache}
+% Afim de eviar lalalal, este protocolo executara a politica de cache write back...
 
 
-\begin{algorithm}[htb]
-    \begin{center}
-        \begin{algorithmic}[1]
-            \STATE \textbf{function} $\text{Police(ip, resources)}$
-            \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip)}$
-            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{update(ip, resources)}$
-            \STATE \hspace{\algorithmicindent} \textbf{else}
-            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{insert(ip, resources)}$
-        \end{algorithmic}
-    \end{center}
-    \caption[Política de atualização de recursos]%
-        {\label{alg:alg1} Política de atualização de recursos.}%
-    \end{algorithm}
+% Cada nodo da rede deve manter uma lista com os endereços IP`s que fazem parte do mapeamento. Juntamente à cada endereço IP, deverá haver uma lista com os recursos providos por ele.
+% Em vista disso, cada nodo da névoa possui um mapeamento global de recursos disponíveis na rede.
+
+% Quando um nodo entrar na rede pela primeira vez, deverá enviar um pacote para os endereços \textit{unicasts} indicando os recursos que disponibilizará.
+% O Pseudocódigo \ref{alg:alg1} demonstra, de forma simplificada, a política de atualização que cada nodo deverá implementar.
+
+
+% \begin{algorithm}[htb]
+%     \begin{center}
+%         \begin{algorithmic}[1]
+%             \STATE \textbf{function} $\text{Police(ip, resources)}$
+%             \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip)}$
+%             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{update(ip, resources)}$
+%             \STATE \hspace{\algorithmicindent} \textbf{else}
+%             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{insert(ip, resources)}$
+%         \end{algorithmic}
+%     \end{center}
+%     \caption[Política de atualização de recursos]%
+%         {\label{alg:alg1} Política de atualização de recursos.}%
+%     \end{algorithm}
 
 
 
-A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
-Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
-Esses controles são realizados em duas esferas, uma trata do desvinculamento do nodo da rede e outra quando um recurso deixa de fazer parte dela.
+% A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
+% Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
+% Esses controles são realizados em duas esferas, uma trata do desvinculamento do nodo da rede e outra quando um recurso deixa de fazer parte dela.
 
-O desvinculamento pode ser abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
-Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois sem esse procedimento seria difícil
-saber quando remover um IP da lista de recursos globais. Portanto, para manter a lista o mais atualizada possível, este protocolo implementará mensagens deste tipo.
+% O desvinculamento pode ser abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
+% Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois sem esse procedimento seria difícil
+% saber quando remover um IP da lista de recursos globais. Portanto, para manter a lista o mais atualizada possível, este protocolo implementará mensagens deste tipo.
 
-No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços \textit{unicasts} indicando quais são os seus recursos existentes no momento.
-O nodo solicitado percebe que este recurso não esta mais disponível porque recebeu na requisição o id do recurso, e este não está em sua lista local.
-Lembrando que o nodo requisitado está consciente desta divergência em virtude da execução continua dos métodos providos pelo \textit{middleware}. Portanto, o gatilho para a atualização dos recursos na névoa
-é disparado pelo primeiro nodo que requisitar um recurso inválido.
+% No momento em que um nodo requisitar um recurso global da névoa, e este estiver fora de operação, o nodo que foi solicitado deverá enviar um novo pacote para os endereços \textit{unicasts} indicando quais são os seus recursos existentes no momento.
+% O nodo solicitado percebe que este recurso não esta mais disponível porque recebeu na requisição o id do recurso, e este não está em sua lista local.
+% Lembrando que o nodo requisitado está consciente desta divergência em virtude da execução continua dos métodos providos pelo \textit{middleware}. Portanto, o gatilho para a atualização dos recursos na névoa
+% é disparado pelo primeiro nodo que requisitar um recurso inválido.
 
 
 \section{Resultados esperados}
