@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  21 JUN 2018 18:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  22 JUN 2018 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1206,27 +1206,38 @@ Underfull \hbox (badness 10000) detected at line 73
 \T1/phv/m/n/12 3.2.2
  []
 
+<fig5.jpeg, id=105, 1284.8pt x 963.6pt>
+File: fig5.jpeg Graphic file (type jpg)
+ <use fig5.jpeg>
+Package pdftex.def Info: fig5.jpeg used on input line 93.
+(pdftex.def)             Requested size: 362.77264pt x 272.07048pt.
 
-Underfull \hbox (badness 10000) detected at line 87
+<fig6.jpeg, id=106, 1284.8pt x 963.6pt>
+File: fig6.jpeg Graphic file (type jpg)
+ <use fig6.jpeg>
+Package pdftex.def Info: fig6.jpeg used on input line 103.
+(pdftex.def)             Requested size: 362.77264pt x 272.07048pt.
+ [15]
+Underfull \hbox (badness 10000) detected at line 113
 \T1/phv/m/n/12 3.2.3
  []
 
-[15]
-Underfull \hbox (badness 10000) detected at line 135
+[16 <./fig5.jpeg> <./fig6.jpeg>]
+Underfull \hbox (badness 10000) detected at line 161
 \T1/phv/b/n/12 3.3
  []
 
 
-Underfull \hbox (badness 10000) detected at line 141
+Underfull \hbox (badness 10000) detected at line 167
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 146
+Underfull \hbox (badness 10000) detected at line 172
 \T1/phv/b/n/12 3.5
  []
 
-) [16]
+[17]) [18]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1236,12 +1247,12 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 4. 
  []
 
-<fig3.pdf, id=111, 1113.15875pt x 276.03125pt>
+<fig3.pdf, id=119, 1113.15875pt x 276.03125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
 Package pdftex.def Info: fig3.pdf used on input line 8.
 (pdftex.def)             Requested size: 483.69687pt x 119.94205pt.
-) [17
+) [19
 
 
 
@@ -1257,7 +1268,7 @@ Underfull \hbox (badness 1297) in paragraph at lines 82--86
  Version 1.2''.
  []
 
-[18
+[20
 
 
 ]
@@ -1266,12 +1277,12 @@ Underfull \hbox (badness 1325) in paragraph at lines 121--125
 g: Towards a
  []
 
-) [19] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
+) [21] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6747 strings out of 492995
- 89915 string characters out of 6132704
- 172726 words of memory out of 5000000
- 10012 multiletter control sequences out of 15000+600000
+ 6762 strings out of 492995
+ 90098 string characters out of 6132704
+ 172748 words of memory out of 5000000
+ 10024 multiletter control sequences out of 15000+600000
  48030 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,8n,37p,557b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1282,10 +1293,10 @@ cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (19 pages, 903904 bytes).
+Output written on main.pdf (21 pages, 1120029 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

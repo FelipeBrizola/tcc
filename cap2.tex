@@ -44,7 +44,7 @@ O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o
 
 A arquitetura REST, assim como no protocolo HTTP\cite{rfc2616}, foi utilizada na projetização do protocolo CoAP.
 Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para CoAP e vice-versa é bastante simples.
-Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na sessão 10 da própria RFC-7252\cite{rfc7252},
+Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na seção 10 da própria RFC-7252\cite{rfc7252},
 que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
 
 Além de modelo de comunicação cliente/servidor e arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web
@@ -54,7 +54,7 @@ Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui pa
 Entre as diferenças está a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
 Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
 
-\textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na sessão a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
+\textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na seção a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
 

@@ -56,21 +56,22 @@ O detalhamento das funcionalides que o projeto deverá dispor, bem como ilustra�
 \subsection{Middleware}
 
 Observando a Figura \ref{fig:fig1}, notamos que há comunicação entre um fog node e seus respectivos edge devices.
-A comunicação entre o fog node e seus edge devices não é o foco deste projeto e, portanto, será tratada de forma simulada
+A comunicação entre o fog node e seus edge devices não é o foco deste projeto e, portanto, será tratada de forma simulada.
 Assim sendo, a simulação deverá prever alguns casos que, por vezes, possam suceder. Dentre alguns dos eventos possíveis está 
 o acréscimo ou remoção de um edge device vinculado à algum fog node.
 
-A manutenção dos recursos, acréscimo e remoção, transcorrerá utilizando o protocolo CoAP.
+A manutenção dos recursos, acréscimo ou remoção, transcorrerá utilizando o protocolo CoAP.
 Utilizar CoAP para estas funcionalidades faz sentido, uma vez que este prevê meios para vinculação de recursos à nodos.
-Então, para vincularmos um novo recurso a um nodo, devemos nomear uma URI para que este seja acessivel através da (CoRE) Link Format gerada.
 
 Segundo a definição de POST protocolo CoAP temos que "a função real executada pelo método POST é determinada pelo servidor de origem e depende do recurso de destino.
 Geralmente, resulta em um novo recurso sendo criado ou recurso de destino sendo atualizado"\cite{rfc7252}.
-Já a mesma RFC-7252 define o método DELETE como "o método DELETE solicita que o recurso identificado pelo solicitação URI ser excluída"\cite{rfc7252}.
+Já a mesma RFC define o método DELETE como "o método DELETE solicita que o recurso identificado pelo solicitação URI ser excluída"\cite{rfc7252}.
 
-Nessa perspectiva, portanto, o uso dos métodos POST e DELETE do protocolo CoAP para gerencimanto de recursos tem fundamento.
+Nessa perspectiva, portanto, o uso do método POST faz sentido para gerarmos \textit{(CoRE) Link Format} e o método DELETE para removermos.
+
 
 \subsection{Descoberta de recursos}
+
 
 Partindo do pressuposto que os nodos da névoa já possuem seus recursos devidamente criados e acessíveis via CoAP,
 como primeiro passo do mapeamento devemos considerar a entrada de um novo nodo, com seus recursos, na rede.
@@ -80,8 +81,33 @@ No momento em que o nodo dispor de um endereço IP válido, este deverá enviar 
 Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma query
 unicast para o endereço de origem indicando tal intenção.
 
-Sendo assim, quem estiver interessado em obter os recursos do novo nodo, deverá realizar a query utilizando a URI \textit{/.well-known/core} do protocolo CoAP.
+Sendo assim, o nodo interessado deverá realizar uma query ao novo membro da rede, e esta query utilizará a URI \textit{/.well-known/core} do protocolo CoAP.
 Lembrando que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
+
+Para elucidarmos esta primeira fase do protocolo utilizaremos as imagens das Figuras \ref{fig:fig5} e \ref{fig:fig6} como exemplo de fluxo para a descoberta de recursos.
+
+A topologia da névoa utilizada nas imagens é definida por fog nodes enumerados de um à cinco, sendo o nodo FN5 o ultimo a entrar na rede.
+A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por broadcast indicando que possui recursos a serem disponibilizados.
+
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.75\textwidth]{fig5.jpeg}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig5} Nodo entrando na névoa.}
+\end{figure}
+
+Após FN5 enviar mensagem  "Hello" por broadcast, os nodos FN1, FN2 e FN3 realizam a query diretamente ao FN5 afim de obter os recuros disponíbilizados por ele.
+Por não estar executada o protocolo de mapeamento, ou por não estar interessado em obter novos recursos, o nodo FN4 não realiza a query de descobrimento em FN5.
+
+
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.75\textwidth]{fig6.jpeg}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig6} Nodos realizando query.}
+\end{figure}
+
+% ATENCAO
+% nodo pode querer divulagar e nao usar..servidor,
+% nodo pode querer só usar e nao divulgar.
 
 
 \subsection{Gerenciamento de recursos}

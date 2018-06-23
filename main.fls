@@ -291,6 +291,12 @@ INPUT ./fig1.pdf
 INPUT fig2.pdf
 INPUT ./fig2.pdf
 INPUT ./fig2.pdf
+INPUT fig5.jpeg
+INPUT ./fig5.jpeg
+INPUT ./fig5.jpeg
+INPUT fig6.jpeg
+INPUT ./fig6.jpeg
+INPUT ./fig6.jpeg
 OUTPUT cap4.aux
 INPUT cap4.tex
 INPUT cap4.tex
