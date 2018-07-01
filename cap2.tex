@@ -37,7 +37,7 @@ O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o
 
 
 \begin{figure}[htb!]
-    \centering\includegraphics[height=.5\textwidth]{fig4.pdf}
+    \centering\includegraphics[height=.4\textwidth]{fig4.png} 
     \caption
     {\label{fig:fig4} Requisição e resposta utilizando mensagens não confirmáveis.} \cite{rfc7252}
 \end{figure}
@@ -67,10 +67,9 @@ Em aplicação deste tipo é primordial que as configurações não dependam de 
 
 A principal função desta especificação é fornecer identificadores, denominados URIs, para os recursos hospedados em servidores. 
 Para além, é possível que essas URIs possuam atributos relacionados aos recursos.
-Estes atributos dividem-se basicamente em dois sendo eles rt, \textit{resource type} e if \textit{interface description}.
-
+Estes atributos dividem-se basicamente em dois: rt, \textit{resource type} e if \textit{interface description}.
 O primeiro é utilizado para para atribuir um nome que descreva de forma clara e enxuta um recurso,
-já o segundo tem por objetivo indicar uma interface especifica que interagirá com o recurso destino.
+já o segundo tem por objetivo indicar a interface especifica que interagirá com o recurso destino.
 
 Um aspecto relevante ao CoRE, e de suma importancia para aplicações maquina-a-maquina, é o fato de possuir como URI padrão o prefixo \textit{/.well-known/core} , definido na RFC-5785\cite{rfc5785}.
 Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
@@ -81,7 +80,7 @@ Estes esquemas são utilizados para identificar e localizar os recursos coap na 
 Sendo assim, servidores coap ficam aguardando por requisições que utilizem tal esquema.
 
 Para exemplificarmos, abaixo esta um ciclo de requisição e resposta entre um cliente e um servidor com nomenclatura \textit{example.net}.
-Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e para tal utiliza o prefixo padrao \textit{/.well-known/core}.
+Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e para tal utiliza o prefixo padrão \textit{/.well-known/core}.
 
 \begin{verbatim}
     REQ: GET coap://example.net/.well-known/core

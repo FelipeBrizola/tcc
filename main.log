@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  22 JUN 2018 22:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  1 JUL 2018 01:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1103,21 +1103,26 @@ Underfull \hbox (badness 10000) detected at line 37
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 52.
-[7
+<fig1.pdf, id=23, 168.63pt x 95.6373pt>
+File: fig1.pdf Graphic file (type pdf)
+ <use fig1.pdf>
+Package pdftex.def Info: fig1.pdf used on input line 57.
+(pdftex.def)             Requested size: 241.84843pt x 137.16594pt.
+ [7
 
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 60
+Underfull \hbox (badness 10000) detected at line 66
 \T1/phv/b/n/12 1.2
  []
 
 
-Underfull \hbox (badness 10000) detected at line 67
+Underfull \hbox (badness 10000) detected at line 77
 \T1/phv/b/n/12 1.3
  []
 
-) [8]
+) [8 <./fig1.pdf>] [9]
 \openout2 = `cap2.aux'.
 
  (./cap2.tex
@@ -1140,29 +1145,30 @@ Underfull \hbox (badness 10000) detected at line 20
 \T1/phv/b/n/12 2.2
  []
 
-[9
+[10
 
 
 
-] <fig4.pdf, id=34, 256.92789pt x 250.90637pt>
-File: fig4.pdf Graphic file (type pdf)
- <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 40.
-(pdftex.def)             Requested size: 247.66725pt x 241.84843pt.
- [10 <./fig4.pdf>]
+] <fig4.png, id=48, 631.35875pt x 605.26125pt>
+File: fig4.png Graphic file (type png)
+ <use fig4.png>
+Package pdftex.def Info: fig4.png used on input line 40.
+(pdftex.def)             Requested size: 201.81735pt x 193.47578pt.
+
 Underfull \hbox (badness 10000) detected at line 62
 \T1/phv/b/n/12 2.3
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 86.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+[11 <./fig4.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 85.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) detected at line 102
+Underfull \hbox (badness 10000) detected at line 101
 \T1/phv/b/n/12 2.4
  []
 
-[11]) [12]
+[12]) [13]
 \openout2 = `cap3.aux'.
 
  (./cap3.tex
@@ -1172,72 +1178,67 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 3. 
  []
 
-<fig1.pdf, id=62, 168.63pt x 95.6373pt>
-File: fig1.pdf Graphic file (type pdf)
- <use fig1.pdf>
-Package pdftex.def Info: fig1.pdf used on input line 14.
-(pdftex.def)             Requested size: 362.77264pt x 205.74892pt.
 
-Underfull \hbox (badness 10000) detected at line 19
+Underfull \hbox (badness 10000) detected at line 13
 \T1/phv/b/n/12 3.1
  []
 
-<fig2.pdf, id=63, 548.02042pt x 114.42148pt>
+<fig2.pdf, id=62, 548.02042pt x 114.42148pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
-Package pdftex.def Info: fig2.pdf used on input line 27.
-(pdftex.def)             Requested size: 362.77264pt x 75.74536pt.
- [13
+Package pdftex.def Info: fig2.pdf used on input line 21.
+(pdftex.def)             Requested size: 241.84843pt x 50.49574pt.
+ [14
 
 
 
- <./fig1.pdf>]
-Underfull \hbox (badness 10000) detected at line 46
+ <./fig2.pdf>]
+Underfull \hbox (badness 10000) detected at line 41
 \T1/phv/b/n/12 3.2
  []
 
 
-Underfull \hbox (badness 10000) detected at line 56
+Underfull \hbox (badness 10000) detected at line 51
 \T1/phv/m/n/12 3.2.1
  []
 
-[14 <./fig2.pdf>]
-Underfull \hbox (badness 10000) detected at line 73
+
+Underfull \hbox (badness 10000) detected at line 68
 \T1/phv/m/n/12 3.2.2
  []
 
-<fig5.jpeg, id=105, 1284.8pt x 963.6pt>
-File: fig5.jpeg Graphic file (type jpg)
- <use fig5.jpeg>
-Package pdftex.def Info: fig5.jpeg used on input line 93.
-(pdftex.def)             Requested size: 362.77264pt x 272.07048pt.
+[15] <fig5.png, id=93, 966.9726pt x 718.1229pt>
+File: fig5.png Graphic file (type png)
+ <use fig5.png>
+Package pdftex.def Info: fig5.png used on input line 88.
+(pdftex.def)             Requested size: 241.84843pt x 179.60698pt.
 
-<fig6.jpeg, id=106, 1284.8pt x 963.6pt>
-File: fig6.jpeg Graphic file (type jpg)
- <use fig6.jpeg>
-Package pdftex.def Info: fig6.jpeg used on input line 103.
-(pdftex.def)             Requested size: 362.77264pt x 272.07048pt.
- [15]
-Underfull \hbox (badness 10000) detected at line 113
+<fig6.png, id=94, 966.9726pt x 718.1229pt>
+File: fig6.png Graphic file (type png)
+ <use fig6.png>
+Package pdftex.def Info: fig6.png used on input line 98.
+(pdftex.def)             Requested size: 241.84843pt x 179.60698pt.
+
+Underfull \hbox (badness 10000) detected at line 104
 \T1/phv/m/n/12 3.2.3
  []
 
-[16 <./fig5.jpeg> <./fig6.jpeg>]
-Underfull \hbox (badness 10000) detected at line 161
+[16 <./fig5.png>] [17 <./fig6.png>] [18]
+Underfull \hbox (badness 10000) detected at line 204
 \T1/phv/b/n/12 3.3
  []
 
 
-Underfull \hbox (badness 10000) detected at line 167
+Underfull \hbox (badness 10000) detected at line 210
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 172
+Underfull \hbox (badness 10000) detected at line 219
 \T1/phv/b/n/12 3.5
  []
 
-[17]) [18]
+[19]) [20]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1247,12 +1248,12 @@ Underfull \hbox (badness 10000) detected at line 1
 \T1/phv/b/n/14.4 4. 
  []
 
-<fig3.pdf, id=119, 1113.15875pt x 276.03125pt>
+<fig3.pdf, id=113, 1113.15875pt x 276.03125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
 Package pdftex.def Info: fig3.pdf used on input line 8.
 (pdftex.def)             Requested size: 483.69687pt x 119.94205pt.
-) [19
+) [21
 
 
 
@@ -1268,7 +1269,7 @@ Underfull \hbox (badness 1297) in paragraph at lines 82--86
  Version 1.2''.
  []
 
-[20
+[22
 
 
 ]
@@ -1277,15 +1278,15 @@ Underfull \hbox (badness 1325) in paragraph at lines 121--125
 g: Towards a
  []
 
-) [21] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
+) [23] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 6762 strings out of 492995
- 90098 string characters out of 6132704
- 172748 words of memory out of 5000000
- 10024 multiletter control sequences out of 15000+600000
- 48030 words of font info for 84 fonts, out of 8000000 for 9000
+ 6784 strings out of 492995
+ 90202 string characters out of 6132704
+ 172760 words of memory out of 5000000
+ 10046 multiletter control sequences out of 15000+600000
+ 49766 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,8n,37p,557b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,8n,37p,557b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
 local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/lo
 cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
@@ -1293,10 +1294,10 @@ cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (21 pages, 1120029 bytes).
+Output written on main.pdf (23 pages, 1437057 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

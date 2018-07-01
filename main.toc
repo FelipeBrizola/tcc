@@ -5,19 +5,19 @@
 \contentsline {section}{\numberline {1.1}\MakeTextUppercase {Contextualiza\IeC {\c c}\IeC {\~a}o}}{7}
 \contentsline {section}{\numberline {1.2}\MakeTextUppercase {Motiva\IeC {\c c}\IeC {\~a}o e justificativa}}{8}
 \contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{8}
-\contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{9}
-\contentsline {section}{\numberline {2.1}\MakeTextUppercase {BGP}}{9}
-\contentsline {section}{\numberline {2.2}\MakeTextUppercase {CoAP}}{9}
-\contentsline {section}{\numberline {2.3}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{11}
-\contentsline {section}{\numberline {2.4}\MakeTextUppercase {Trabalhos Relacionados}}{12}
-\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{13}
-\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{13}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{14}
-\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{14}
-\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descoberta de recursos}}{15}
+\contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{10}
+\contentsline {section}{\numberline {2.1}\MakeTextUppercase {BGP}}{10}
+\contentsline {section}{\numberline {2.2}\MakeTextUppercase {CoAP}}{10}
+\contentsline {section}{\numberline {2.3}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{12}
+\contentsline {section}{\numberline {2.4}\MakeTextUppercase {Trabalhos Relacionados}}{13}
+\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{14}
+\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{14}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{15}
+\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{15}
+\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descoberta de recursos}}{16}
 \contentsline {subsection}{\numberline {3.2.3}\MakeTextUppercase {Gerenciamento de recursos}}{17}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{17}
-\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{17}
-\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{17}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{19}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{20}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{19}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{19}
+\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{19}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{21}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{22}
