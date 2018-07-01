@@ -90,7 +90,7 @@ A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, dev
     {\label{fig:fig5} Nodo entrando na névoa.}
 \end{figure}
 
-Após FN5 enviar mensagem  “Hello“ por broadcast, os nodos FN1, FN2 e FN4 realizam a query diretamente ao FN5 afim de obter os recuros disponíbilizados por ele,
+Após FN5 enviar mensagem  “Hello“ por broadcast, os nodos FN1, FN2 e FN4 realizam a query diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
 já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 
@@ -181,24 +181,36 @@ Após o recebimento da mensagem de keep alive, os nodos deverão respondê-las i
 Caso o nodo não responda a mensagem de keep alive, este será marcado como parcialmente inativo pelo remetente da mensagem.
 Quando o nodo solicitante realizar outra mensagem de keep alive e o nodo que já estava marcado com parcialmente inativo não responder, o mesmo será removido da lista de recursos do
 solicitante, e assim é possível saber quando um nodo deixou de fazer parte da névoa.
-Para realizar este controle será preciso adicionar na estrutura \textit{Fog} a propriedade boleana, denominada \textit{isRespondingKeepAlive}, que indica se o nodo esta respondendo a solicitações de keep alive.
+Para realizar este controle será preciso adicionar na estrutura \textit{Fog} a propriedade boleana, denominada \textit{isRespondingKeepAlive}, que indica se o nodo está respondendo a solicitações de keep alive.
 
-% SJF: Já podes definir aqui como vai funcionar todo o protocolo de maneira geral, sem incluir muitos detalhes. Não importa se algo vai mudar posteriormente. O importante é deixar claro que estás pensando em todos os detalhes, não como vais resolver todos os problemas.
+As mensagens de keep alive mantém os nodos informados sobre o estado de seus vizinhos, mas não conseguem indicar informações relacionadas aos edge device.
+Consequentemente, não é possível saber quando um edge device parou ou iniciou sua operação em um nodo ativo.
 
-% colocar fluxo do keep alive?
-% preciso explicar o esquema da epoca ainda.. esse com ctz precisará de desenhos
-% as imagens nao estao no lugar que eu gostaria por enquanto, mas quando terminar de escrever ajusto o lugar delas.
-% a imagem da pilha de protocolos mostra IPv6, mas no texto me refiro a ipv4. vou ajustar a imagem.
+Para que seja possível detectarmos esse tipo de comportamento, o protocolo proposto deverá implementar a técnica denominada \textit{época},
+e servirá para que os nodos mantenham ciênia sobre o estado dos edge devices de seus vizinhos de rede.
+Para isso, uma nova propriedade denominada \textit{epoch}, do tipo inteiro, deverá ser adicionada a estrutura de dados, e estará presente tanto no nodo em sí quanto em cada item da lista de fogs.
+O valor da época será incrementado em uma unidadade a toda alteração observada no nodo, seja pelo acréscimo ou pela remoção de edge devices.
 
-% Para que as mensagens de keep alive funcionem no protocolo de mapeamento de recursos será preciso adicionar uma nova propriedade na estrutura de dados já proposta.
-% Esta propriedade, denominada \textit{epoch}, será do tipo inteiro e indicará a versão do estado em que o nodo se encontra.
+A partir de agora, então, todas as mensagens de keep alive deverão conter a época do nodo que está realizando o broadcast.
+Assim, todo nodo que receber a mensagem poderá comparar a época recebida na mensagem com a época que possui armazenada em sua lista de fogs referente ao remetente da mensagen.
+Havendo divergencia de épocas, este poderá realizar uma nova requisição para atualizar sua lista de recursos referente aquele nodo em específico.
 
-% quando tver altracao, nao faz nada.... quando alguem for usar recurso q nao existe mais. atualiza epoca e responde responde not found.
-% jundo das respostas manda epoca atualizada.
-% no proximo keepalive a epoca vai ser diferente. ai todos fazem query.
+Após as alterações realizadas na estrutura de dados, abaixo temos o novo modelo que suportará as funcionalidades propostas.
+\begin{verbatim}
+    Fog = {
+        string ip;
+        string resources[];
+        int epoch;
+        boolean isRespondingKeepAlive;
+    }
+    Fog fogs[];
+    string myResources[];
+    int epoch;
+\end{verbatim}
 
-% api list add delete gerenciamento local da lista
-
+Além do protocolo de mapeamento em sí, este trabalho disponibilizará uma API para o gerenciamento de recursos locais.
+Esta API deverá ser executada localmente e possuirá métodos para listagem, remoção e criação de recursos, portanto, a partir dela será possível
+simularmos o gerenciamento, inserção e remoção, de recursos que o protocolo implementará.
 
 
 \section{Resultados esperados}

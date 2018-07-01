@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  1 JUL 2018 01:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  1 JUL 2018 11:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1223,22 +1223,22 @@ Underfull \hbox (badness 10000) detected at line 104
 \T1/phv/m/n/12 3.2.3
  []
 
-[16 <./fig5.png>] [17 <./fig6.png>] [18]
-Underfull \hbox (badness 10000) detected at line 204
+[16 <./fig5.png>] [17 <./fig6.png>] [18] [19]
+Underfull \hbox (badness 10000) detected at line 216
 \T1/phv/b/n/12 3.3
  []
 
 
-Underfull \hbox (badness 10000) detected at line 210
+Underfull \hbox (badness 10000) detected at line 222
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 219
+Underfull \hbox (badness 10000) detected at line 231
 \T1/phv/b/n/12 3.5
  []
 
-[19]) [20]
+) [20]
 \openout2 = `cap4.aux'.
 
  (./cap4.tex
@@ -1294,7 +1294,7 @@ cal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/201
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (23 pages, 1437057 bytes).
+Output written on main.pdf (23 pages, 1440003 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream
