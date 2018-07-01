@@ -19,5 +19,5 @@
 \contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{20}
 \contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{20}
 \contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{20}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia cronograma de desenvolvimento}}{21}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{22}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia e cronograma de desenvolvimento}}{22}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{23}

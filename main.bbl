@@ -40,11 +40,24 @@ Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   13--16.
 \bibAnnoteFile{Bonomi:2012}
 
+\bibitem{vscode}
+Corporation, M. \urlprefix\url{https://code.visualstudio.com}, 2018.
+\bibAnnoteFile{vscode}
+
+\bibitem{github}
+Corporation, M. \urlprefix\url{https://github.com}, 2018.
+\bibAnnoteFile{github}
+
 \bibitem{rfc2616}
 Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;
   Berners-Lee, T. \enquote{Rfc 2616, hypertext transfer protocol -- http/1.1}.
   \urlprefix\url{http://www.rfc.net/rfc2616.html}, 1999.
 \bibAnnoteFile{rfc2616}
+
+\bibitem{python}
+Foundation, P.~S. \enquote{Python software foundation}.
+  \urlprefix\url{https://python.org}, 2018.
+\bibAnnoteFile{python}
 
 \bibitem{socketPython}
 Foundation, P.~S. \enquote{socket — low-level networking interface}.
@@ -62,6 +75,11 @@ Hammer-Lahav, E.; Nottingham, M. \enquote{{Defining Well-Known Uniform Resource
   Identifiers (URIs)}}. \urlprefix\url{https://rfc-editor.org/rfc/rfc5785.txt},
   \bblapr{}~2010.
 \bibAnnoteFile{rfc5785}
+
+\bibitem{coregui}
+Laboratory, U. N.~R. \enquote{Common open research emulator (core)}.
+  \urlprefix\url{https://www.nrl.navy.mil/itd/ncs/products/core}, 2018.
+\bibAnnoteFile{coregui}
 
 \bibitem{Spencer:2015}
 Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
@@ -122,5 +140,10 @@ Vaquero, L.~M.; Rodero-Merino, L. \enquote{Finding your way in the fog: Towards
   a comprehensive definition of fog computing}, \textit{SIGCOMM Comput. Commun.
   Rev.}, \bblvol{}~44--5, \bbloct{}~2014, \bblpp{} 27--32.
 \bibAnnoteFile{Vaquero:2014}
+
+\bibitem{wireshark}
+wireshark org. \enquote{Wireshark}. \urlprefix\url{https://www.wireshark.org},
+  2018.
+\bibAnnoteFile{wireshark}
 
 \end{thebibliography}

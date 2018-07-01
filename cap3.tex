@@ -181,7 +181,7 @@ Após o recebimento da mensagem de keep alive, os nodos deverão respondê-las i
 Caso o nodo não responda a mensagem de keep alive, este será marcado como parcialmente inativo pelo remetente da mensagem.
 Quando o nodo solicitante realizar outra mensagem de keep alive e o nodo que já estava marcado com parcialmente inativo não responder, o mesmo será removido da lista de recursos do
 solicitante, e assim é possível saber quando um nodo deixou de fazer parte da névoa.
-Para realizar este controle será preciso adicionar na estrutura \textit{Fog} a propriedade boleana, denominada \textit{isRespondingKeepAlive}, que indica se o nodo está respondendo a solicitações de keep alive.
+Para realizar este controle será preciso adicionar na estrutura \textit{Fog} a propriedade boleana, denominada \textit{isReplyingKeepAlive}, que indica se o nodo está respondendo a solicitações de keep alive.
 
 As mensagens de keep alive mantém os nodos informados sobre o estado de seus vizinhos, mas não conseguem indicar informações relacionadas aos edge device.
 Consequentemente, não é possível saber quando um edge device parou ou iniciou sua operação em um nodo ativo.
@@ -201,7 +201,7 @@ Após as alterações realizadas na estrutura de dados, abaixo temos o novo mode
         string ip;
         string resources[];
         int epoch;
-        boolean isRespondingKeepAlive;
+        boolean isReplyingKeepAlive;
     }
     Fog fogs[];
     string myResources[];
@@ -212,42 +212,36 @@ Além do protocolo de mapeamento em sí, este trabalho disponibilizará uma API 
 Esta API deverá ser executada localmente e possuirá métodos para listagem, remoção e criação de recursos, portanto, a partir dela será possível
 simularmos o gerenciamento, inserção e remoção, de recursos que o protocolo implementará.
 
-
 \section{Resultados esperados}
 
-Espera-se que este trabalho resulte em um protocolo funcional a nível de prova de conceito e que seja capaz de descobrir e sincronizar recursos de dispositivos sob computação em névoa.
+Espera-se que este trabalho resulte em um protocolo funcional, simples e que seja capaz de descobrir e sincronizar recursos de dispositivos sob computação em névoa.
 Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma deverá manter-se coerente.
-% SJF: Podes incluir aqui alguma informação de como pretendes integrar teu projeto. Por exemplo, qual ambiente vai ser usado, quais os outros frameworks / bibliotecas que serão usados para a tua implementação, etc.
+Esta coerência significa manter o estado global dos recursos acessível a todos os nodos.
+
+A névoa será construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}. Nela é possível criar as mais variadas topologias de redes,
+além disso, cada nodo adicionado à topologia contém um terminal Unix que pode ser utilizado para executar comandos. Então, os comandos da API descritos acima,
+podem ser utilizados a fim de auxiliar o gerenciamento dos recursos locais dos nodos. A ferramenta de monitoramento de trafego de rede, Wireshark\cite{wireshark}, será utilizada em conjuntos com o 
+CORE, pois, nela será possível apurarmos se os pacotes estão sendo enviados e recebidos da forma correta.
+
 
 \section{Validação}
 
-
-% topologia de rede simulada com nodos contendo edge devices e rodando o protocolo
-
-
-Para validarmos o funcionamento do protocolo, utilizaremos um simulador de dispositivos a ser definido no decorrer deste TCC.
-Estes dispositivos executarão o \textit{middleware} citado no item 3.2.1 deste trabalho.
+A validação deste trabalho consiste em realizar simulações que faça com que o protocolo execute suas funcionalidades de acordo com os resultados descritos na Seção anterior, sendo assim, 
+algumas situações devem ocorrer para que as validações sejam realizadas.
+Estas situações serão abordadas nos cenários de teste da Seção a seguir.
 
 \section{Cenários de teste}
 
-\begin{itemize}
+Utilizando como base a Figura x.x, e partindo do pressuposto que todos os nodos da névoa já estão com seus recursos sincronizados corretamente,
+iremos exemplificar os cenários de testes elencados abaixo.
+
+\begin{enumerate}
     \item Entrada de algum equipamento na rede e este anunciando seus recursos. 
     \item Atualização das listas globais quando algum equipamento deixar de responder as mensagens de \textit{keep alive}.
-    \item Utilização de recursos de nodos da rede.
-    \item Desligamento de recursos de algum dispositivo da rede, e posterior a isso, a tentativa de acesso a esse recurso por algum nodo.
-    O equipamento que perdeu o recurso deverá anunciar seus novos recursos atualizando a lista global dos outros nodos da névoa.
-\end{itemize}
+    \item Atualização da lista de recursos quando algum edge device é adicionado ou removido de um nodo da névoa.
+\end{enumerate}
 
-% SJF: Tens que escrever essa parte. Podes explorar um cenário como exemplo, colocando figuras para deixar mais claro como esse cenário funciona.
+O Item 1 não será explicado neste momento, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
 
-
-
-
-
-
-
-
-
-
-
-
+O segundo item refere-se ao fato de um equipamento deixar de responder as mensagens de keep alive, e para ilustar esse funcionamento as Figuras x.x e x.x1 
+representam a saída do nodo fn3 da rede e sua marcação como parcialmente ativo e posteriormente a sua remoção da lista por completo.
