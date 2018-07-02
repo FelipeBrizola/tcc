@@ -7,7 +7,8 @@
 \contentsline {figure}{Figura\nobreakspace \numberline {3.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo entrando na n\IeC {\'e}voa.}}{17}
 \contentsline {figure}{Figura\nobreakspace \numberline {3.3\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodos realizando Requisi\IeC {\c c}\IeC {\~a}o.}}{18}
 \contentsline {figure}{Figura\nobreakspace \numberline {3.4\hfil \nobreakspace --\nobreakspace }{\ignorespaces Topologia base para cen\IeC {\'a}rio de teste.}}{22}
-\contentsline {figure}{Figura\nobreakspace \numberline {3.5\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo deixa de responder mensagens de keep alive.}}{23}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.5\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo marcado como parcialmente inativo.}}{23}
 \contentsline {figure}{Figura\nobreakspace \numberline {3.6\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo removido da lista de recursos.}}{23}
-\contentsline {figure}{Figura\nobreakspace \numberline {3.7\hfil \nobreakspace --\nobreakspace }{\ignorespaces Atualiza\IeC {\c c}\IeC {\~a}o de recursos ap\IeC {\'o}s edge device ser removido da n\IeC {\'e}voa.}}{24}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.7\hfil \nobreakspace --\nobreakspace }{\ignorespaces Edge device fora de opera\IeC {\c c}\IeC {\~a}o.}}{24}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.8\hfil \nobreakspace --\nobreakspace }{\ignorespaces Estado da n\IeC {\'e}voa ap\IeC {\'o}s atualiza\IeC {\c c}\IeC {\~a}o de recursos.}}{24}
 \contentsline {figure}{Figura\nobreakspace \numberline {4.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Cronograma de atividades.}}{25}

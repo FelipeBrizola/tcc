@@ -15,8 +15,9 @@
 \contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{16}
 \contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{16}
 \contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descoberta de recursos}}{17}
-\contentsline {subsection}{\numberline {3.2.3}\MakeTextUppercase {Gerenciamento de recursos}}{18}
+\contentsline {subsection}{\numberline {3.2.3}\MakeTextUppercase {Gerenciamento de recursos}}{17}
 \contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{21}
-\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o}}{21}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~o}es}}{21}
 \contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{21}
 \contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia e cronograma de desenvolvimento}}{25}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{26}

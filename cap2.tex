@@ -21,7 +21,6 @@ Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protoc
 Especificado pela RFC-7252, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
 e tem como foco a transferência de documentos web entre nodos com recursos limitados em redes de baixa qualidade\cite{rfc7252}.
 
-
 O modelo de interação cliente/servidor é o padrão adotado pelo CoAP, entretanto,
 o fato do protocolo ter sido projetado para aplicações máquina-a-máquina faz com que os dispositivos comumente desempenhem o papel de cliente e servidor simultaneamente.
 
@@ -32,7 +31,6 @@ Por fim, um token é utilizado para que haja a correspondência entre requisiç�
 A Figura \ref{fig:fig4} ilustra uma solicitação entre cliente e servidor, na qual o cliente deseja obter a temperatura.
 Analisando a troca de mensagens, notamos que o cliente envia uma solicitação não confirmável com token 0x74 e código GET para acessar o recurso temperatura no servidor.
 O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o mesmo token que recebeu na solicitação do cliente e o valor 22.5 C.
-
 
 \begin{figure}[htb!]
     \centering\includegraphics[height=.4\textwidth]{fig4.png} 
@@ -45,7 +43,7 @@ Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para
 Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na seção 10 da própria RFC-7252\cite{rfc7252},
 que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
 
-Além de modelo de comunicação cliente/servidor e arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web
+Além de modelo de comunicação cliente/servidor e da arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web,
 como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc2046}.
 
 Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
@@ -55,12 +53,10 @@ Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é 
 \textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na seção a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
-
-
 \section{Constrained RESTful Environments (CoRE) Link Format}
 
-Segundo a RFC-6690, a finalidade deste especificação é realizar REST em nodos com recursos limitados sendo importante em aplicações maquina-a-maquina\cite{rfc6690}.
-Em aplicação deste tipo é primordial que as configurações não dependam de interação de humanos, e portanto, que mantenham seu funcionamento sem configurações estáticas.
+Segundo a RFC-6690, a finalidade desta especificação é realizar REST em nodos com recursos limitados, sendo tal característica importante em aplicações maquina-a-maquina\cite{rfc6690}.
+Em aplicação deste tipo é primordial que as configurações não dependam de interação de humanos, portanto, devem manter seu funcionamento sem configurações estáticas.
 
 
 A principal função desta especificação é fornecer identificadores, denominados URIs, para os recursos hospedados em servidores. 
@@ -72,13 +68,13 @@ já o segundo tem por objetivo indicar a interface especifica que interagirá co
 Um aspecto relevante ao CoRE, e de suma importancia para aplicações maquina-a-maquina, é o fato de possuir como URI padrão o prefixo \textit{/.well-known/core} , definido na RFC-5785\cite{rfc5785}.
 Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
 
-O protocolo CoAP preve suporte à CoRE e ao prefixo \textit{/.well-known/core}. Contanto com esses recursos, é possível traçarmos uma pequena analogia entre
+O protocolo CoAP prevê suporte à CoRE e ao prefixo \textit{/.well-known/core}. Contando com esses recursos, é possível traçarmos uma pequena analogia entre
 esquemas HTTP/HTTPS e \textit{coap}/\textit{coaps}, este utilizando segurança DTLS.
-Estes esquemas são utilizados para identificar e localizar os recursos coap na rede.
-Sendo assim, servidores coap ficam aguardando por requisições que utilizem tal esquema.
+Estes esquemas são utilizados para identificar e localizar os recursos CoAP na rede.
+Sendo assim, servidores CoAP ficam aguardando por requisições que utilizem tal esquema.
 
-Para exemplificarmos, abaixo esta um ciclo de requisição e resposta entre um cliente e um servidor com nomenclatura \textit{example.net}.
-Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e para tal utiliza o prefixo padrão \textit{/.well-known/core}.
+Para exemplificarmos, abaixo está um ciclo de requisição e resposta entre um cliente e um servidor com nomenclatura \textit{example.net}.
+Este cliente deseja saber as políticas e recurso disponíveis pelo servidor, e para tal utiliza o prefixo padrão \textit{/.well-known/core}.
 
 \begin{verbatim}
     REQ: GET coap://example.net/.well-known/core
@@ -92,7 +88,7 @@ Este cliente deseja saber as políticas e recurso disponíveis pelo servidor e p
 
 
 Analisando a resposta é fácil notar que este servidor possui dois recursos disponíveis,
-sendo ambos com interface do tipo sensor, porem um utilizado para medir temperatura e outro para medir intensidade de luz.
+sendo ambos com interface do tipo sensor, porém, um utilizado para medir temperatura e outro para medir intensidade de luz.
 Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação transcorreu com sucesso.
 
 
@@ -114,7 +110,7 @@ Esta plataforma possui quatro funcionalidades chaves, sendo elas, descoberta de 
 Focaremos na descoberta de recursos providos pela plataforma, pois, é o item que mais se assemelha a proposta deste trabalho de conclusão.
 Como primeiro passo para a execução desta funcionalidade, devemos registrar o recurso utilizando sua URI e IP.
 Após o registro, é possível especificarmos que este recurso é observável, ou seja, quando houver algum evento o nodo que o registrou como observável será notificado.
-Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos de mapeamento de recursos em redes locais.
+Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos para manter o mapeamento de recursos em redes locais.
 
 
 A tabela \ref{table:tab1} compara algumas funcionalidades deste trabalho de conclusão perante a outros.
@@ -128,7 +124,8 @@ A tabela \ref{table:tab1} compara algumas funcionalidades deste trabalho de conc
     Lan                            & sim   & sim       & sim      & sim                \\ \hline
     Internet                       & sim   & não       & sim      & não                \\ \hline
     Map. de recursos               & sim   & sim       & sim      & sim                \\ \hline
-    Manutenção do map. de recursos & não   & não       & sim      & sim                \\ \hline
+    Manutenção do map. de recursos & não   & não       & não      & sim                \\ \hline
+    Recursos observáveis           & n/a   & n/a       & sim      & não                \\ \hline
     \end{tabular}
     \label{table:tab1}
 \end{table}

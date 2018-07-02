@@ -57,7 +57,7 @@ A manutenção dos recursos, acréscimo ou remoção, transcorrerá utilizando o
 Utilizar CoAP para estas funcionalidades faz sentido, uma vez que este prevê meios para vinculação de recursos a nodos.
 
 Segundo a definição de POST do protocolo CoAP, sua função é determinada pelo servidor que está recebendo a requisição e pelo do recurso referenciado na URI.
-Geralmente a sua utilização resulta na criação ou atualização de um recurso.\cite{rfc7252}.
+Geralmente a sua utilização resulta na criação ou atualização de um recurso\cite{rfc7252}.
 Já a mesma RFC define o método DELETE como sendo um método de remoção de recursos baseado em URIs\cite{rfc7252}.
 Nessa perspectiva, portanto, o uso do método POST faz sentido para gerarmos \textit{(CoRE) Link Format} e o método DELETE para removermos.
 
@@ -74,22 +74,17 @@ Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais 
 unicast para a URI \textit{/.well-known/core} utilizando o protocolo CoAP.
 Vale lembrar que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
 
-
-Com o objetivo de exemplificar a primeira fase do protocolo, as Figuras \ref{fig:fig5} e \ref{fig:fig6} apresentam o fluxo para a descoberta de recursos.
-
-%  mencionar q cada fog tem edge devices
-A topologia da névoa utilizada nas imagens é definida por fog nodes enumerados de um à cinco, sendo o nodo FN5 o ultimo a entrar na rede.
-A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por broadcast indicando que possui recursos a serem disponibilizados.
-
 \begin{figure}[htb!]
     \centering\includegraphics[width=.5\textwidth]{fig5.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig5} Nodo entrando na névoa.}
 \end{figure}
 
-Após FN5 enviar mensagem Olá por broadcast, os nodos FN1, FN2 e FN4 realizam a Requisição diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
-já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
+A topologia da névoa utilizada nas Figuras \ref{fig:fig5} e \ref{fig:fig6} é definida por fog nodes enumerados de um a cinco, sendo o nodo FN5 o último a entrar na rede.
+A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por broadcast indicando que possui recursos a serem disponibilizados.
 
+Após FN5 enviar mensagem de Olá por broadcast, os nodos FN1, FN2 e FN4 realizam a Requisição diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
+já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.5\textwidth]{fig6.png}
@@ -168,7 +163,7 @@ demonstramos abaixo o estado em que se encontram os dados armazenados em FN2 ap�
 \end{verbatim}
 
 Visto isso, é imprescindível que os nodos mantenham seus dados consistentes, pois, após adicionar o novo nodo em sua lista de fogs, o protocolo precisa ser capaz de perceber quando um elemento
-deixou de fazer parte do processo. Assim, a manutenção dos estados será abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP, por exemplo.
+deixou de fazer parte do processo. Assim, a manutenção dos estados será abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP.
 Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois, sem esse procedimento seria difícil
 saber quando remover um IP da lista de recursos. Portanto, para manter a lista atualizada, este protocolo implementará mensagens desse tipo.
 
@@ -185,7 +180,7 @@ Consequentemente, não é possível saber quando um edge device parou ou iniciou
 
 Para que seja possível detectarmos esse tipo de comportamento, o protocolo proposto deverá implementar a técnica denominada \textit{época},
 e servirá para que os nodos mantenham ciênia sobre o estado dos edge devices de seus vizinhos de rede.
-Para isso, uma nova propriedade denominada \textit{epoch}, do tipo inteiro, deverá ser adicionada a estrutura de dados, e estará presente tanto no nodo em sí quanto em cada item da lista de fogs.
+Para isso, uma nova propriedade denominada \textit{epoch}, do tipo inteiro, deverá ser adicionada a estrutura de dados, e estará presente tanto no nodo em si quanto em cada item da lista de fogs.
 O valor da época será incrementado em uma unidadade a toda alteração observada no nodo, seja pelo acréscimo ou pela remoção de edge devices.
 
 A partir de agora, então, todas as mensagens de keep alive deverão conter a época do nodo que está realizando o broadcast.
@@ -217,11 +212,11 @@ Esta coerência significa manter o estado global dos recursos acessível a todos
 
 A névoa será construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}. Nela é possível criar as mais variadas topologias de redes,
 além disso, cada nodo adicionado à topologia contém um terminal Unix que pode ser utilizado para executar comandos. Então, os comandos da API descritos acima,
-podem ser utilizados a fim de auxiliar o gerenciamento dos recursos locais dos nodos. A ferramenta de monitoramento de trafego de rede, Wireshark\cite{wireshark}, será utilizada em conjuntos com o 
+podem ser utilizados a fim de auxiliar o gerenciamento dos recursos locais dos nodos. A ferramenta de monitoramento de trafego de rede, Wireshark\cite{wireshark}, será utilizada em conjunto com o 
 CORE, pois, nela será possível apurarmos se os pacotes estão sendo enviados e recebidos da forma correta.
 
 
-\section{Validação}
+\section{Validações}
 
 A validação deste trabalho consiste em realizar simulações que faça com que o protocolo execute suas funcionalidades de acordo com os resultados descritos na Seção anterior, sendo assim, 
 algumas situações devem ocorrer para que as validações sejam realizadas.
@@ -244,34 +239,45 @@ iremos exemplificar os cenários de testes elencados abaixo.
     {\label{fig:fig7} Topologia base para cenário de teste.}
 \end{figure}
 
-O Item 1 não será demonstrado agora, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
+O item 1 não será demonstrado agora, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
 
 O segundo item trata de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
 Na Figura \ref{fig:fig8}, o nodo FN1 não respondeu, no tempo previamente estipulado, a mensagem de keep alive enviada pelo nodo FN2, 
 portanto, o nodo destinatário foi marcado em FN2 como parcialmente inativo.
+Já a Figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
+
+
 \begin{figure}[htb!]
     \centering\includegraphics[width=.8\textwidth]{fig8.png}
     \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig8} Nodo deixa de responder mensagens de keep alive.}
+    {\label{fig:fig8} Nodo marcado como parcialmente inativo.}
 \end{figure}
-Já a figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
+
 \begin{figure}[htb!]
     \centering\includegraphics[width=.8\textwidth]{fig9.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig9} Nodo removido da lista de recursos.}
 \end{figure}
+
 O terceiro item dos cenários de teste trata de quando o nodo está normalmente em operação, porém, um de seus recursos foi alterado, seja por incremendo de um novo edge device ou
 pela remoção de um.
-
-Utilizaremos a Figura \ref{fig:fig5} como exemplo básico, e nela podemos observar que o edge device denominada ED3 vinculado ao nodo FN2 parou de funcionar.
-Para este cenário, o nodo que hospeda ED3 deve estar ciente que este edge device está inoperante, e assim atualizar a sua \textit{época}.
-O nodo que possui o edge device inoperante, então, terá sua época enviada juntamente das mensagens de keep alive.
-Assim, quando os nodos receberem o keep alive poderão compará-los e posteriormente realizar requisição ao nodo para atualizar sua lista de recursos globais.
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.8\textwidth]{fig10.png} 
     \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig10} Atualização de recursos após edge device ser removido da névoa.}
+    {\label{fig:fig10} Edge device fora de operação.}
+\end{figure}
+
+Utilizaremos a Figura \ref{fig:fig10} como exemplo básico, e nela podemos observar que o edge device denominada ED2 vinculado ao nodo FN2 parou de funcionar.
+Para este cenário, o nodo que hospeda ED2 deve estar ciente que este edge device está inoperante, e assim atualizar a sua \textit{época}.
+O nodo que possui o edge device inoperante, então, terá sua época enviada juntamente com as mensagens de keep alive.
+Assim, quando o nodo receber esta mensagem poderá comparar a época armazenada em sua lista de fogs com a época recebida pelo keep alive, e após a validação da divergencia realizará
+um Requisição diretamente ao nodo para que possa atualizar sua lista de recursos globais.
+
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig11.png} 
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig11} Estado da névoa após atualização de recursos.}
 \end{figure}
 
 
