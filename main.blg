@@ -29,6 +29,8 @@ Warning--entry type for "github" isn't style-file defined
 --line 305 of file bibliography.bib
 Warning--entry type for "python" isn't style-file defined
 --line 312 of file bibliography.bib
+Warning--entry type for "iotivity" isn't style-file defined
+--line 320 of file bibliography.bib
 Warning--to sort, need author or key in definition:panaceia
 Warning--to sort, need author or key in archfog:2017
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -42,45 +44,45 @@ Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 24 entries,
+You've used 25 entries,
             2900 wiz_defined-function locations,
-            771 strings with 8992 characters,
-and the built_in function-call counts, 10980 in all, are:
-= -- 920
-> -- 271
+            775 strings with 9080 characters,
+and the built_in function-call counts, 11352 in all, are:
+= -- 951
+> -- 278
 < -- 4
-+ -- 115
-- -- 90
-* -- 691
-:= -- 1305
-add.period$ -- 63
-call.type$ -- 24
-change.case$ -- 115
++ -- 118
+- -- 92
+* -- 711
+:= -- 1352
+add.period$ -- 66
+call.type$ -- 25
+change.case$ -- 119
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 1097
-empty$ -- 1004
-format.name$ -- 102
-if$ -- 2300
+cite$ -- 62
+duplicate$ -- 1134
+empty$ -- 1042
+format.name$ -- 104
+if$ -- 2380
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 203
-newline$ -- 115
-num.names$ -- 44
-pop$ -- 598
+int.to.str$ -- 25
+missing$ -- 210
+newline$ -- 119
+num.names$ -- 46
+pop$ -- 619
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 96
 quote$ -- 0
-skip$ -- 280
+skip$ -- 290
 stack$ -- 0
-substring$ -- 610
-swap$ -- 412
+substring$ -- 627
+swap$ -- 425
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
+type$ -- 98
 warning$ -- 12
-while$ -- 71
-width$ -- 26
-write$ -- 232
-(There were 23 warnings)
+while$ -- 74
+width$ -- 27
+write$ -- 241
+(There were 24 warnings)

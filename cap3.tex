@@ -18,7 +18,7 @@ A pilha de protocolos atuará em conjunto com a organização arquitetural previ
 A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fig:fig2} explicita a pilha de protocolos que o projeto fará uso para implementar as funcionalidades propostas.
 
 \begin{figure}[htb!]
-    \centering\includegraphics[width=.5\textwidth]{fig2.pdf}
+    \centering\includegraphics[width=.8\textwidth]{fig2.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig2} Pilha de protocolos.}
 \end{figure}
@@ -44,8 +44,6 @@ De forma geral, cada nodo da rede deverá manter uma lista com os endereços IP`
 Atrelado à cada endereço IP, deverá haver uma lista com os recursos providos por este.
 Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis na névoa.
 
-% SJF: Podes dar a dica aqui (sem entrar em maiores detalhes) de que o mapeamento de recursos será atualizado sob demanda o que implicará em uma menor necessidade de tráfego para manter o estado global atualizado e permitirá uma maior escalabilidade de nodos / recursos.
-
 O detalhamento das funcionalides que o projeto deverá dispor, bem como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
 
 \subsection{Middleware}
@@ -61,7 +59,6 @@ Utilizar CoAP para estas funcionalidades faz sentido, uma vez que este prevê me
 Segundo a definição de POST do protocolo CoAP, sua função é determinada pelo servidor que está recebendo a requisição e pelo do recurso referenciado na URI.
 Geralmente a sua utilização resulta na criação ou atualização de um recurso.\cite{rfc7252}.
 Já a mesma RFC define o método DELETE como sendo um método de remoção de recursos baseado em URIs\cite{rfc7252}.
-
 Nessa perspectiva, portanto, o uso do método POST faz sentido para gerarmos \textit{(CoRE) Link Format} e o método DELETE para removermos.
 
 
@@ -73,7 +70,7 @@ como primeiro passo do mapeamento devemos considerar a entrada de um novo nodo n
 No momento em que o nodo dispor de um endereço IP válido, este deverá enviar um pacote para o endereço de broadcast indicando que possui recursos a serem disponibilizados.
 
 
-Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma query
+Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma Requisição
 unicast para a URI \textit{/.well-known/core} utilizando o protocolo CoAP.
 Vale lembrar que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
 
@@ -90,14 +87,14 @@ A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, dev
     {\label{fig:fig5} Nodo entrando na névoa.}
 \end{figure}
 
-Após FN5 enviar mensagem  “Hello“ por broadcast, os nodos FN1, FN2 e FN4 realizam a query diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
+Após FN5 enviar mensagem Olá por broadcast, os nodos FN1, FN2 e FN4 realizam a Requisição diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
 já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.5\textwidth]{fig6.png}
     \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig6} Nodos realizando query.}
+    {\label{fig:fig6} Nodos realizando Requisição.}
 \end{figure}
 
 
@@ -128,12 +125,12 @@ O Pseudocódigo \ref{alg:alg1} demonstra, de forma sucinta, a política de atual
         {\label{alg:alg1} Política de atualização de recursos.}%
     \end{algorithm}
 
-No momento em que o nodo recebe a resposta de sua query, contendo os recursos providos pelo nodo requisitado, aquele deverá armazenar as informações em uma estrutura de dados adequada.
+No momento em que o nodo recebe a resposta de sua Requisição, contendo os recursos providos pelo nodo requisitado, aquele deverá armazenar as informações em uma estrutura de dados adequada.
 Essa estrutura de dados estará implementada em todos os nodos da névoa, e a partir dela será possível realizar o gerenciamento dos recursos de forma simples e eficiente.
 O trecho abaixo define, por ora, o formato dos dados que serão utilizados em cada nodo.
 
 
-% SJF: query -> requisição
+% SJF: Requisição -> requisição
 
 
 \begin{verbatim}
@@ -149,7 +146,7 @@ De posse da Figura \ref{fig:fig6} como cenário, do algoritmo de atualização \
 demonstramos abaixo o estado em que se encontram os dados armazenados em FN2 após a aplicação do método.
 
 \begin{verbatim}
-    fogs = [
+    fogs: [
         {
             ip: '192.168.0.1',
             resources: [ 'ED1' ]
@@ -167,7 +164,7 @@ demonstramos abaixo o estado em que se encontram os dados armazenados em FN2 ap�
             resources: [ 'ED1', 'ED2' ]
         }
     ];
-    myResources = [ 'ED1', 'ED2', 'ED3' ];
+    myResources: [ 'ED1', 'ED2', 'ED3' ];
 \end{verbatim}
 
 Visto isso, é imprescindível que os nodos mantenham seus dados consistentes, pois, após adicionar o novo nodo em sua lista de fogs, o protocolo precisa ser capaz de perceber quando um elemento
@@ -232,16 +229,50 @@ Estas situações serão abordadas nos cenários de teste da Seção a seguir.
 
 \section{Cenários de teste}
 
-Utilizando como base a Figura x.x, e partindo do pressuposto que todos os nodos da névoa já estão com seus recursos sincronizados corretamente,
+Utilizando como base a Figura \ref{fig:fig7}, e partindo do pressuposto que todos os nodos da névoa já estão com seus recursos sincronizados corretamente,
 iremos exemplificar os cenários de testes elencados abaixo.
 
 \begin{enumerate}
     \item Entrada de algum equipamento na rede e este anunciando seus recursos. 
-    \item Atualização das listas globais quando algum equipamento deixar de responder as mensagens de \textit{keep alive}.
+    \item Atualização das listas globais quando algum equipamento deixar de responder as mensagens de keep alive.
     \item Atualização da lista de recursos quando algum edge device é adicionado ou removido de um nodo da névoa.
 \end{enumerate}
 
-O Item 1 não será explicado neste momento, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig7.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig7} Topologia base para cenário de teste.}
+\end{figure}
 
-O segundo item refere-se ao fato de um equipamento deixar de responder as mensagens de keep alive, e para ilustar esse funcionamento as Figuras x.x e x.x1 
-representam a saída do nodo fn3 da rede e sua marcação como parcialmente ativo e posteriormente a sua remoção da lista por completo.
+O Item 1 não será demonstrado agora, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
+
+O segundo item trata de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
+Na Figura \ref{fig:fig8}, o nodo FN1 não respondeu, no tempo previamente estipulado, a mensagem de keep alive enviada pelo nodo FN2, 
+portanto, o nodo destinatário foi marcado em FN2 como parcialmente inativo.
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig8.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig8} Nodo deixa de responder mensagens de keep alive.}
+\end{figure}
+Já a figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig9.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig9} Nodo removido da lista de recursos.}
+\end{figure}
+O terceiro item dos cenários de teste trata de quando o nodo está normalmente em operação, porém, um de seus recursos foi alterado, seja por incremendo de um novo edge device ou
+pela remoção de um.
+
+Utilizaremos a Figura \ref{fig:fig5} como exemplo básico, e nela podemos observar que o edge device denominada ED3 vinculado ao nodo FN2 parou de funcionar.
+Para este cenário, o nodo que hospeda ED3 deve estar ciente que este edge device está inoperante, e assim atualizar a sua \textit{época}.
+O nodo que possui o edge device inoperante, então, terá sua época enviada juntamente das mensagens de keep alive.
+Assim, quando os nodos receberem o keep alive poderão compará-los e posteriormente realizar requisição ao nodo para atualizar sua lista de recursos globais.
+
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig10.png} 
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig10} Atualização de recursos após edge device ser removido da névoa.}
+\end{figure}
+
+
+

@@ -54,6 +54,12 @@ Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;
   \urlprefix\url{http://www.rfc.net/rfc2616.html}, 1999.
 \bibAnnoteFile{rfc2616}
 
+\bibitem{iotivity}
+Foundation, L. \enquote{Iotivity}.
+  \urlprefix\url{https://iotivity.org/documentation/architecture-overview},
+  2018.
+\bibAnnoteFile{iotivity}
+
 \bibitem{python}
 Foundation, P.~S. \enquote{Python software foundation}.
   \urlprefix\url{https://python.org}, 2018.

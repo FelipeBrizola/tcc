@@ -3,7 +3,6 @@
 Este capítulo apresentará alguns protocolos de comunicação e técnicas que servirão de apoio para o desenvolvimento deste TCC. 
 Por fim, alguns trabalhos relacionados a área serão expostos, bem como o posicionamento deste trabalho perante aos demais.
 
-
 \section{BGP}
 
 
@@ -22,7 +21,6 @@ Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protoc
 Especificado pela RFC-7252, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
 e tem como foco a transferência de documentos web entre nodos com recursos limitados em redes de baixa qualidade\cite{rfc7252}.
 
-% falar do service discovery e resource directory.
 
 O modelo de interação cliente/servidor é o padrão adotado pelo CoAP, entretanto,
 o fato do protocolo ter sido projetado para aplicações máquina-a-máquina faz com que os dispositivos comumente desempenhem o papel de cliente e servidor simultaneamente.
@@ -109,8 +107,31 @@ A existência desse ponto justifica-se pelas regras de implementação do \texti
 Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
 Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
 
+A plataforma Iotivity \cite{iotivity}, mantida pela Linux Foundation, tem como cerne a criação de um padrão no qual os dispositivos conectam-se entre si e a Internet.
+Esta plataforma possui quatro funcionalidades chaves, sendo elas, descoberta de recursos, gerenciamento de dados e dispositivos e transmissão de dados.
 
 
+Focaremos na descoberta de recursos providos pela plataforma, pois, é o item que mais se assemelha a proposta deste trabalho de conclusão.
+Como primeiro passo para a execução desta funcionalidade, devemos registrar o recurso utilizando sua URI e IP.
+Após o registro, é possível especificarmos que este recurso é observável, ou seja, quando houver algum evento o nodo que o registrou como observável será notificado.
+Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos de mapeamento de recursos em redes locais.
+
+
+A tabela \ref{table:tab1} compara algumas funcionalidades deste trabalho de conclusão perante a outros.
+
+\begin{table}[htb!]
+    \begin{tabular}{|l|c|c|c|c|}
+    \hline
+                                   & CoAP  & S. Lewson & Iotivity & Protocolo proposto \\ \hline
+    Complexidade                   & média & média     & alta     & baixa              \\ \hline
+    Bluetooth                      & não   & sim       & sim      & não                \\ \hline
+    Lan                            & sim   & sim       & sim      & sim                \\ \hline
+    Internet                       & sim   & não       & sim      & não                \\ \hline
+    Map. de recursos               & sim   & sim       & sim      & sim                \\ \hline
+    Manutenção do map. de recursos & não   & não       & sim      & sim                \\ \hline
+    \end{tabular}
+    \label{table:tab1}
+\end{table}
 
 
 

@@ -1,9 +1,13 @@
 \select@language {brazil}
 \select@language {brazil}
 \select@language {brazil}
-\contentsline {figure}{Figura\nobreakspace \numberline {1.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Organiza\IeC {\c c}\IeC {\~a}o arquitetural.}}{8}
-\contentsline {figure}{Figura\nobreakspace \numberline {2.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Requisi\IeC {\c c}\IeC {\~a}o e resposta utilizando mensagens n\IeC {\~a}o confirm\IeC {\'a}veis.}}{11}
-\contentsline {figure}{Figura\nobreakspace \numberline {3.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Pilha de protocolos.}}{14}
-\contentsline {figure}{Figura\nobreakspace \numberline {3.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo entrando na n\IeC {\'e}voa.}}{16}
-\contentsline {figure}{Figura\nobreakspace \numberline {3.3\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodos realizando query.}}{17}
-\contentsline {figure}{Figura\nobreakspace \numberline {4.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Cronograma de atividades.}}{22}
+\contentsline {figure}{Figura\nobreakspace \numberline {1.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Organiza\IeC {\c c}\IeC {\~a}o arquitetural.}}{9}
+\contentsline {figure}{Figura\nobreakspace \numberline {2.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Requisi\IeC {\c c}\IeC {\~a}o e resposta utilizando mensagens n\IeC {\~a}o confirm\IeC {\'a}veis.}}{12}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Pilha de protocolos.}}{15}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo entrando na n\IeC {\'e}voa.}}{17}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.3\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodos realizando Requisi\IeC {\c c}\IeC {\~a}o.}}{18}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.4\hfil \nobreakspace --\nobreakspace }{\ignorespaces Topologia base para cen\IeC {\'a}rio de teste.}}{22}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.5\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo deixa de responder mensagens de keep alive.}}{23}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.6\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo removido da lista de recursos.}}{23}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.7\hfil \nobreakspace --\nobreakspace }{\ignorespaces Atualiza\IeC {\c c}\IeC {\~a}o de recursos ap\IeC {\'o}s edge device ser removido da n\IeC {\'e}voa.}}{24}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Cronograma de atividades.}}{25}
