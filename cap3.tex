@@ -74,7 +74,7 @@ Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais 
 unicast para a URI \textit{/.well-known/core} utilizando o protocolo CoAP.
 Vale lembrar que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.5\textwidth]{fig5.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig5} Nodo entrando na névoa.}
@@ -86,7 +86,7 @@ A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, dev
 Após FN5 enviar mensagem de Olá por broadcast, os nodos FN1, FN2 e FN4 realizam a Requisição diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
 já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.5\textwidth]{fig6.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig6} Nodos realizando Requisição.}
@@ -233,7 +233,7 @@ iremos exemplificar os cenários de testes elencados abaixo.
     \item Atualização da lista de recursos quando algum edge device é adicionado ou removido de um nodo da névoa.
 \end{enumerate}
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig7.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig7} Topologia base para cenário de teste.}
@@ -244,16 +244,17 @@ O item 1 não será demonstrado agora, uma vez que as Subseções 3.2.2 e 3.2.3 
 O segundo item trata de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
 Na Figura \ref{fig:fig8}, o nodo FN1 não respondeu, no tempo previamente estipulado, a mensagem de keep alive enviada pelo nodo FN2, 
 portanto, o nodo destinatário foi marcado em FN2 como parcialmente inativo.
-Já a Figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
 
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig8.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig8} Nodo marcado como parcialmente inativo.}
 \end{figure}
 
-\begin{figure}[htb!]
+Já a Figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
+
+\begin{figure}[h!]
     \centering\includegraphics[width=.8\textwidth]{fig9.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig9} Nodo removido da lista de recursos.}
@@ -262,7 +263,7 @@ Já a Figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à
 O terceiro item dos cenários de teste trata de quando o nodo está normalmente em operação, porém, um de seus recursos foi alterado, seja por incremendo de um novo edge device ou
 pela remoção de um.
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig10.png} 
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig10} Edge device fora de operação.}
@@ -274,7 +275,7 @@ O nodo que possui o edge device inoperante, então, terá sua época enviada jun
 Assim, quando o nodo receber esta mensagem poderá comparar a época armazenada em sua lista de fogs com a época recebida pelo keep alive, e após a validação da divergencia realizará
 um Requisição diretamente ao nodo para que possa atualizar sua lista de recursos globais.
 
-\begin{figure}[htb!]
+\begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig11.png} 
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig11} Estado da névoa após atualização de recursos.}
