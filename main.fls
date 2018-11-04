@@ -300,6 +300,9 @@ INPUT cap3.tex
 INPUT fig2.png
 INPUT ./fig2.png
 INPUT ./fig2.png
+INPUT fig12.png
+INPUT ./fig12.png
+INPUT ./fig12.png
 INPUT fig5.png
 INPUT ./fig5.png
 INPUT ./fig5.png
@@ -308,6 +311,9 @@ INPUT ./fig6.png
 INPUT ./fig6.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
+INPUT fig13.png
+INPUT ./fig13.png
+INPUT ./fig13.png
 INPUT fig7.png
 INPUT ./fig7.png
 INPUT ./fig7.png

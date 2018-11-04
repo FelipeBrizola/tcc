@@ -16,6 +16,22 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{#2}
 
+\bibitem{linuxalpine:2018}
+\enquote{Alpine linux is a security-oriented, lightweight linux distribution
+  based on musl libc and busybox.} \urlprefix\url{https://alpinelinux.org},
+  2018.
+\bibAnnoteFile{linuxalpine:2018}
+
+\bibitem{docker:2018}
+\enquote{Docker containerization.} \urlprefix\url{https://www.docker.com},
+  2018.
+\bibAnnoteFile{docker:2018}
+
+\bibitem{dockersdk:2018}
+\enquote{Docker sdk for python.}
+  \urlprefix\url{https://docker-py.readthedocs.io/en/stable/}, 2018.
+\bibAnnoteFile{dockersdk:2018}
+
 \bibitem{archfog:2017}
 \enquote{Should you consider fog computing for your iiot?.}
   \urlprefix\url{https://www.moxa.com/newsletter/connection/2017/11/feat_02.htm},
@@ -146,10 +162,5 @@ Vaquero, L.~M.; Rodero-Merino, L. \enquote{Finding your way in the fog: Towards
   a comprehensive definition of fog computing}, \textit{SIGCOMM Comput. Commun.
   Rev.}, \bblvol{}~44--5, \bbloct{}~2014, \bblpp{} 27--32.
 \bibAnnoteFile{Vaquero:2014}
-
-\bibitem{wireshark}
-wireshark org. \enquote{Wireshark}. \urlprefix\url{https://www.wireshark.org},
-  2018.
-\bibAnnoteFile{wireshark}
 
 \end{thebibliography}

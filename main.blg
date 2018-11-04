@@ -17,23 +17,33 @@ Warning--entry type for "definition:panaceia" isn't style-file defined
 --line 115 of file bibliography.bib
 Warning--entry type for "archfog:2017" isn't style-file defined
 --line 122 of file bibliography.bib
+Warning--entry type for "dockersdk:2018" isn't style-file defined
+--line 129 of file bibliography.bib
+Warning--entry type for "docker:2018" isn't style-file defined
+--line 135 of file bibliography.bib
+Warning--entry type for "linuxalpine:2018" isn't style-file defined
+--line 149 of file bibliography.bib
 Warning--entry type for "Rekhter:1995" isn't style-file defined
---line 140 of file bibliography.bib
-Warning--entry type for "wireshark" isn't style-file defined
---line 282 of file bibliography.bib
+--line 173 of file bibliography.bib
 Warning--entry type for "coregui" isn't style-file defined
---line 290 of file bibliography.bib
+--line 323 of file bibliography.bib
 Warning--entry type for "vscode" isn't style-file defined
---line 298 of file bibliography.bib
+--line 331 of file bibliography.bib
 Warning--entry type for "github" isn't style-file defined
---line 305 of file bibliography.bib
+--line 338 of file bibliography.bib
 Warning--entry type for "python" isn't style-file defined
---line 312 of file bibliography.bib
+--line 345 of file bibliography.bib
 Warning--entry type for "iotivity" isn't style-file defined
---line 320 of file bibliography.bib
+--line 353 of file bibliography.bib
 Warning--to sort, need author or key in definition:panaceia
 Warning--to sort, need author or key in archfog:2017
+Warning--to sort, need author or key in dockersdk:2018
+Warning--to sort, need author or key in docker:2018
+Warning--to sort, need author or key in linuxalpine:2018
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty author in linuxalpine:2018
+Warning--empty author in docker:2018
+Warning--empty author in dockersdk:2018
 Warning--empty author in archfog:2017
 Warning--empty author in definition:panaceia
 Warning--empty title in vscode
@@ -44,45 +54,45 @@ Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 25 entries,
+You've used 27 entries,
             2900 wiz_defined-function locations,
-            775 strings with 9080 characters,
-and the built_in function-call counts, 11352 in all, are:
-= -- 951
-> -- 278
+            780 strings with 9297 characters,
+and the built_in function-call counts, 11934 in all, are:
+= -- 1004
+> -- 274
 < -- 4
 + -- 118
-- -- 92
-* -- 711
-:= -- 1352
-add.period$ -- 66
-call.type$ -- 25
-change.case$ -- 119
+- -- 90
+* -- 754
+:= -- 1392
+add.period$ -- 69
+call.type$ -- 27
+change.case$ -- 124
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 1134
-empty$ -- 1042
-format.name$ -- 104
-if$ -- 2380
+cite$ -- 72
+duplicate$ -- 1196
+empty$ -- 1115
+format.name$ -- 102
+if$ -- 2516
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 210
-newline$ -- 119
-num.names$ -- 46
-pop$ -- 619
+int.to.str$ -- 27
+missing$ -- 218
+newline$ -- 127
+num.names$ -- 44
+pop$ -- 655
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 99
 quote$ -- 0
-skip$ -- 290
+skip$ -- 316
 stack$ -- 0
-substring$ -- 627
-swap$ -- 425
+substring$ -- 661
+swap$ -- 442
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
-warning$ -- 12
+type$ -- 106
+warning$ -- 18
 while$ -- 74
-width$ -- 27
-write$ -- 241
-(There were 24 warnings)
+width$ -- 29
+write$ -- 256
+(There were 32 warnings)

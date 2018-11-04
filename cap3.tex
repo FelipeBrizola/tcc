@@ -12,7 +12,7 @@ Nas seções a seguir abordaremos a arquitetura, módulos e submódulos que comp
 
 \section{Arquitetura}
 
-Esta Seção define a pilha de protocolos a serem utilizados neste projeto, bem como a justifica pela escolha dos mesmos.
+Esta Seção define a pilha de protocolos a serem utilizados neste projeto, a justificativa pelas suas escolhas, e por fim, o detalhamento do protocolo proposto.
 A pilha de protocolos atuará em conjunto com a organização arquitetural previamente definida na Figura \ref{fig:fig1}.
 
 A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fig:fig2} explicita a pilha de protocolos que o projeto fará uso para implementar as funcionalidades propostas.
@@ -33,9 +33,25 @@ Manter o contexto de conexão entre os nodos, utilizando TCP por exemplo, despen
 Visto que a simplicidade é um dos objetivos deste trabalho e que transitar uma pequena quantidade de dados a cada requisição aumenta o desempenho da solução,
 a utilização de datagramas UDP faz sentido neste protocolo
 
-O protocolo proposto, entitulado \textit{Resource Mapping}, como apresentado na Figura \ref{fig:fig2}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
-Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos, e garantir que o desempenho seja satisfatório com o objetivo permitir a escalabilidade da solução.
+A Figura \ref{fig:fig12} apresenta, de forma detalhada, a estrutura dos dados contidos no protocolo \textit{Resource Mapping}.
 
+\begin{figure}[htb!]
+    \centering\includegraphics[width=.8\textwidth]{fig12.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig12} Detalhamento Resource Mapping.}
+\end{figure}
+
+\begin{itemize}
+\item O campo Protocol Type é reservado para indicar a forma de encapsulamento do pacote.
+\item Atualmente existem dois tipos de Messages Types possíveis, keep alive e acknowledgement.
+\item Sequence Number tem o intuito de identificar o pacote enviado.
+\item O campo Epoch é utilizado para indicar alterações nos recursos providos pelo fog node.
+Sendo assim, quando um recurso é adicionado ou removido de um fog node, o campo Epoch é acrescido em uma unidade.
+\item O campo Hash utiliza a função de criptografia MD5 para validar a integridade dos demais campos contidos no pacote.
+\end{itemize}
+
+O protocolo proposto, intitulado \textit{Resource Mapping}, como apresentado nas Figuras \ref{fig:fig2} e \ref{fig:fig12}, atuará na camada de aplicação do modelo de referência TCP/IP \cite{tanenbaum2011redes} e será responsável por padronizar, descobrir e sincronizar os nodos da névoa.
+Os maiores desafios neste modelo proposto são manter o estado global dos recursos acessível a todos os nodos, e garantir que o desempenho seja satisfatório com o objetivo permitir a escalabilidade da solução.
 
 
 \section{Módulos}
@@ -44,17 +60,16 @@ De forma geral, cada nodo da rede deverá manter uma lista com os endereços IP`
 Atrelado à cada endereço IP, deverá haver uma lista com os recursos providos por este.
 Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis na névoa.
 
-O detalhamento das funcionalides que o projeto deverá dispor, bem como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
+O detalhamento das funcionalides que o projeto deverá dispor, tal como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
 
-\subsection{Middleware}
+\subsection{Gerenciamento de recursos}
 
 Observando a Figura \ref{fig:fig1}, notamos que há comunicação entre um fog node e seus respectivos edge devices.
-A comunicação entre estes não é o foco deste projeto, portanto, será tratada de forma simulada.
-Assim sendo, a simulação deverá prever alguns casos que, por vezes, possam suceder. Dentre alguns dos eventos possíveis está
-o acréscimo ou remoção de um edge device vinculado à algum fog node.
+A comunicação entre estes será executada utilizando o protocolo CoAP, todavia os dados que os edge devices fornecerão aos fog nodes serão tratados de forma simulada.
 
-A manutenção dos recursos, acréscimo ou remoção, transcorrerá utilizando o protocolo CoAP.
-Utilizar CoAP para estas funcionalidades faz sentido, uma vez que este prevê meios para vinculação de recursos a nodos.
+O gerenciamento de recursos deverá prever alguns casos que, por vezes, possam suceder. Dentre alguns dos eventos possíveis está
+o acréscimo ou remoção de um edge device vinculado à algum fog node.
+Utilizar CoAP para as funcioalidade de inclusão e exclusão de recursos faz sentido, uma vez que este prevê meios para tal.
 
 Segundo a definição de POST do protocolo CoAP, sua função é determinada pelo servidor que está recebendo a requisição e pelo do recurso referenciado na URI.
 Geralmente a sua utilização resulta na criação ou atualização de um recurso\cite{rfc7252}.
@@ -67,27 +82,27 @@ Nessa perspectiva, portanto, o uso do método POST faz sentido para gerarmos \te
 
 Partindo do pressuposto que os nodos da névoa já possuem seus recursos devidamente criados e acessíveis via CoAP,
 como primeiro passo do mapeamento devemos considerar a entrada de um novo nodo na rede.
-No momento em que o nodo dispor de um endereço IP válido, este deverá enviar um pacote para o endereço de broadcast indicando que possui recursos a serem disponibilizados.
+No momento em que o nodo dispor de um endereço IP válido, este deverá enviar um pacote para o endereço de multicast indicando que possui recursos a serem disponibilizados.
 
 
-Ao receberem o pacote enviado por broadcast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma Requisição
+Ao receberem o pacote enviado por multicast, os nodos que desejarem saber quais recursos estão sendo providos por este novo membro, deverão realizar uma Requisição
 unicast para a URI \textit{/.well-known/core} utilizando o protocolo CoAP.
 Vale lembrar que este fluxo de requisição e resposta, utilizando a URI \textit{/.well-known/core}, faz com que o nodo requisitado retorne todos seus recursos ao solicitante.
 
 \begin{figure}[H]
-    \centering\includegraphics[width=.5\textwidth]{fig5.png}
+    \centering\includegraphics[width=.8\textwidth]{fig5.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig5} Nodo entrando na névoa.}
 \end{figure}
 
 A topologia da névoa utilizada nas Figuras \ref{fig:fig5} e \ref{fig:fig6} é definida por fog nodes enumerados de um a cinco, sendo o nodo FN5 o último a entrar na rede.
-A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por broadcast indicando que possui recursos a serem disponibilizados.
+A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por multicast indicando que possui recursos a serem disponibilizados.
 
-Após FN5 enviar mensagem de Olá por broadcast, os nodos FN1, FN2 e FN4 realizam a Requisição diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
+Após FN5 enviar mensagem de Olá por multicast, os nodos FN1, FN2 e FN4 realizam a Requisição CoAP diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
 já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 \begin{figure}[H]
-    \centering\includegraphics[width=.5\textwidth]{fig6.png}
+    \centering\includegraphics[width=.8\textwidth]{fig6.png}
     \caption%[This figure has a shorter caption now]%
     {\label{fig:fig6} Nodos realizando Requisição.}
 \end{figure}
@@ -95,7 +110,7 @@ já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 \subsection{Gerenciamento de recursos}
 
-A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois, a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte rede.
+A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois, a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
 Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
 Esses controles são realizados em duas esferas, a primeira trata da inserção ou remoção de um nodo na rede,
 já a segunda refere-se a inserção ou remoção de um edge device, vinculado a um nodo qualquer.
@@ -104,35 +119,37 @@ já a segunda refere-se a inserção ou remoção de um edge device, vinculado a
 
 
 Inicialmente abordaremos a entrada e saída de nodos da névoa, e para esta subseção será utilizado o cenário da Figura \ref{fig:fig6} quando necessário.
-O Pseudocódigo \ref{alg:alg1} demonstra, de forma sucinta, a política de atualização que cada nodo deverá implementar.
+O Pseudocódigo \ref{alg:alg1} demonstra, de forma sucinta, a política de atualização que cada nodo deverá implementar no recebimento de mensagens de keep alive.
+
 
 \begin{algorithm}[htb]
     \begin{center}
         \begin{algorithmic}[1]
-            \STATE \textbf{function} $\text{Police(ip, resources)}$
-            \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip)}$
+            \STATE \textbf{function} $\text{Police(ip, epoch, myEpoch)}$
+            \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip) and epochHasChanged(epoch, myEpoch)}$
+            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{update(ip, resources)};$
             \STATE \hspace{\algorithmicindent} \textbf{else}
+            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{insert(ip, resources)};$
+            \STATE \hspace{\algorithmicindent} $\text{sendAcknowledgement(ip)};$
+
         \end{algorithmic}
     \end{center}
     \caption[Política de atualização de recursos]%
         {\label{alg:alg1} Política de atualização de recursos.}%
     \end{algorithm}
 
-No momento em que o nodo recebe a resposta de sua Requisição, contendo os recursos providos pelo nodo requisitado, aquele deverá armazenar as informações em uma estrutura de dados adequada.
+No momento em que o nodo recebe a resposta da chamada de função \textit{getResourcesCoAP}, contendo os recursos providos pelo nodo requisitado, aquele deverá armazenar as informações em uma estrutura de dados adequada.
 Essa estrutura de dados estará implementada em todos os nodos da névoa, e a partir dela será possível realizar o gerenciamento dos recursos de forma simples e eficiente.
 O trecho abaixo define, por ora, o formato dos dados que serão utilizados em cada nodo.
-
-
-% SJF: Requisição -> requisição
 
 
 \begin{verbatim}
     Fog = {
         string ip;
         string resources[];    
-    }
+    };
     Fog fogs[];
     string myResources[];
 \end{verbatim}
@@ -167,8 +184,8 @@ deixou de fazer parte do processo. Assim, a manutenção dos estados será abord
 Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois, sem esse procedimento seria difícil
 saber quando remover um IP da lista de recursos. Portanto, para manter a lista atualizada, este protocolo implementará mensagens desse tipo.
 
-As mensagens de keep alive serão transmitidas sob broadcast em um intervalo de trinta segundos, porém, este é apenas um valor inicial, e conforme o desenvolvimento do projeto esse
-parâmetro pode ser ajustado para que a solução obtenha uma eficiência satisfatória.
+As mensagens de keep alive serão transmitidas sob multicast em um intervalo de trinta segundos, porém, este é apenas um valor arbitrário, e pode ser alterado
+para que a solução obtenha uma melhor eficiência.
 Após o recebimento da mensagem de keep alive, os nodos deverão respondê-las indicando que ainda estão em operação.
 Caso o nodo não responda a mensagem de keep alive, este será marcado como parcialmente inativo pelo remetente da mensagem.
 Quando o nodo solicitante realizar outra mensagem de keep alive e o nodo que já estava marcado com parcialmente inativo não responder, o mesmo será removido da lista de recursos do
@@ -181,11 +198,15 @@ Consequentemente, não é possível saber quando um edge device parou ou iniciou
 Para que seja possível detectarmos esse tipo de comportamento, o protocolo proposto deverá implementar a técnica denominada \textit{época},
 e servirá para que os nodos mantenham ciênia sobre o estado dos edge devices de seus vizinhos de rede.
 Para isso, uma nova propriedade denominada \textit{epoch}, do tipo inteiro, deverá ser adicionada a estrutura de dados, e estará presente tanto no nodo em si quanto em cada item da lista de fogs.
-O valor da época será incrementado em uma unidadade a toda alteração observada no nodo, seja pelo acréscimo ou pela remoção de edge devices.
+O valor da \textit{epoch} será incrementado em uma unidadade a toda alteração observada no nodo, seja pelo acréscimo ou pela remoção de edge devices.
 
-A partir de agora, então, todas as mensagens de keep alive deverão conter a época do nodo que está realizando o broadcast.
+Esta observação atuará realizando requisições para a URI /.well-known/core no endereço de loopback do próprio nodo,
+assim, obterá seus recursos disponíveis e poderá comparar com os que possui armazenado em sua estrutura de dados.
+Havendo divergências, como mencionado anteriormente, a propriedade época será incrementada em uma unidadade.
+
+A partir de agora, então, todas as mensagens de keep alive deverão conter a época do nodo que está realizando o multicast.
 Assim, todo nodo que receber a mensagem poderá comparar a época recebida na mensagem com a época que possui armazenada em sua lista de fogs referente ao remetente da mensagen.
-Havendo divergencia de épocas, este poderá realizar uma nova requisição para atualizar sua lista de recursos referente aquele nodo em específico.
+Havendo divergência de épocas, este deverá realizar uma nova requisição para atualizar sua lista de recursos referente aquele nodo em específico.
 
 Após as alterações realizadas na estrutura de dados, abaixo temos o novo modelo que suportará as funcionalidades propostas.
 \begin{verbatim}
@@ -200,20 +221,39 @@ Após as alterações realizadas na estrutura de dados, abaixo temos o novo mode
     int epoch;
 \end{verbatim}
 
-Além do protocolo de mapeamento em sí, este trabalho disponibilizará uma API para o gerenciamento de recursos locais.
-Esta API deverá ser executada localmente e possuirá métodos para listagem, remoção e criação de recursos, portanto, a partir dela será possível
-simularmos o gerenciamento, inserção e remoção, de recursos que o protocolo implementará.
 
-\section{Resultados esperados}
+\section{Configuração da névoa}
 
-Espera-se que este trabalho resulte em um protocolo funcional, simples e que seja capaz de descobrir e sincronizar recursos de dispositivos sob computação em névoa.
-Além disso, temos como objetivo fazer com que a névoa configure-se de forma autônoma, ou seja, quando um recurso ou nodo entrar ou sair da rede, a mesma deverá manter-se coerente.
-Esta coerência significa manter o estado global dos recursos acessível a todos os nodos.
+Em um primeiro momento a névoa foi construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}.
+Para os primeiros experimentos a ferramente obteve resultados satisfatórios, porém quando foi necessário escalarmos a solução ela se mostrou ineficiente.
+A ineficiência estava na criação dos nodos e na execução dos protocolos CoAP e Resource Mapping, uma vez que eles deveriam ser executados em todos os hosts da rede e não havia 
+meios de automatizar este processo.
 
-A névoa será construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}. Nela é possível criar as mais variadas topologias de redes,
-além disso, cada nodo adicionado à topologia contém um terminal Unix que pode ser utilizado para executar comandos. Então, os comandos da API descritos acima,
-podem ser utilizados a fim de auxiliar o gerenciamento dos recursos locais dos nodos. A ferramenta de monitoramento de trafego de rede, Wireshark\cite{wireshark}, será utilizada em conjunto com o 
-CORE, pois, nela será possível apurarmos se os pacotes estão sendo enviados e recebidos da forma correta.
+Esta automatização foi implantada utilizando a SDK de gerenciamento de containers Docker para Python, desta forma, foi possível criarmos névoas com tamanhos arbitrários
+e, portanto, a ascalabilidade da solução pode ser amplamente testada\cite{dockersdk:2018}.
+
+Cabe ressaltar que containers Docker\cite{docker:2018} consomem recursos da maquina hospedeira, tais como memória, processamento, disco rígido.
+Portanto, a criacao de containers da névoa fica atrelado a quantidade de recursos que esse host pode proporcionar.
+
+Cada container executa uma distrbuição Linux chamada Alpine, de aproximadamente 5Mb, que possui apenas as funcioalidades básicas de um sistema operacional\cite{linuxalpine:2018}.
+O fato da distribuição ser Open Source faz com que existam customizações da mesma, e neste projeto foi utilizado a customização que inclui a versão 2.7 da linguagem Python.
+Tal customização faz-se necessária para a execução dos protocolos CoAP e Resource Mapping.
+
+
+A Figura \ref{fig:fig13} não só expõe os elementos que fazem parte da arquitetura de cada container, mas também os detalha em nível de requisições entre sí.
+
+
+\begin{figure}[H]
+    \centering\includegraphics[width=.8\textwidth]{fig13.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig13} Fog node container.}
+\end{figure}
+
+
+Além do protocolo de mapeamento em sí, este trabalho dispõe de uma API para o gerenciamento de recursos providos pelos CoAP servers.
+Esta API possui métodos para listagem, remoção e criação de recursos e deve ser executada a partir do host que gerencia os container.
+Assim, conseguimos proporcionar o dinamismo que a névoa necessita para a realização de testes no comportamento do protocolo de sincronização.
+
 
 
 \section{Validações}

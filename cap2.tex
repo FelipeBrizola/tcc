@@ -91,9 +91,24 @@ Analisando a resposta é fácil notar que este servidor possui dois recursos dis
 sendo ambos com interface do tipo sensor, porém, um utilizado para medir temperatura e outro para medir intensidade de luz.
 Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação transcorreu com sucesso.
 
+\section{MQTT - Message Queue Telemetry Transport}
+
+O protocolo MQTT, inicialmente desenvolvido pela IBM, tornou-se um padrão para aplicações de IoT, pois mostrou-se escalável em ambientes com redes instáveis.
+Essa caracteristica dá-se pelo fato do protocolo implementar um modelo asíncrono de troca de mensagens, deste modo, o emissor mantém-se desacoplado do receptor.
+Diferentemente de um modelo cliente/servidor, HTTP por exemplo, o protocolo faz uso da técnica \textit{publish/subscribe}.
+Essa técnica requer a existência de duas entidades, clientes e ao menos um \textit{message broker}.
+O funcionamento básico do protocolo em questão é demonstrado em três passos.
+
+\begin{itemize}
+    \item O cliente pode assinar qualquer tópico de mensagens no broker, e para tal precisa conectar-se a ele. Essa conexão pode ser uma conexão TCP/IP simples ou uma conexão TLS criptografada para mensagens sensíveis.
+    \item O cliente publica as mensagens em um tópico do broker.
+    \item Em seguida, o broker encaminha a mensagem a todos os clientes que assinam esse tópico.
+\end{itemize}
+
+Baseado nas caracteristicas descritas, notamos que o protocolo necessita de um ponto central de comunicação entre os nodos do sistema.
+Este ponto, o broker, faz com que o MQTT não seja um protocolo desentralizado, pois caso o broker fique inoperante toda a rede MQTT passa a ficar desatualizada.
 
 \section{Trabalhos Relacionados}
-
 
 Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
 A especificação do protocolo e um \textit{middleware}, capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
@@ -106,7 +121,6 @@ Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de 
 A plataforma Iotivity \cite{iotivity}, mantida pela Linux Foundation, tem como cerne a criação de um padrão no qual os dispositivos conectam-se entre si e a Internet.
 Esta plataforma possui quatro funcionalidades chaves, sendo elas, descoberta de recursos, gerenciamento de dados e dispositivos e transmissão de dados.
 
-
 Focaremos na descoberta de recursos providos pela plataforma, pois, é o item que mais se assemelha a proposta deste trabalho de conclusão.
 Como primeiro passo para a execução desta funcionalidade, devemos registrar o recurso utilizando sua URI e IP.
 Após o registro, é possível especificarmos que este recurso é observável, ou seja, quando houver algum evento o nodo que o registrou como observável será notificado.
@@ -114,17 +128,18 @@ Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui me
 
 \begin{table}[htb!]
     \centering
-    \caption{Comparação das funcionalidades deste TCC perante a outros.}
-    \begin{tabular}{|l|c|c|c|c|}
+    \caption{Comparação de funcionalidades.}
+    \begin{tabular}{|l|c|c|c|c|c|}
     \hline
-                                   & CoAP  & S. Lewson & Iotivity & Protocolo proposto \\ \hline
-    Complexidade                   & média & média     & alta     & baixa              \\ \hline
-    Bluetooth                      & não   & sim       & sim      & não                \\ \hline
-    Lan                            & sim   & sim       & sim      & sim                \\ \hline
-    Internet                       & sim   & não       & sim      & não                \\ \hline
-    Map. de recursos               & sim   & sim       & sim      & sim                \\ \hline
-    Manutenção do map. de recursos & não   & não       & não      & sim                \\ \hline
-    Recursos observáveis           & n/a   & n/a       & sim      & não                \\ \hline
+                                   & CoAP  & S. Lewson & Iotivity & MQTT  & Protocolo proposto \\ \hline
+    Complexidade                   & média & média     & alta     & baixa & baixa              \\ \hline
+    Bluetooth                      & não   & sim       & sim      & sim   & não                \\ \hline
+    Lan                            & sim   & sim       & sim      & sim   & sim                \\ \hline
+    Internet                       & sim   & não       & sim      & sim   & não                \\ \hline
+    Map. de recursos               & sim   & sim       & sim      & sim   & sim                \\ \hline
+    Sincronização do map.          & não   & não       & não      & não   & sim                \\ \hline
+    Recursos observáveis           & n/a   & n/a       & sim      & sim   & não                \\ \hline
+    Distribuído                    & não   & não       & não      & não   & sim                \\ \hline
     \end{tabular}
     \label{table:tab1}
 \end{table}

@@ -9,15 +9,16 @@
 \contentsline {section}{\numberline {2.1}\MakeTextUppercase {BGP}}{11}
 \contentsline {section}{\numberline {2.2}\MakeTextUppercase {CoAP}}{11}
 \contentsline {section}{\numberline {2.3}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{13}
-\contentsline {section}{\numberline {2.4}\MakeTextUppercase {Trabalhos Relacionados}}{14}
-\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{15}
-\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{15}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{16}
-\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Middleware}}{16}
-\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descoberta de recursos}}{17}
-\contentsline {subsection}{\numberline {3.2.3}\MakeTextUppercase {Gerenciamento de recursos}}{18}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Resultados esperados}}{21}
-\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~o}es}}{21}
-\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{21}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia e cronograma de desenvolvimento}}{25}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{26}
+\contentsline {section}{\numberline {2.4}\MakeTextUppercase {MQTT - Message Queue Telemetry Transport}}{14}
+\contentsline {section}{\numberline {2.5}\MakeTextUppercase {Trabalhos Relacionados}}{14}
+\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Proposta de trabalho}}{16}
+\contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{16}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {M\IeC {\'o}dulos}}{18}
+\contentsline {subsection}{\numberline {3.2.1}\MakeTextUppercase {Gerenciamento de recursos}}{18}
+\contentsline {subsection}{\numberline {3.2.2}\MakeTextUppercase {Descoberta de recursos}}{18}
+\contentsline {subsection}{\numberline {3.2.3}\MakeTextUppercase {Gerenciamento de recursos}}{20}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Configura\IeC {\c c}\IeC {\~a}o da n\IeC {\'e}voa}}{23}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~o}es}}{24}
+\contentsline {section}{\numberline {3.5}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{24}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Metodologia e cronograma de desenvolvimento}}{28}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{29}
