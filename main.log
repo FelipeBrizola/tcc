@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  4 NOV 2018 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  7 NOV 2018 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -979,11 +979,6 @@ Underfull \vbox (badness 10000) detected at line 106
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 106--106
-\T1/phv/m/n/12 Trabalho de Con-clu-são I apre-sen-tado
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 106--106
 \T1/phv/m/n/12 como re-qui-sito par-cial à ob-ten-ção
  []
@@ -1129,7 +1124,7 @@ Underfull \hbox (badness 10000) detected at line 94
  []
 
 [13]
-Underfull \hbox (badness 10000) detected at line 111
+Underfull \hbox (badness 10000) detected at line 113
 \T1/phv/b/n/12 2.5
  []
 
@@ -1193,49 +1188,49 @@ Underfull \hbox (badness 10000) detected at line 111
  []
 
 [20 <./fig6.png>] [21] [22]
-Underfull \hbox (badness 10000) detected at line 225
+Underfull \hbox (badness 10000) detected at line 224
 \T1/phv/b/n/12 3.3
  []
 
-<fig13.png, id=98, 1600.98125pt x 711.65875pt>
+[23] <fig13.png, id=101, 1600.98125pt x 711.65875pt>
 File: fig13.png Graphic file (type png)
  <use fig13.png>
-Package pdftex.def Info: fig13.png used on input line 247.
+Package pdftex.def Info: fig13.png used on input line 246.
 (pdftex.def)             Requested size: 386.95897pt x 172.00694pt.
- [23]
-Underfull \hbox (badness 10000) detected at line 259
+
+Underfull \hbox (badness 10000) detected at line 258
 \T1/phv/b/n/12 3.4
  []
 
 
-Underfull \hbox (badness 10000) detected at line 265
+Underfull \hbox (badness 10000) detected at line 264
 \T1/phv/b/n/12 3.5
  []
 
-<fig7.png, id=102, 1495.7481pt x 1018.2843pt>
+[24 <./fig13.png>] <fig7.png, id=106, 1495.7481pt x 1018.2843pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
-Package pdftex.def Info: fig7.png used on input line 277.
+Package pdftex.def Info: fig7.png used on input line 276.
 (pdftex.def)             Requested size: 386.95897pt x 263.42697pt.
- [24 <./fig13.png>] <fig8.png, id=107, 1495.7481pt x 1004.3121pt>
+ <fig8.png, id=107, 1495.7481pt x 1004.3121pt>
 File: fig8.png Graphic file (type png)
  <use fig8.png>
-Package pdftex.def Info: fig8.png used on input line 290.
+Package pdftex.def Info: fig8.png used on input line 289.
 (pdftex.def)             Requested size: 386.95897pt x 259.81241pt.
  [25 <./fig7.png>] <fig9.png, id=113, 1495.7481pt x 1014.4299pt>
 File: fig9.png Graphic file (type png)
  <use fig9.png>
-Package pdftex.def Info: fig9.png used on input line 298.
+Package pdftex.def Info: fig9.png used on input line 297.
 (pdftex.def)             Requested size: 386.95897pt x 262.42984pt.
  <fig10.png, id=114, 1495.7481pt x 923.1288pt>
 File: fig10.png Graphic file (type png)
  <use fig10.png>
-Package pdftex.def Info: fig10.png used on input line 307.
+Package pdftex.def Info: fig10.png used on input line 306.
 (pdftex.def)             Requested size: 386.95897pt x 238.81053pt.
  [26 <./fig8.png> <./fig9.png>] <fig11.png, id=120, 1495.7481pt x 929.1513pt>
 File: fig11.png Graphic file (type png)
  <use fig11.png>
-Package pdftex.def Info: fig11.png used on input line 319.
+Package pdftex.def Info: fig11.png used on input line 318.
 (pdftex.def)             Requested size: 386.95897pt x 240.36853pt.
 ) [27 <./fig10.png> <./fig11.png>]
 \openout2 = `cap4.aux'.
@@ -1282,14 +1277,14 @@ Underfull \hbox (badness 1325) in paragraph at lines 161--165
 ) [30] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
  7063 strings out of 492995
- 93962 string characters out of 6132704
+ 93959 string characters out of 6132704
  176738 words of memory out of 5000000
  10297 multiletter control sequences out of 15000+600000
  49766 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,9n,37p,559b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,9n,37p,559b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (30 pages, 3840495 bytes).
+Output written on main.pdf (30 pages, 3840688 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream

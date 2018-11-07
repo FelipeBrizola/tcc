@@ -96,7 +96,9 @@ Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação tran
 O protocolo MQTT, inicialmente desenvolvido pela IBM, tornou-se um padrão para aplicações de IoT, pois mostrou-se escalável em ambientes com redes instáveis.
 Essa caracteristica dá-se pelo fato do protocolo implementar um modelo asíncrono de troca de mensagens, deste modo, o emissor mantém-se desacoplado do receptor.
 Diferentemente de um modelo cliente/servidor, HTTP por exemplo, o protocolo faz uso da técnica \textit{publish/subscribe}.
-Essa técnica requer a existência de duas entidades, clientes e ao menos um \textit{message broker}.
+
+
+Essa técnica requer a existência de duas entidades, clientes e ao menos uma entidade central denominada \textit{broker}.
 O funcionamento básico do protocolo em questão é demonstrado em três passos.
 
 \begin{itemize}
@@ -106,7 +108,7 @@ O funcionamento básico do protocolo em questão é demonstrado em três passos.
 \end{itemize}
 
 Baseado nas caracteristicas descritas, notamos que o protocolo necessita de um ponto central de comunicação entre os nodos do sistema.
-Este ponto, o broker, faz com que o MQTT não seja um protocolo desentralizado, pois caso o broker fique inoperante toda a rede MQTT passa a ficar desatualizada.
+Neste caso o broker faz com que o MQTT seja um protocolo centralizado, pois, caso ele fique inoperante toda a rede MQTT passa a ficar desatualizada.
 
 \section{Trabalhos Relacionados}
 
@@ -143,7 +145,3 @@ Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui me
     \end{tabular}
     \label{table:tab1}
 \end{table}
-
-
-
-

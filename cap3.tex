@@ -113,22 +113,21 @@ já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois, a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
 Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
 Esses controles são realizados em duas esferas, a primeira trata da inserção ou remoção de um nodo na rede,
-já a segunda refere-se a inserção ou remoção de um edge device, vinculado a um nodo qualquer.
-% SJF: Ta um pouco confuso esse parágrafo. Tenta remover as vírgulas, reescrevendo e mudando um pouco o estilo.
-
+já a segunda refere-se a inserção ou remoção de um edge device vinculado a um nodo qualquer.
 
 
 Inicialmente abordaremos a entrada e saída de nodos da névoa, e para esta subseção será utilizado o cenário da Figura \ref{fig:fig6} quando necessário.
 O Pseudocódigo \ref{alg:alg1} demonstra, de forma sucinta, a política de atualização que cada nodo deverá implementar no recebimento de mensagens de keep alive.
 
 
-\begin{algorithm}[htb]
+\begin{algorithm}[H]
     \begin{center}
         \begin{algorithmic}[1]
             \STATE \textbf{function} $\text{Police(ip, epoch, myEpoch)}$
-            \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip) and epochHasChanged(epoch, myEpoch)}$
-            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
-            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{update(ip, resources)};$
+            \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip)}$
+            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} \textbf{if} $\text{epochHasChanged(epoch, myEpoch)};$
+            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
+            \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{update(ip, resources)};$
             \STATE \hspace{\algorithmicindent} \textbf{else}
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{insert(ip, resources)};$
@@ -281,7 +280,7 @@ iremos exemplificar os cenários de testes elencados abaixo.
 
 O item 1 não será demonstrado agora, uma vez que as Subseções 3.2.2 e 3.2.3 já o fizeram, portanto, partiremos diretamente para o segundo item da listagem.
 
-O segundo item trata de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
+O segundo item trata-se de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
 Na Figura \ref{fig:fig8}, o nodo FN1 não respondeu, no tempo previamente estipulado, a mensagem de keep alive enviada pelo nodo FN2, 
 portanto, o nodo destinatário foi marcado em FN2 como parcialmente inativo.
 
