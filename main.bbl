@@ -56,14 +56,6 @@ Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
   13--16.
 \bibAnnoteFile{Bonomi:2012}
 
-\bibitem{vscode}
-Corporation, M. \urlprefix\url{https://code.visualstudio.com}, 2018.
-\bibAnnoteFile{vscode}
-
-\bibitem{github}
-Corporation, M. \urlprefix\url{https://github.com}, 2018.
-\bibAnnoteFile{github}
-
 \bibitem{rfc2616}
 Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;
   Berners-Lee, T. \enquote{Rfc 2616, hypertext transfer protocol -- http/1.1}.
@@ -75,11 +67,6 @@ Foundation, L. \enquote{Iotivity}.
   \urlprefix\url{https://iotivity.org/documentation/architecture-overview},
   2018.
 \bibAnnoteFile{iotivity}
-
-\bibitem{python}
-Foundation, P.~S. \enquote{Python software foundation}.
-  \urlprefix\url{https://python.org}, 2018.
-\bibAnnoteFile{python}
 
 \bibitem{socketPython}
 Foundation, P.~S. \enquote{socket — low-level networking interface}.

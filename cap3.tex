@@ -1,4 +1,5 @@
 \chapter{\label{chap:chap3} Proposta de trabalho}
+% Sergio: será que o título não poderia ser "Projeto", ou "Desenvolvimento do projeto" ou "Organização do projeto" ou "Descrição do protocolo e organização do projeto"?
 
 Seguindo a organização arquitetural da Figura \ref{fig:fig1}, a proposta deste trabalho é fazer com que um \textit{fog node} conheça, de forma autônoma, os recursos disponibilizados por seus vizinhos.
 Assim, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede, portanto,
@@ -123,7 +124,7 @@ O Pseudocódigo \ref{alg:alg1} demonstra, de forma sucinta, a política de atual
 \begin{algorithm}[H]
     \begin{center}
         \begin{algorithmic}[1]
-            \STATE \textbf{function} $\text{Police(ip, epoch, myEpoch)}$
+            \STATE \textbf{function} $\text{Policy(ip, epoch, myEpoch)}$
             \STATE \hspace{\algorithmicindent} \textbf{if} $\text{exists(ip)}$
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} \textbf{if} $\text{epochHasChanged(epoch, myEpoch)};$
             \STATE \hspace{\algorithmicindent} \hspace{\algorithmicindent} \hspace{\algorithmicindent} $\text{resources = getResourcesCoAP(ip, '/.well-known/core')};$
@@ -222,6 +223,7 @@ Após as alterações realizadas na estrutura de dados, abaixo temos o novo mode
 
 
 \section{Configuração da névoa}
+% Sergio: Essa seção pode fazer parte do capítulo 4, seção "Ambiente de simulação"
 
 Em um primeiro momento a névoa foi construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}.
 Para os primeiros experimentos a ferramente obteve resultados satisfatórios, porém quando foi necessário escalarmos a solução ela se mostrou ineficiente.
@@ -256,6 +258,7 @@ Assim, conseguimos proporcionar o dinamismo que a névoa necessita para a realiz
 
 
 \section{Validações}
+% Sergio: Essa seção, juntamente com os cenários de teste, podem fazer parte do capítulo 4
 
 A validação deste trabalho consiste em realizar simulações que faça com que o protocolo execute suas funcionalidades de acordo com os resultados descritos na Seção anterior, sendo assim, 
 algumas situações devem ocorrer para que as validações sejam realizadas.
