@@ -68,11 +68,6 @@ Foundation, L. \enquote{Iotivity}.
   2018.
 \bibAnnoteFile{iotivity}
 
-\bibitem{socketPython}
-Foundation, P.~S. \enquote{socket — low-level networking interface}.
-  \urlprefix\url{https://docs.python.org/3/library/socket.html}, 2018.
-\bibAnnoteFile{socketPython}
-
 \bibitem{rfc2046}
 Freed, N.; Borenstein, D. N.~S. \enquote{{Multipurpose Internet Mail Extensions
   (MIME) Part Two: Media Types}}.
@@ -100,10 +95,6 @@ Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
 Mell, P.~M.; Grance, T. \enquote{Sp 800-145. the nist definition of cloud
   computing}, \bbltechrep{}, Gaithersburg, MD, United States, 2011.
 \bibAnnoteFile{Mell:2011}
-
-\bibitem{Rekhter:1995}
-Rekhter, Y.; Li, T. \enquote{A border gateway protocol 4 (bgp-4)}, 1995.
-\bibAnnoteFile{Rekhter:1995}
 
 \bibitem{rfc6347}
 Rescorla, E.; Modadugu, N. \enquote{{Datagram Transport Layer Security Version

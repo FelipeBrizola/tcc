@@ -3,26 +3,30 @@
 Este capítulo apresentará alguns protocolos de comunicação e técnicas que servirão de apoio para o desenvolvimento deste TCC. 
 Por fim, alguns trabalhos relacionados a área serão expostos, bem como o posicionamento deste trabalho perante aos demais.
 
-% Sergio: incluir as seções abaixo enumeradas. Não é necessário que sejam demasiadamente longas, porém são importantes para alinhar o leitor:
+\section{Taxonomias em Arquiteturas de Computadores}
 % -Taxonomias em Arquiteturas de Computadores (FLYNN - taxonomia, TANENBAUM, A. Organização estruturada de computadores)
+\section{Máquinas multiprocessadas}
 % -Máquinas multiprocessadas / paralelismo
+\section{Modelos para troca de mensagens em aplicações}
 % -Modelos para troca de mensagens em aplicações: cliente/servidor (sockets, RPC, RMI, MPI...), Publish/Subscribe, Webservices, Microservices 
-% As seções abaixo (CoAP, Rest, MQTT, fora os trabalhos relacionados) podem fazer parte de uma só seção. Ou seja, viram subseções de uma seção chamada "Protocolos relacionados".
 
-\section{BGP}
-% Sergio: não sei se incluir o BGP aqui é relevante. Talvez faz como conversamos na reunião, se existe alguma semelhança do teu protocolo com BGP, joga isso pra outra seção e referencia ou explica um pouco do BGP lá.
 
-O protocolo BGP está situado na quinta camada, a camada de aplicação, do modelo de referência TCP/IP \cite{tanenbaum2011redes}.
-Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protocolo que embasarão o restante deste trabalho.
+% \section{BGP}
+% % Sergio: não sei se incluir o BGP aqui é relevante. Talvez faz como conversamos na reunião, se existe alguma semelhança do teu protocolo com BGP, joga isso pra outra seção e referencia ou explica um pouco do BGP lá.
 
-\begin{itemize}
-    \item A responsabilidade deste protocolo é manter a troca de informações sobre roteamentos entre sistemas autônomos \cite{Rekhter:1995}.
-    \item O roteador ao entrar na rede pela primeira vez deve-se conectar ao seu vizinho. Após a conexão estabelecida, os roteadores compartilham entre sí suas tabelas de roteamento \cite{Rekhter:1995}.
-    \item Posteriormente, as atualizações nas tabelas dos roteadores dão-se de forma incremental à medida que as mudanças na rotas ocorrem \cite{Rekhter:1995}.
-    \item Mensagens de \textit{keep alive} são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
-\end{itemize}
+% O protocolo BGP está situado na quinta camada, a camada de aplicação, do modelo de referência TCP/IP \cite{tanenbaum2011redes}.
+% Abaixo, de forma sucinta, elencaremos algumas funcionalidades básicas do protocolo que embasarão o restante deste trabalho.
 
-\section{CoAP}
+% \begin{itemize}
+%     \item A responsabilidade deste protocolo é manter a troca de informações sobre roteamentos entre sistemas autônomos \cite{Rekhter:1995}.
+%     \item O roteador ao entrar na rede pela primeira vez deve-se conectar ao seu vizinho. Após a conexão estabelecida, os roteadores compartilham entre sí suas tabelas de roteamento \cite{Rekhter:1995}.
+%     \item Posteriormente, as atualizações nas tabelas dos roteadores dão-se de forma incremental à medida que as mudanças na rotas ocorrem \cite{Rekhter:1995}.
+%     \item Mensagens de \textit{keep alive} são trocadas periodicamente a fim de garantir conectividade entre os roteadores \cite{Rekhter:1995}.
+% \end{itemize}
+
+\section{Protocolos relacionados}
+
+\subsection{CoAP}
 
 Especificado pela RFC-7252, o CoAP, protocolo de aplicação restrita, foi projetado para aplicações máquina-a-máquina
 e tem como foco a transferência de documentos web entre nodos com recursos limitados em redes de baixa qualidade\cite{rfc7252}.
@@ -59,7 +63,7 @@ Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é 
 \textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na seção a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
 estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
 
-\section{Constrained RESTful Environments (CoRE) Link Format}
+\subsection{Constrained RESTful Environments (CoRE) Link Format}
 
 Segundo a RFC-6690, a finalidade desta especificação é realizar REST em nodos com recursos limitados, sendo tal característica importante em aplicações maquina-a-maquina\cite{rfc6690}.
 Em aplicação deste tipo é primordial que as configurações não dependam de interação de humanos, portanto, devem manter seu funcionamento sem configurações estáticas.
@@ -97,7 +101,7 @@ Analisando a resposta é fácil notar que este servidor possui dois recursos dis
 sendo ambos com interface do tipo sensor, porém, um utilizado para medir temperatura e outro para medir intensidade de luz.
 Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação transcorreu com sucesso.
 
-\section{MQTT - Message Queue Telemetry Transport}
+\subsection{MQTT - Message Queue Telemetry Transport}
 
 O protocolo MQTT, inicialmente desenvolvido pela IBM, tornou-se um padrão para aplicações de IoT, pois mostrou-se escalável em ambientes com redes instáveis.
 Essa caracteristica dá-se pelo fato do protocolo implementar um modelo asíncrono de troca de mensagens, deste modo, o emissor mantém-se desacoplado do receptor.

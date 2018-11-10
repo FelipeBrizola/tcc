@@ -7,8 +7,6 @@ A level-1 auxiliary file: cap3.aux
 A level-1 auxiliary file: cap4.aux
 The style file: tcc-num.bst
 Database file #1: bibliography.bib
-Warning--entry type for "socketPython" isn't style-file defined
---line 82 of file bibliography.bib
 Warning--entry type for "ciscoSystems" isn't style-file defined
 --line 90 of file bibliography.bib
 Warning--entry type for "edgeDevices" isn't style-file defined
@@ -23,8 +21,6 @@ Warning--entry type for "docker:2018" isn't style-file defined
 --line 135 of file bibliography.bib
 Warning--entry type for "linuxalpine:2018" isn't style-file defined
 --line 149 of file bibliography.bib
-Warning--entry type for "Rekhter:1995" isn't style-file defined
---line 173 of file bibliography.bib
 Warning--entry type for "coregui" isn't style-file defined
 --line 323 of file bibliography.bib
 Warning--entry type for "iotivity" isn't style-file defined
@@ -44,47 +40,46 @@ Warning--empty journal in Spencer:2015
 Warning--empty volume and number in Spencer:2015
 Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
-Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 24 entries,
+You've used 22 entries,
             2900 wiz_defined-function locations,
-            773 strings with 9193 characters,
-and the built_in function-call counts, 10850 in all, are:
-= -- 917
-> -- 253
+            762 strings with 8959 characters,
+and the built_in function-call counts, 10062 in all, are:
+= -- 854
+> -- 234
 < -- 4
-+ -- 109
-- -- 84
-* -- 694
-:= -- 1255
-add.period$ -- 62
-call.type$ -- 24
-change.case$ -- 114
++ -- 100
+- -- 78
+* -- 649
+:= -- 1157
+add.period$ -- 57
+call.type$ -- 22
+change.case$ -- 105
 chr.to.int$ -- 0
-cite$ -- 64
-duplicate$ -- 1089
-empty$ -- 1007
-format.name$ -- 96
-if$ -- 2288
+cite$ -- 59
+duplicate$ -- 1012
+empty$ -- 930
+format.name$ -- 89
+if$ -- 2122
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 197
-newline$ -- 115
-num.names$ -- 38
-pop$ -- 586
+int.to.str$ -- 22
+missing$ -- 182
+newline$ -- 107
+num.names$ -- 34
+pop$ -- 539
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 83
 quote$ -- 0
-skip$ -- 286
+skip$ -- 265
 stack$ -- 0
-substring$ -- 610
-swap$ -- 407
+substring$ -- 575
+swap$ -- 380
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
-warning$ -- 16
-while$ -- 65
-width$ -- 26
-write$ -- 231
-(There were 27 warnings)
+type$ -- 86
+warning$ -- 15
+while$ -- 59
+width$ -- 24
+write$ -- 214
+(There were 24 warnings)
