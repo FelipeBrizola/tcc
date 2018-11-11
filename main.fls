@@ -297,6 +297,15 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 OUTPUT cap3.aux
 INPUT cap3.tex
 INPUT cap3.tex
+INPUT fig14.png
+INPUT ./fig14.png
+INPUT ./fig14.png
+INPUT fig15.png
+INPUT ./fig15.png
+INPUT ./fig15.png
+INPUT fig16.png
+INPUT ./fig16.png
+INPUT ./fig16.png
 INPUT fig2.png
 INPUT ./fig2.png
 INPUT ./fig2.png

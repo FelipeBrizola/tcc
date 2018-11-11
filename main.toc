@@ -14,15 +14,15 @@
 \contentsline {subsection}{\numberline {2.4.2}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{12}
 \contentsline {subsection}{\numberline {2.4.3}\MakeTextUppercase {MQTT - Message Queue Telemetry Transport}}{13}
 \contentsline {section}{\numberline {2.5}\MakeTextUppercase {Trabalhos Relacionados}}{14}
-\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Descri\IeC {\c c}\IeC {\~a}o do protocolo e organiza\IeC {\c c}\IeC {\~a}o do projeto}}{16}
+\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Projeto}}{16}
 \contentsline {section}{\numberline {3.1}\MakeTextUppercase {Arquitetura}}{16}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Formato de mensagens}}{16}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{18}
-\contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Gerenciamento de recursos}}{18}
-\contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Descoberta de recursos}}{18}
-\contentsline {subsection}{\numberline {3.3.3}\MakeTextUppercase {Gerenciamento de recursos}}{20}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Ambiente de simula\IeC {\c c}\IeC {\~a}o e estudos de caso}}{24}
-\contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{24}
-\contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{25}
-\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{28}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{29}
+\contentsline {subsection}{\numberline {3.1.1}\MakeTextUppercase {Premissas}}{18}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Formato de mensagens}}{19}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{20}
+\contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Descoberta de recursos}}{21}
+\contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Gerenciamento de recursos}}{22}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Ambiente de simula\IeC {\c c}\IeC {\~a}o e estudos de caso}}{26}
+\contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{26}
+\contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{27}
+\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{30}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{31}

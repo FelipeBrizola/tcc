@@ -1,19 +1,69 @@
-\chapter{\label{chap:chap3} Descrição do protocolo e organização do projeto}
+\chapter{\label{chap:chap3} Projeto}
 % Sergio: será que o título não poderia ser "Projeto", ou "Desenvolvimento do projeto" ou "Organização do projeto" ou "Descrição do protocolo e organização do projeto"?
 
-Seguindo a organização arquitetural da Figura \ref{fig:fig1}, a proposta deste trabalho é fazer com que um \textit{fog node} conheça, de forma autônoma, os recursos disponibilizados por seus vizinhos.
-Assim, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede, portanto,
-o nodo que possui o sensor de chuva saberia que existe um outro nodo na rede capaz de medir a temperatura, por exemplo.
 
-
-Podemos observar na topologia da Figura \ref{fig:fig1}, que os \textit{fog nodes} não possuem uma um nodo central como servidor.
-Em razão da topologia distribuída, se for necessário escalarmos a quantidade de nodos na rede, a mesma não deverá sofrer impactos significativos de performance.
-
-Nas seções a seguir abordaremos a arquitetura, formato de mensagens, módulos e submódulos que compõem o projeto.
+A organização e a descrição deste projeto serão apresentados neste capítulo.
+Para tal, nas seções a seguir abordaremos a arquitetura, o formato de mensagens, módulos e submódulos que o constituem.
 
 \section{Arquitetura}
 
-Explicar a arquitetura com imagens xalalalal
+Seguindo a topologia da Figura \ref{fig:fig14}, podemos observar que os \textit{fog nodes} não possuem uma um nodo central como servidor.
+Sendo assim, os fog nodes e os edge devices comunicam-se utilizando o protocolo CoAP.
+Dessa maneira, as Requisições entre fog nodes só ocorre caso o nodo requisitante saiba, previamente, o endereço relativo ao nodo solicitado.
+ 
+
+Em razão da topologia distribuída, a arquitetura deve ser capaz de mapear e sincronizar, de forma autônoma, os recursos providos pelos fog nodes.
+Desta forma, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede e, portanto,
+o nodo que possui o sensor de chuva saberia que existe um outro nodo em sua LAN capaz de medir a temperatura, por exemplo.
+
+\begin{figure}[H]
+    \centering\includegraphics[width=.5\textwidth]{fig14.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig14} Topologia LAN.}
+\end{figure}
+
+A arquitetura proposta, no que se refere a comunicação entre fog nodes e edge devices, utilizou como base um fork da implementação do protocolo CoAP\cite{coapimpl:2018}.
+Esse fork, implementado em Python e de acordo com a RFC-7252, consiste em dois grandes modulos: \textit{CoAP-Server} e \textit{CoAP-Client}.
+O primeiro, é responsável pelo recebimento das Requisições, e foi alterado com o objetivo de proporcionar o dinamismo na inserção e remoção dos recursos sem a necessidade de sua reinicialização.
+O segundo módulo é encarregado de realizar as Requisições diretamente aos nodos, e para essa funcionalidade nenhuma alteração no projeto original foi realizada.
+
+
+Baseado na Figura \ref{fig:fig15}, podemos notar que a arquitetura de um fog node é composta por três grandes camadas, sendo elas hardware, sistema operacional e aplicações.
+
+Na camada de hardware podemos utilizar desde um dispositivo com limitações de recursos até um aparelho com grande capacidade computacional.
+Já na camada de sistema operacional, temos a liberdade de utilizar uma vasta diversidade de distribuições Unix.
+Por fim, na camada de aplicação devemos executar os processos \textit{CoAP-Server}, \textit{CoAP-Client} e \textit{Resource-Mapping}.
+
+\begin{figure}[H]
+    \centering\includegraphics[width=.5\textwidth]{fig15.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig15} Arquitetura de um fog node.}
+\end{figure}
+
+A Figura \ref{fig:fig16} exibe, de maneira detalhada, os processos envolvidos na execução no protocolo \textit{Resource-Mapping}.
+Nela podemos destacar a presença de três entidades principais, \textit{Observer}, \textit{Keep Alive} e \textit{Receptor}.
+Abaixo elencaremos as funcionalidades de cada entidade.
+
+\begin{itemize}
+    \item \textit{Observer} é responsável por manter o estado de seus proprios recursos atualizados.
+    \item \textit{Keep Alive} tem a missão de manter seus vizinhos de rede atualizados sobre seu estado de operação.
+    \item \textit{Receptor} é incumbido de receber e processar as requições recebidas via \textit{Resource-Mapping}.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering\includegraphics[width=.5\textwidth]{fig16.png}
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig16} Arquitetura Resource-Mapping.}
+\end{figure}
+
+
+\subsection{Premissas}
+
+Para que a solução opere corretamente, tanto no mapeamento quanto na sincronização de recursos, algumas premissas necessitam ser expostas.
+
+Como proposição inicial temos que o sistema operacional deve ser Unix e o usuário corrente deve dispor de privilégios de root.
+Além disso, a linguagem de programação Python em sua versão 2.7 com seu respectivo gerenciador de pacotes, \textit{PIP}\cite{pip}, devem estar instalados.
+Por fim, os dados que os edge devices fornecerão aos fog nodes serão tratados de forma simulada.
 
 
 \section{Formato de mensagens}
@@ -67,21 +117,6 @@ Atrelado à cada endereço IP, deverá haver uma lista com os recursos providos 
 Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis na névoa.
 
 O detalhamento das funcionalides que o projeto deverá dispor, tal como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
-
-\subsection{Gerenciamento de recursos}
-
-Observando a Figura \ref{fig:fig1}, notamos que há comunicação entre um fog node e seus respectivos edge devices.
-A comunicação entre estes será executada utilizando o protocolo CoAP, todavia os dados que os edge devices fornecerão aos fog nodes serão tratados de forma simulada.
-
-O gerenciamento de recursos deverá prever alguns casos que, por vezes, possam suceder. Dentre alguns dos eventos possíveis está
-o acréscimo ou remoção de um edge device vinculado à algum fog node.
-Utilizar CoAP para as funcioalidade de inclusão e exclusão de recursos faz sentido, uma vez que este prevê meios para tal.
-
-Segundo a definição de POST do protocolo CoAP, sua função é determinada pelo servidor que está recebendo a requisição e pelo do recurso referenciado na URI.
-Geralmente a sua utilização resulta na criação ou atualização de um recurso\cite{rfc7252}.
-Já a mesma RFC define o método DELETE como sendo um método de remoção de recursos baseado em URIs\cite{rfc7252}.
-Nessa perspectiva, portanto, o uso do método POST faz sentido para gerarmos \textit{(CoRE) Link Format} e o método DELETE para removermos.
-
 
 \subsection{Descoberta de recursos}
 
@@ -185,7 +220,7 @@ demonstramos abaixo o estado em que se encontram os dados armazenados em FN2 ap�
 \end{verbatim}
 
 Visto isso, é imprescindível que os nodos mantenham seus dados consistentes, pois, após adicionar o novo nodo em sua lista de fogs, o protocolo precisa ser capaz de perceber quando um elemento
-deixou de fazer parte do processo. Assim, a manutenção dos estados será abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP.
+deixou de fazer parte do processo. Assim, a manutenção dos estados será abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP\cite{Rekhter:1995}.
 Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois, sem esse procedimento seria difícil
 saber quando remover um IP da lista de recursos. Portanto, para manter a lista atualizada, este protocolo implementará mensagens desse tipo.
 

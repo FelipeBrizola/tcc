@@ -53,8 +53,10 @@ A computação em névoa é um assunto relativamente novo e teve sua primeira de
 
 Atualmente a computação em névoa tornou-se um paradigma próprio e não mais uma mera extensão da computação em nuvem, e desse
 paradigma criou-se o conceito de \textit{fog nodes}, que abrangem desde dispositivos finais com baixa capacidade computacional até servidores poderosos na nuvem.
-Assim, os \textit{fog nodes} passam a fazer parte da implementação dos serviços em nuvem.
-O que torna a computação em névoa interessante é a capacidade dessa variedade de dispositivos cooperarem uns com os outros de forma distribuída.
+
+Desta forma, os \textit{fog nodes} passam a fazer parte da implementação dos serviços em nuvem como uma camada intermediária entre ela os edge devices.
+Essa camada intermediária tem o propósito de aumentar a eficiência, tanto no processamento quanto no armazenamento de informações, além de reduzir a quantidade de dados transportados dos edge devices para a nuvem\cite{fogdefinition:2016}.
+
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.5\textwidth]{fig1.pdf}
@@ -63,8 +65,8 @@ O que torna a computação em névoa interessante é a capacidade dessa variedad
 \end{figure}
 
 Em uma abordagem \textit{bottom-up}, podemos descrever a arquiterura da computação em névoa como um conjunto de \textit{edge devices}\footnote{Dispositivo que controla o fluxo de dados no limite entre duas redes \cite{edgeDevices}.} que se comunicam com os \textit{fog nodes}, e esses com servidores centrais.
-Entretanto, a comunicação entre os \textit{fog nodes} e os servidores centrais nao é essencial para a execução dos serviços em névoa \cite{DBLP:journals/corr/RomanLM16}.
-A Figura \cite{archfog:2017} representa este conceito de computação em névoa.
+Entretanto, a comunicação entre os \textit{fog nodes} e os servidores centrais não é essencial para a execução dos serviços em névoa \cite{DBLP:journals/corr/RomanLM16}.
+A Figura \ref{fig:fig1} representa este conceito de computação em névoa.
 
 \section{Motivação e justificativa}
 
@@ -73,7 +75,7 @@ Os problemas referentes à padronização, descoberta e sincronização são os 
 no qual um membro da rede, seja ele um dispositivo com limitações de memória e processamento ou um computador, mapeiem os recursos disponíveis e divulgue os seus na rede.
 
 A ausência desses mecanismos faz com que cada membro interaja exclusivamente com seus recursos, portanto, não há compartilhamento entre os nodos da rede.
-O motivo pelo qual os nodos não consomem os recursos de seus vizinhos está no desconhecimento da existência dos mesmos, sendo assim, é inviável utilização de um recurso que não esteja atrelado ao próprio nodo.
+O motivo pelo qual os nodos não consomem os recursos de seus vizinhos está no desconhecimento dos mesmos, sendo assim, é inviável utilização de um recurso que não esteja atrelado ao próprio nodo.
 Este compartilhamento de informações, referente aos nodos e recursos, justifica o desenvolvimento deste trabalho.
 
 

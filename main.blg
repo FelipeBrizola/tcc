@@ -21,10 +21,18 @@ Warning--entry type for "docker:2018" isn't style-file defined
 --line 135 of file bibliography.bib
 Warning--entry type for "linuxalpine:2018" isn't style-file defined
 --line 149 of file bibliography.bib
+Warning--entry type for "Rekhter:1995" isn't style-file defined
+--line 173 of file bibliography.bib
 Warning--entry type for "coregui" isn't style-file defined
 --line 323 of file bibliography.bib
 Warning--entry type for "iotivity" isn't style-file defined
 --line 353 of file bibliography.bib
+Warning--entry type for "fogdefinition:2016" isn't style-file defined
+--line 361 of file bibliography.bib
+Warning--entry type for "coapimpl:2018" isn't style-file defined
+--line 369 of file bibliography.bib
+Warning--entry type for "pip" isn't style-file defined
+--line 377 of file bibliography.bib
 Warning--to sort, need author or key in definition:panaceia
 Warning--to sort, need author or key in archfog:2017
 Warning--to sort, need author or key in dockersdk:2018
@@ -40,46 +48,47 @@ Warning--empty journal in Spencer:2015
 Warning--empty volume and number in Spencer:2015
 Warning--missing institution in Mell:2011
 Warning--empty numpages in Mell:2011
+Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
-You've used 22 entries,
+You've used 26 entries,
             2900 wiz_defined-function locations,
-            762 strings with 8959 characters,
-and the built_in function-call counts, 10062 in all, are:
-= -- 854
-> -- 234
+            780 strings with 9439 characters,
+and the built_in function-call counts, 11596 in all, are:
+= -- 979
+> -- 267
 < -- 4
-+ -- 100
-- -- 78
-* -- 649
-:= -- 1157
-add.period$ -- 57
-call.type$ -- 22
-change.case$ -- 105
++ -- 116
+- -- 88
+* -- 734
+:= -- 1349
+add.period$ -- 68
+call.type$ -- 26
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 1012
-empty$ -- 930
-format.name$ -- 89
-if$ -- 2122
+cite$ -- 68
+duplicate$ -- 1163
+empty$ -- 1083
+format.name$ -- 100
+if$ -- 2448
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 182
-newline$ -- 107
-num.names$ -- 34
-pop$ -- 539
+int.to.str$ -- 26
+missing$ -- 211
+newline$ -- 123
+num.names$ -- 42
+pop$ -- 628
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 96
 quote$ -- 0
-skip$ -- 265
+skip$ -- 306
 stack$ -- 0
-substring$ -- 575
-swap$ -- 380
+substring$ -- 645
+swap$ -- 433
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
-warning$ -- 15
-while$ -- 59
-width$ -- 24
-write$ -- 214
-(There were 24 warnings)
+type$ -- 102
+warning$ -- 16
+while$ -- 71
+width$ -- 28
+write$ -- 249
+(There were 29 warnings)

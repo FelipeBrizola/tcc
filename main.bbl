@@ -68,6 +68,11 @@ Foundation, L. \enquote{Iotivity}.
   2018.
 \bibAnnoteFile{iotivity}
 
+\bibitem{pip}
+Foundation, P.~S. \enquote{A package manager for python packages}.
+  \urlprefix\url{https://pypi.org/project/pip/}, 2018.
+\bibAnnoteFile{pip}
+
 \bibitem{rfc2046}
 Freed, N.; Borenstein, D. N.~S. \enquote{{Multipurpose Internet Mail Extensions
   (MIME) Part Two: Media Types}}.
@@ -95,6 +100,16 @@ Lewson, S. \enquote{Fog protocol and fogkit: A json-based protocol and
 Mell, P.~M.; Grance, T. \enquote{Sp 800-145. the nist definition of cloud
   computing}, \bbltechrep{}, Gaithersburg, MD, United States, 2011.
 \bibAnnoteFile{Mell:2011}
+
+\bibitem{fogdefinition:2016}
+of~Things~Agenda, I. \enquote{Definition fog computing}.
+  \urlprefix\url{https://internetofthingsagenda.techtarget.com/definition/fog-computing-fogging},
+  2016.
+\bibAnnoteFile{fogdefinition:2016}
+
+\bibitem{Rekhter:1995}
+Rekhter, Y.; Li, T. \enquote{A border gateway protocol 4 (bgp-4)}, 1995.
+\bibAnnoteFile{Rekhter:1995}
 
 \bibitem{rfc6347}
 Rescorla, E.; Modadugu, N. \enquote{{Datagram Transport Layer Security Version
@@ -134,6 +149,12 @@ Shelby, Z.; Hartke, K.; Bormann, C. \enquote{{The Constrained Application
 Tanenbaum, A.; Wetherall, D.; Translations, O. \enquote{Redes de computadores}.
   PRENTICE HALL BRASIL, 2011.
 \bibAnnoteFile{tanenbaum2011redes}
+
+\bibitem{coapimpl:2018}
+Tanganelli, G. \enquote{Coapthon is a python library to the coap protocol
+  aligned with the rfc}.
+  \urlprefix\url{https://github.com/FelipeBrizola/CoAPthon}, 2018.
+\bibAnnoteFile{coapimpl:2018}
 
 \bibitem{Vaquero:2014}
 Vaquero, L.~M.; Rodero-Merino, L. \enquote{Finding your way in the fog: Towards
