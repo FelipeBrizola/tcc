@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  15 NOV 2018 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  15 NOV 2018 20:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1293,11 +1293,16 @@ Underfull \hbox (badness 10000) detected at line 108
  []
 
 
-Underfull \hbox (badness 10000) detected at line 110
+Underfull \hbox (badness 10000) detected at line 120
 \T1/phv/m/n/12 4.3.2
  []
 
-) [31] (./main.bbl
+<fig17.png, id=140, 2103.86pt x 3737.965pt>
+File: fig17.png Graphic file (type png)
+ <use fig17.png>
+Package pdftex.def Info: fig17.png used on input line 132.
+(pdftex.def)             Requested size: 386.95897pt x 687.52014pt.
+) [31] [32 <./fig17.png>] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 66--70
 []\T1/phv/m/n/12 Foundation, L. ``Io-ti-vity''. Cap-tu-rado em: $https :
  []
@@ -1312,7 +1317,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--109
 []\T1/phv/m/n/12 of Things Agenda, I. ``De-fi-ni-tion fog com-pu-ting''. Cap-tu-rado em:
  []
 
-[32
+[33
 
 
 ]
@@ -1325,20 +1330,20 @@ Underfull \hbox (badness 1325) in paragraph at lines 160--164
 []\T1/phv/m/n/12 Vaquero, L. M.; Rodero-Merino, L. ``Finding your way in the fog: Towards a
  []
 
-) [33] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
+) [34] (./main.aux (./cap1.aux) (./cap2.aux) (./cap3.aux) (./cap4.aux)) ) 
 Here is how much of TeX's memory you used:
- 7073 strings out of 492995
- 94121 string characters out of 6132704
- 175753 words of memory out of 5000000
- 10306 multiletter control sequences out of 15000+600000
+ 7079 strings out of 492995
+ 94196 string characters out of 6132704
+ 175764 words of memory out of 5000000
+ 10311 multiletter control sequences out of 15000+600000
  49766 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,9n,37p,559b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (33 pages, 3729393 bytes).
+Output written on main.pdf (34 pages, 18007616 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

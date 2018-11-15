@@ -105,8 +105,6 @@ um Requisição diretamente ao nodo para que possa atualizar sua lista de recurs
 
 As Subseções a seguir foram criadas com o intuito de simular os cenários de testes previamente descritos.
 
-\subsection{Métricas no agronegócio}
-
 \subsection{Segurança residencial}
 
 Como cenário para esse estudo de caso, podemos imaginar um bairro no qual os moradores estejam preucupados com a segurança de suas propriedades.
@@ -118,43 +116,20 @@ Dessa maneira, as casas terão condições de monitorar eventos suspeitos que po
 Um exemplo de monitoramento está no uso das imagens captadas pelas câmeras de vigilância instaladas na casa A, mas acessados a partir da casa B.
 Além disso, cada sensor adicionado ou removido estará, automaticamente, disponível a todos os fog nodes do bairro.
 
-% Podemos variar o cenario exposto imaginando propriedades rurais aonde a conexão a internet, por vezes, nao possui uma boa qualidade.
-% Nessa perspectiva 
 
-% Uma variante do cenario exposto
+\subsection{Métricas no agronegócio}
 
-% a troca desse cenario urbano por um cenario rural aonde a conexão a internet geralmente nao possui uma boa qualidade.
+Como cenário para esse estudo de caso, podemos imaginar uma fazenda que faz criação porcos.
+Nessa fazenda os animais se alimentam em coxos individuais que possuem sensores que captam a temperatura, o peso, e a idenficação do animal, bem como medem os níveis de comida e água
+que são engeridos.
 
-% Uma variante desse cenário urbano está 
+Quando o animal entra nesse ambiente, o fog node é ligado e seus sensores começam a atuar nas medições.
+Enquanto isso, um fog node com conexão a internet é encarregado de coletar os dados, processá-los e enviá-los a um servidor de armazenamento na nuvem.
+Por fim, com o objetivo de economizar energia elétrica, os fog nodes e os sensores são desligados quando os animais deixam os coxos.
+A Figura \ref{fig:fig17} ilustra o cenário exposto.
 
-% Podemos trocar casas por propredades rurais aonde a conexão a internet geralmente nao possui uma boa qualidade.
-
-% Podemos considerar uma variante desse estudo de caso 
-
-% Uma variante desse estudo de casa pode ser considerado
-
-
-% Uma variante desse estudo de caso pode se dar em propriedades rurais, onde a conexão a internet, por vezes, não tem uma boa qualidade.
-% A comunicação entre as propriedades, neste caso, dependeria apenas de uma rede e funcionaria bem
-
-
-
-
-% Como pano de fundo para esse estudo de caso, podemos imaginar um condomínio fechado de resi
-% saber das condicoes climaticas em diferentes areas da propriedade
-
-% Em um cenário no qual
-% Tendo como cenário base uma fazenda de grande porte, pode ser interessante para o dono, a fim de maximizar sua produtividade, coletar métricas de sua propriedade.
-
-
-% Essas métricas podem ser colhidas atravez de sensores que medem temperatura ambinte, velocidade do vento, humidade do ar, nutrientes do solo, niveis de agua nos bebedores dos animais, etc..
-
-
-
-
-
-% Seção: "Estudos de caso" (pelo menos 2) -
-% pensar em alguma aplicação, onde por exemplo tens um conjunto amplo de recursos (por exemplo, diversos sensores e atuadores, luminárias, cameras, etc, tipo o prédio 32 da PUC).
-% Pensa que os usuários de tal ambiente (alunos, professores, etc) são potenciais fornecedores de recursos (o alunos é identificado por seu smartphone na rede local e está inscrito em diversas disciplinas).
-% Informações sobre presença (ou ausência) poderiam ser registradas, o aluno poderia ser informado sobre a sala/lab que deveria se dirigir juntamente com o tópico da aula... Sei lá!
-% Tem que pensar em uma forma se simular, de maneira simplificada, um cenário como esse.
+\begin{figure}[H]
+    \centering\includegraphics[width=.8\textwidth]{fig17.png} 
+    \caption%[This figure has a shorter caption now]%
+    {\label{fig:fig17} Coxo de porcos.}
+\end{figure}
