@@ -21,8 +21,10 @@
 \contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{20}
 \contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Descoberta de recursos}}{21}
 \contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Gerenciamento de recursos}}{22}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Ambiente de simula\IeC {\c c}\IeC {\~a}o e estudos de caso}}{26}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Valida\IeC {\c c}\IeC {\~o}es}}{26}
 \contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{26}
 \contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{27}
-\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{30}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{31}
+\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{31}
+\contentsline {subsection}{\numberline {4.3.1}\MakeTextUppercase {M\IeC {\'e}tricas no agroneg\IeC {\'o}cio}}{31}
+\contentsline {subsection}{\numberline {4.3.2}\MakeTextUppercase {Seguran\IeC {\c c}a residencial}}{31}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{32}
