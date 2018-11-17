@@ -1,12 +1,12 @@
 \chapter{\label{chap:chap4} Validações}
-% Sérgio: Este capítulo poderia se chamar "Ambiente de simulação e estudos de caso"
+
 
 Este capítulo abordará temas relacionados as validações realizadas neste projeto.
-Sendo assim, nas seções a seguir apresentaremos temas como ambientes de simulações, cenários de testes e, por fim, estudos de casos
+Sendo assim, nas seções a seguir serão apresentados temas como ambientes de simulações, cenários de testes e, por fim, estudos de casos
 
 
 \section{Ambiente de simulação}
-% Seção: "Ambiente de simulação" - descrever como tu montou tuas simulações, e como foi organizado o ambiente, etc..
+
 Em um primeiro momento a névoa foi construída de forma simulada utilizando a ferramenta Common Open Research Emulator (CORE)\cite{coregui}.
 Para os primeiros experimentos a ferramente obteve resultados satisfatórios, porém quando foi necessário escalarmos a solução ela se mostrou ineficiente.
 A ineficiência estava na criação dos nodos e na execução dos protocolos CoAP e Resource Mapping, uma vez que eles deveriam ser executados em todos os hosts da rede e não havia 
@@ -15,8 +15,9 @@ meios de automatizar este processo.
 Esta automatização foi implantada utilizando a SDK de gerenciamento de containers Docker para Python, desta forma, foi possível criarmos névoas com tamanhos arbitrários
 e, portanto, a ascalabilidade da solução pode ser amplamente testada\cite{dockersdk:2018}.
 
-Cabe ressaltar que containers Docker\cite{docker:2018} consomem recursos da maquina hospedeira, tais como memória, processamento, disco rígido.
-Portanto, a criacao de containers da névoa fica atrelado a quantidade de recursos que esse host pode proporcionar.
+Cabe ressaltar que containers Docker\cite{docker:2018} consomem recursos da máquina hospedeira, tais como memória, processamento e disco rígido.
+Portanto, a criação de instâncias de nodos (executando em containers) está limitada à quantidade de memória e capacidade de processamento da máquina hospedeira.
+
 
 Cada container executa uma distrbuição Linux chamada Alpine, de aproximadamente 5Mb, que possui apenas as funcioalidades básicas de um sistema operacional\cite{linuxalpine:2018}.
 O fato da distribuição ser Open Source faz com que existam customizações da mesma, e neste projeto foi utilizado a customização que inclui a versão 2.7 da linguagem Python.
@@ -24,11 +25,11 @@ Tal customização faz-se necessária para a execução dos protocolos CoAP e Re
 
 
 A Figura \ref{fig:fig13} não só expõe os elementos que fazem parte da arquitetura de cada container, mas também os detalha em nível de requisições entre sí.
-
+Conforme apresentado na figura, o primeiro nodo recebe uma informação atualizada sobre a época de um segundo fog node, o que faz com que o primeiro realize uma requição \textit{/.well-known/core} a fim de obter os recursos disponiveis pelo segundo.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig13.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption [Fog node container]
     {\label{fig:fig13} Fog node container.}
 \end{figure}
 
@@ -38,12 +39,10 @@ Esta API possui métodos para listagem, remoção e criação de recursos e deve
 Assim, conseguimos proporcionar o dinamismo que a névoa necessita para a realização de testes no comportamento do protocolo de sincronização.
 
 
-
 \section{Cenários de teste}
 % Seção: "Cenários de teste"
 
-
-Utilizando como base a Figura \ref{fig:fig7}, e partindo do pressuposto que todos os nodos da névoa já estão com seus recursos sincronizados corretamente,
+Utilizando como base a Figura \ref{fig:fig7}, que retrata uma névoa com três fog nodes e seus respectivos edge devices, e partindo do pressuposto que todos os nodos da névoa já estão com seus recursos sincronizados corretamente,
 iremos exemplificar os cenários de testes elencados abaixo.
 
 \begin{enumerate}
@@ -54,28 +53,28 @@ iremos exemplificar os cenários de testes elencados abaixo.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig7.png}
-    \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig7} Topologia base para cenário de teste.}
+    \caption[Topologia base para cenários de teste]
+    {\label{fig:fig7} Topologia base para cenários de teste.}
 \end{figure}
 
 O primeiro item da listagem acima não será demonstrado agora, uma vez que as Subseções 3.3.1 e 3.3.2 já o fizeram, portanto, partiremos diretamente para o segundo item.
 
-O segundo item trata-se de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar este funcionamento.
-Na Figura \ref{fig:fig8}, o nodo FN1 não respondeu, no tempo previamente estipulado, a mensagem de keep alive enviada pelo nodo FN2, 
+O segundo item trata-se de quando um nodo deixa de responder mensagens de keep alive, e a Figura \ref{fig:fig7} será utilizada para ilustrar esse funcionamento.
+Na Figura \ref{fig:fig8}, que representa a continuação da Figura \ref{fig:fig7}, o nodo FN1 não respondeu no tempo previamente estipulado a mensagem de keep alive enviada pelo nodo FN2, 
 portanto, o nodo destinatário foi marcado em FN2 como parcialmente inativo.
 
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig8.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption [Nodo marcado como parcialmente inativo]
     {\label{fig:fig8} Nodo marcado como parcialmente inativo.}
 \end{figure}
 
-Já a Figura \ref{fig:fig9} demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
+Já a Figura \ref{fig:fig9} representada como continuação da Figura \ref{fig:fig8}, demonstra que o nodo FN1 não respondeu novamente à mensagem de keep alive enviada por FN2, por isso, foi removido de sua lista de recursos. 
 
 \begin{figure}[h!]
     \centering\includegraphics[width=.8\textwidth]{fig9.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption [Nodo removido da lista de recursos]
     {\label{fig:fig9} Nodo removido da lista de recursos.}
 \end{figure}
 
@@ -84,7 +83,7 @@ pela remoção de um.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig10.png} 
-    \caption%[This figure has a shorter caption now]%
+    \caption[Edge device fora de operação]
     {\label{fig:fig10} Edge device fora de operação.}
 \end{figure}
 
@@ -96,14 +95,14 @@ um Requisição diretamente ao nodo para que possa atualizar sua lista de recurs
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig11.png} 
-    \caption%[This figure has a shorter caption now]%
+    \caption[Estado da névoa após atualização de recursos]
     {\label{fig:fig11} Estado da névoa após atualização de recursos.}
 \end{figure}
 
 
 \section{Estudos de caso}
 
-As Subseções a seguir foram criadas com o intuito de simular os cenários de testes previamente descritos.
+As Subseções a seguir foram criadas com o intuito de ilustrar os testes previamente descritos, e para tal dois cenários serão propostos.
 
 \subsection{Segurança residencial}
 
@@ -119,17 +118,19 @@ Além disso, cada sensor adicionado ou removido estará, automaticamente, dispon
 
 \subsection{Métricas no agronegócio}
 
+
 Como cenário para esse estudo de caso, podemos imaginar uma fazenda que faz criação porcos.
 Nessa fazenda os animais se alimentam em coxos individuais que possuem sensores que captam a temperatura, o peso, e a idenficação do animal, bem como medem os níveis de comida e água
-que são engeridos.
+que são consumidos.
 
 Quando o animal entra nesse ambiente, o fog node é ligado e seus sensores começam a atuar nas medições.
 Enquanto isso, um fog node com conexão a internet é encarregado de coletar os dados, processá-los e enviá-los a um servidor de armazenamento na nuvem.
-Por fim, com o objetivo de economizar energia elétrica, os fog nodes e os sensores são desligados quando os animais deixam os coxos.
+Por fim, com o objetivo de economizar energia elétrica, os fog nodes e os sensores são desligados quando os animais deixam o local de alimentação.
 A Figura \ref{fig:fig17} ilustra o cenário exposto.
 
+
 \begin{figure}[H]
-    \centering\includegraphics[width=.8\textwidth]{fig17.png} 
-    \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig17} Coxo de porcos.}
+    \centering\includegraphics[width=1\textwidth]{fig17.png} 
+    \caption[ Métricas alimentares na criação de porcos]
+    {\label{fig:fig17} Métricas alimentares na criação de porcos.}
 \end{figure}

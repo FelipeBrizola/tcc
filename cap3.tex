@@ -1,26 +1,25 @@
 \chapter{\label{chap:chap3} Projeto}
-% Sergio: será que o título não poderia ser "Projeto", ou "Desenvolvimento do projeto" ou "Organização do projeto" ou "Descrição do protocolo e organização do projeto"?
+
 
 
 A organização e a descrição deste projeto serão apresentados neste capítulo.
 Para tal, nas seções a seguir abordaremos a arquitetura, o formato de mensagens, módulos e submódulos que o constituem.
 
-\section{Arquitetura}
+\section { Arquitetura }
 
 Seguindo a topologia da Figura \ref{fig:fig14}, podemos observar que os \textit{fog nodes} não possuem uma um nodo central como servidor.
 Sendo assim, os fog nodes e os edge devices comunicam-se utilizando o protocolo CoAP.
-Dessa maneira, as Requisições entre fog nodes só ocorre caso o nodo requisitante saiba, previamente, o endereço relativo ao nodo solicitado.
- 
-
-Em razão da topologia distribuída, a arquitetura deve ser capaz de mapear e sincronizar, de forma autônoma, os recursos providos pelos fog nodes.
-Desta forma, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede e, portanto,
-o nodo que possui o sensor de chuva saberia que existe um outro nodo em sua LAN capaz de medir a temperatura, por exemplo.
+Dessa maneira, as Requisições entre fog nodes só ocorre caso o nodo requisitante saiba, previamente, o endereço IP relativo ao nodo solicitado.
 
 \begin{figure}[H]
-    \centering\includegraphics[width=.5\textwidth]{fig14.png}
-    \caption%[This figure has a shorter caption now]%
+    \centering\includegraphics[width=.8\textwidth]{fig14.png}
+    \caption [Topologia LAN]
     {\label{fig:fig14} Topologia LAN.}
 \end{figure}
+
+Em razão da topologia distribuída, a arquitetura deve ser capaz de mapear e sincronizar, de forma autônoma, os recursos providos pelos fog nodes.
+Dessa forma, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede e, portanto,
+o nodo que possui o sensor de chuva saberia que existe um outro nodo em sua LAN capaz de medir a temperatura, por exemplo.
 
 A arquitetura proposta, no que se refere a comunicação entre fog nodes e edge devices, utilizou como base um fork da implementação do protocolo CoAP\cite{coapimpl:2018}.
 Esse fork, implementado em Python e de acordo com a RFC-7252, consiste em dois grandes modulos: \textit{CoAP-Server} e \textit{CoAP-Client}.
@@ -28,15 +27,15 @@ O primeiro, é responsável pelo recebimento das Requisições, e foi alterado c
 O segundo módulo é encarregado de realizar as Requisições diretamente aos nodos, e para essa funcionalidade nenhuma alteração no projeto original foi realizada.
 
 
-Baseado na Figura \ref{fig:fig15}, podemos notar que a arquitetura de um fog node é composta por três grandes camadas, sendo elas hardware, sistema operacional e aplicações.
+Observando a Figura \ref{fig:fig15}, podemos notar que a arquitetura de um fog node é composta por três grandes camadas, sendo elas hardware, sistema operacional e aplicações.
 
-Na camada de hardware podemos utilizar desde um dispositivo com limitações de recursos até um aparelho com grande capacidade computacional.
+Na camada de hardware podemos utilizar desde um dispositivo com limitações de memória e CPU até um aparelho com grande capacidade computacional.
 Já na camada de sistema operacional, temos a liberdade de utilizar uma vasta diversidade de distribuições Unix.
 Por fim, na camada de aplicação devemos executar os processos \textit{CoAP-Server}, \textit{CoAP-Client} e \textit{Resource-Mapping}.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.5\textwidth]{fig15.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption[Arquitetura de um fog node]
     {\label{fig:fig15} Arquitetura de um fog node.}
 \end{figure}
 
@@ -52,7 +51,7 @@ Abaixo elencaremos as funcionalidades de cada entidade.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.5\textwidth]{fig16.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption[Arquitetura Resource-Mapping]
     {\label{fig:fig16} Arquitetura Resource-Mapping.}
 \end{figure}
 
@@ -63,7 +62,8 @@ Para que a solução opere corretamente, tanto no mapeamento quanto na sincroniz
 
 Como proposição inicial temos que o sistema operacional deve ser Unix e o usuário corrente deve dispor de privilégios de root.
 Além disso, a linguagem de programação Python em sua versão 2.7 com seu respectivo gerenciador de pacotes, \textit{PIP}\cite{pip}, devem estar instalados.
-Por fim, os dados que os edge devices fornecerão aos fog nodes serão tratados de forma simulada.
+Por fim, os dados que os edge devices fornecerão aos fog nodes serão tratados de forma simulada, pois o funcionamento exato dos sensores e atuadores
+fogem do escopo desse projeto. As Seções 4.3.1 e 4.3.2 utilizarão essas simulações a fim de validar o protocolo.
 
 
 \section{Formato de mensagens}
@@ -75,7 +75,7 @@ A fim de facilitar a compreensão da arquitetura deste projeto, a Figura \ref{fi
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.8\textwidth]{fig2.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption[Pilha de protocolos]
     {\label{fig:fig2} Pilha de protocolos.}
 \end{figure}
 
@@ -86,14 +86,13 @@ A utilização de IPv4 na camada de rede justifica-se pelo fato do protocolo ser
 se comparado ao IPv6, mas não existem impedimentos para que implementações futuras utilizem IPv6 na camada de rede.
 
 Manter o contexto de conexão entre os nodos, utilizando TCP por exemplo, despenderia uma quantidade de trafego desnecessário na rede.
-Visto que a simplicidade é um dos objetivos deste trabalho e que transitar uma pequena quantidade de dados a cada requisição aumenta o desempenho da solução,
-a utilização de datagramas UDP faz sentido neste protocolo
+Visto que o baixo custo na transmissão de dados é um dos objetivos desse trabalho, a utilização de datagramas UDP faz sentido para que a se aumente o desempenho da solução.
 
 A Figura \ref{fig:fig12} apresenta, de forma detalhada, a estrutura dos dados contidos no protocolo \textit{Resource Mapping}.
 
 \begin{figure}[htb!]
     \centering\includegraphics[width=.8\textwidth]{fig12.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption[Detalhamento Resource Mapping]
     {\label{fig:fig12} Detalhamento Resource Mapping.}
 \end{figure}
 
@@ -112,11 +111,11 @@ Os maiores desafios neste modelo proposto são manter o estado global dos recurs
 
 \section{Módulos}
 
-De forma geral, cada nodo da rede deverá manter uma lista com os endereços IP`s que fazem parte do mapeamento.
-Atrelado à cada endereço IP, deverá haver uma lista com os recursos providos por este.
-Em vista disso, cada nodo portará um mapeamento global de recursos disponíveis na névoa.
+De forma geral, cada nodo da rede mantém uma lista com os endereços IP`s que fazem parte do mapeamento.
+Atrelado à cada endereço IP,  há uma lista com os recursos providos por este.
+Em vista disso, cada nodo contém um mapeamento global de recursos disponíveis na névoa.
 
-O detalhamento das funcionalides que o projeto deverá dispor, tal como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
+O detalhamento das funcionalides que o projeto possui, tal como ilustrações relacionadas aos fluxos, serão abordadas nas proximas subseções.
 
 \subsection{Descoberta de recursos}
 
@@ -132,7 +131,7 @@ Vale lembrar que este fluxo de requisição e resposta, utilizando a URI \textit
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig5.png}
-    \caption%[This figure has a shorter caption now]%
+    \caption[Nodo entrando na névoa]
     {\label{fig:fig5} Nodo entrando na névoa.}
 \end{figure}
 
@@ -144,14 +143,14 @@ já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig6.png}
-    \caption%[This figure has a shorter caption now]%
-    {\label{fig:fig6} Nodos realizando Requisição.}
+    \caption [Requisição entre fog nodes]
+    {\label{fig:fig6} Requisição entre fog nodes.}
 \end{figure}
 
 
 \subsection{Gerenciamento de recursos}
 
-A manutenibilidade da lista de recursos globais é relevante para que a implementação do protocolo tenha sucesso, pois, a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
+A manutenibilidade da lista de recursos globais é relevante para que o protocolo funcione de acordo com a especificação, pois, a névoa deverá saber quando um nodo, ou recurso dele, deixou de fazer parte da rede.
 Para tal, faz-se necessário a utilização de alguns mecanismos de controle.
 Esses controles são realizados em duas esferas, a primeira trata da inserção ou remoção de um nodo na rede,
 já a segunda refere-se a inserção ou remoção de um edge device vinculado a um nodo qualquer.
@@ -222,7 +221,7 @@ demonstramos abaixo o estado em que se encontram os dados armazenados em FN2 ap�
 Visto isso, é imprescindível que os nodos mantenham seus dados consistentes, pois, após adicionar o novo nodo em sua lista de fogs, o protocolo precisa ser capaz de perceber quando um elemento
 deixou de fazer parte do processo. Assim, a manutenção dos estados será abordado de forma similar as mensagens de \textit{keep alive} utilizadas no protocolo BGP\cite{Rekhter:1995}.
 Mensagens de keep alive são adotadas para que os nodos da rede avisem seus vizinhos que ainda estão em operação, pois, sem esse procedimento seria difícil
-saber quando remover um IP da lista de recursos. Portanto, para manter a lista atualizada, este protocolo implementará mensagens desse tipo.
+saber quando remover um IP da lista de recursos. Portanto, para manter a lista atualizada, este protocolo implementa mensagens desse tipo.
 
 As mensagens de keep alive serão transmitidas sob multicast em um intervalo de trinta segundos, porém, este é apenas um valor arbitrário, e pode ser alterado
 para que a solução obtenha uma melhor eficiência.
@@ -235,7 +234,7 @@ Para realizar este controle será preciso adicionar na estrutura \textit{Fog} a 
 As mensagens de keep alive mantém os nodos informados sobre o estado de seus vizinhos, mas não conseguem indicar informações relacionadas aos edge device.
 Consequentemente, não é possível saber quando um edge device parou ou iniciou sua operação em um nodo ativo.
 
-Para que seja possível detectarmos esse tipo de comportamento, o protocolo proposto deverá implementar a técnica denominada \textit{época},
+Para que seja possível detectar esse tipo de comportamento, o protocolo proposto deverá implementar a técnica denominada \textit{época},
 e servirá para que os nodos mantenham ciênia sobre o estado dos edge devices de seus vizinhos de rede.
 Para isso, uma nova propriedade denominada \textit{epoch}, do tipo inteiro, deverá ser adicionada a estrutura de dados, e estará presente tanto no nodo em si quanto em cada item da lista de fogs.
 O valor da \textit{epoch} será incrementado em uma unidadade a toda alteração observada no nodo, seja pelo acréscimo ou pela remoção de edge devices.
