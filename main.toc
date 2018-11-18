@@ -1,29 +1,29 @@
 \select@language {brazil}
 \select@language {brazil}
 \select@language {brazil}
-\contentsline {chapter}{\numberline {1}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{8}
-\contentsline {section}{\numberline {1.1}\MakeTextUppercase {Contextualiza\IeC {\c c}\IeC {\~a}o}}{8}
-\contentsline {section}{\numberline {1.2}\MakeTextUppercase {Motiva\IeC {\c c}\IeC {\~a}o e justificativa}}{9}
-\contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{10}
-\contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{11}
-\contentsline {section}{\numberline {2.1}\MakeTextUppercase {Modelos para troca de mensagens em aplica\IeC {\c c}\IeC {\~o}es}}{11}
-\contentsline {section}{\numberline {2.2}\MakeTextUppercase {Protocolos relacionados}}{11}
-\contentsline {subsection}{\numberline {2.2.1}\MakeTextUppercase {CoAP}}{11}
-\contentsline {subsection}{\numberline {2.2.2}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{12}
-\contentsline {subsection}{\numberline {2.2.3}\MakeTextUppercase {MQTT - Message Queue Telemetry Transport}}{13}
-\contentsline {section}{\numberline {2.3}\MakeTextUppercase {Trabalhos Relacionados}}{14}
-\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Projeto}}{16}
-\contentsline {section}{\numberline {3.1}\MakeTextUppercase { Arquitetura }}{16}
-\contentsline {subsection}{\numberline {3.1.1}\MakeTextUppercase {Premissas}}{18}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Formato de mensagens}}{18}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{20}
-\contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Descoberta de recursos}}{20}
-\contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Gerenciamento de recursos}}{22}
-\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Valida\IeC {\c c}\IeC {\~o}es}}{26}
-\contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{26}
-\contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{27}
-\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{31}
-\contentsline {subsection}{\numberline {4.3.1}\MakeTextUppercase {Seguran\IeC {\c c}a residencial}}{31}
-\contentsline {subsection}{\numberline {4.3.2}\MakeTextUppercase {M\IeC {\'e}tricas no agroneg\IeC {\'o}cio}}{31}
-\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{33}
-\contentsline {chapter}{\numberline {}\uppercase {Anexo}\nobreakspace A\nobreakspace --\nobreakspace \normalfont Depura\IeC {\c c}\IeC {\~a}o das m\IeC {\'e}tricas no agroneg\IeC {\'o}cio}{35}
+\contentsline {chapter}{\numberline {1}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{9}
+\contentsline {section}{\numberline {1.1}\MakeTextUppercase {Contextualiza\IeC {\c c}\IeC {\~a}o}}{9}
+\contentsline {section}{\numberline {1.2}\MakeTextUppercase {Motiva\IeC {\c c}\IeC {\~a}o e justificativa}}{10}
+\contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{11}
+\contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{12}
+\contentsline {section}{\numberline {2.1}\MakeTextUppercase {Modelos para troca de mensagens em aplica\IeC {\c c}\IeC {\~o}es}}{12}
+\contentsline {section}{\numberline {2.2}\MakeTextUppercase {Protocolos relacionados}}{12}
+\contentsline {subsection}{\numberline {2.2.1}\MakeTextUppercase {CoAP}}{12}
+\contentsline {subsection}{\numberline {2.2.2}\MakeTextUppercase {Constrained RESTful Environments (CoRE) Link Format}}{13}
+\contentsline {subsection}{\numberline {2.2.3}\MakeTextUppercase {MQTT - Message Queue Telemetry Transport}}{14}
+\contentsline {section}{\numberline {2.3}\MakeTextUppercase {Trabalhos Relacionados}}{15}
+\contentsline {chapter}{\numberline {3}\MakeTextUppercase { Projeto}}{17}
+\contentsline {section}{\numberline {3.1}\MakeTextUppercase { Arquitetura }}{17}
+\contentsline {subsection}{\numberline {3.1.1}\MakeTextUppercase {Premissas}}{19}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Formato de mensagens}}{19}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{21}
+\contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Descoberta de recursos}}{21}
+\contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Gerenciamento de recursos}}{23}
+\contentsline {chapter}{\numberline {4}\MakeTextUppercase { Valida\IeC {\c c}\IeC {\~o}es}}{27}
+\contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{27}
+\contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{28}
+\contentsline {section}{\numberline {4.3}\MakeTextUppercase {Estudos de caso}}{32}
+\contentsline {subsection}{\numberline {4.3.1}\MakeTextUppercase {Seguran\IeC {\c c}a residencial}}{32}
+\contentsline {subsection}{\numberline {4.3.2}\MakeTextUppercase {M\IeC {\'e}tricas no agroneg\IeC {\'o}cio}}{32}
+\contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{34}
+\contentsline {chapter}{\numberline {}\uppercase {Anexo}\nobreakspace A\nobreakspace --\nobreakspace \normalfont Depura\IeC {\c c}\IeC {\~a}o das m\IeC {\'e}tricas no agroneg\IeC {\'o}cio}{36}
