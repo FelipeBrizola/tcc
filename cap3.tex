@@ -7,7 +7,7 @@ Para tal, nas seções a seguir abordaremos a arquitetura, o formato de mensagen
 
 \section { Arquitetura }
 
-Seguindo a topologia da Figura \ref{fig:fig14}, podemos observar que os \textit{fog nodes} não possuem uma um nodo central como servidor.
+Seguindo a topologia da Figura \ref{fig:fig14}, podemos observar que os \textit{fog nodes} não possuem um nodo central como servidor.
 Sendo assim, os fog nodes e os edge devices comunicam-se utilizando o protocolo CoAP.
 Dessa maneira, as Requisições entre fog nodes só ocorre caso o nodo requisitante saiba, previamente, o endereço IP relativo ao nodo solicitado.
 
@@ -18,11 +18,11 @@ Dessa maneira, as Requisições entre fog nodes só ocorre caso o nodo requisita
 \end{figure}
 
 Em razão da topologia distribuída, a arquitetura deve ser capaz de mapear e sincronizar, de forma autônoma, os recursos providos pelos fog nodes.
-Dessa forma, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede e, portanto,
+Dessa forma, cada \textit{fog node} saberá quais são os \textit{edge devices} disponíveis na rede, portanto,
 o nodo que possui o sensor de chuva saberia que existe um outro nodo em sua LAN capaz de medir a temperatura, por exemplo.
 
 A arquitetura proposta, no que se refere a comunicação entre fog nodes e edge devices, utilizou como base um fork da implementação do protocolo CoAP\cite{coapimpl:2018}.
-Esse fork, implementado em Python e de acordo com a RFC-7252, consiste em dois grandes modulos: \textit{CoAP-Server} e \textit{CoAP-Client}.
+Esse fork, implementado em Python e de acordo com a RFC-7252, consiste em dois grandes módulos: \textit{CoAP-Server} e \textit{CoAP-Client}.
 O primeiro, é responsável pelo recebimento das Requisições, e foi alterado com o objetivo de proporcionar o dinamismo na inserção e remoção dos recursos sem a necessidade de sua reinicialização.
 O segundo módulo é encarregado de realizar as Requisições diretamente aos nodos, e para essa funcionalidade nenhuma alteração no projeto original foi realizada.
 

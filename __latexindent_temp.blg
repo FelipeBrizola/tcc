@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: main.aux
+The top-level auxiliary file: __latexindent_temp.aux
 A level-1 auxiliary file: cap1.aux
 A level-1 auxiliary file: cap2.aux
 A level-1 auxiliary file: cap3.aux
@@ -54,7 +54,7 @@ Warning--empty numpages in tanenbaum2011redes
 Warning--empty numpages in Tanenbaum:2006:DSP:1202502
 You've used 28 entries,
             2900 wiz_defined-function locations,
-            794 strings with 9876 characters,
+            794 strings with 9904 characters,
 and the built_in function-call counts, 12382 in all, are:
 = -- 1027
 > -- 296

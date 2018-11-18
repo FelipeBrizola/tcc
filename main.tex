@@ -96,7 +96,7 @@
   % Orientador (e Co-orientador, caso haja um). É OBRIGATÓRIO
   % informar pelo menos o orientador.
   %----------------------------------------------------------------
-  \orientador{Prof. Dr. Sérgio Johann Filho}
+  \orientador{Dr. Sérgio Johann Filho}
   %\coorientador{Ciclano de Farias}
   
   %----------------------------------------------------------------
@@ -128,20 +128,19 @@
   % Resumo, com as palavras-chave passadas por parâmetro
   % (OBRIGATÓRIO, ao menos para teses e dissertações)
   %----------------------------------------------------------------
-  \begin{resumo}{mapeamento de recursos, computação em névoa, internet das coisas, protocolo de mapeamento, coap}
+  \begin{resumo}{mapeamento de recursos, computação em névoa, internet das coisas, protocolo de mapeamento}
 
     A computação em névoa pode ser vista como um paradigma que provê armazenamento, computação e serviços de rede entre dispositivos finais e os servidores na nuvem.
-    Desse paradigma surge o conceito de \textit{fog nodes} que abrangem desde dispositivos finais com baixa capacidade computacional até servidores poderosos na nuvem.
-    Comumente um fog node está gerenciando recursos tais como sensores e atuadores e esses comunicam-se com o fog node através do protocolo coap.
-    Assim, um nodo interage exclusivamente com seus recursos, pois desconhece os recursos fornececidos por seus vizinhos de rede.
+    Desse paradigma surge o conceito \textit{fog node}, que abrange desde dispositivos finais com baixa capacidade computacional até servidores poderosos na nuvem.
+    Comumente um fog node gerencia recursos, tais como sensores e atuadores.
+    Esses recursos comunicam-se com o fog node através do protocolo CoAP.
+    Sendo assim, um nodo interage exclusivamente com seus recursos, pois, desconhece os sensores e atuadores gerenciados por seus vizinhos de rede.
 
-
-    Os problemas referentes à padronização, descoberta e sincronização são os motivadores deste trabalho, uma vez que atualmente não existem mecanismos
+    Os problemas referentes à padronização, descoberta e sincronização são os motivadores deste projeto, uma vez que atualmente não existem mecanismos
     no qual um fog node, mapeie os recursos disponíveis e divulgue os seus na rede.
 
-    Modelar e implementar um protocolo com baixo custo de transmissão, que seja distribuído, que se adeque a ambientes dinâmicos e que seja simples de ser
-    empregado em topologias de rede já implantadas são os objetivos desse trabalho.
-
+    Este projeto apresentará a modelagem e implementação de um protocolo com baixo custo de transmissão, distribuído, adaptativo e simples de ser empregado em topologias de rede já implantadas.
+    Por fim, cenários de teste e estudos de caso serão apresentados com o objetivo de validar a solução proposta.
   
   \end{resumo}
   
@@ -149,8 +148,21 @@
   % Abstract, com as palavras-chave passadas por parâmetro
   % (OBRIGATÓRIO, ao menos para teses e dissertações)
   %----------------------------------------------------------------
-  %\begin{abstract}{resource mapping, fog computing, internet of things...}
-  %Traducao do resumo\end{abstract}
+  \begin{abstract}{resource mapping, fog computing, internet of things, mapping protocol}
+
+    Fog computing can be seen as a paradigm that provides storage, computing, and network services between end devices and servers in the cloud.
+    From this paradigm comes the \textit{fog node} concept, which ranges from end-devices with low computational capacity to powerful servers in the cloud.
+    Commonly a fog node manages resources such as sensors and actuators.
+    These features communicate with the fog node through the CoAP protocol.
+    Thus, a node interacts exclusively with its resources because it is unaware of the sensors and actuators managed by its network neighbors.
+
+    The problems related to standardization, discovery and synchronization are the motivators of this project, since there are currently no mechanisms in which a fog node maps the available resources and disseminates their resources on the network.
+
+    This project will present the modeling and implementation of a protocol with low transmission cost, distributed, adaptive and simple to be used in already implemented network topologies.
+    Finally, test scenarios and case studies will be presented with the objective of validating the proposed solution.
+
+
+  \end{abstract}
   
   %----------------------------------------------------------------
   % Listas e sumário, nessa ordem. Somente o sumário é obrigatório,
@@ -201,7 +213,7 @@
   % ser considerado um capítulo.
   %----------------------------------------------------------------
   \anexos
-  \chapter{Depuração das métricas no agronegócio}
+  \chapter{Depuração de métricas no agronegócio}
   
 A fim de simplificar a demonstração, o cénario proposto contém apenas um curral e um fog node reponsavél por coletar os dados, processá-los e enviá-los a um servidor de armazenamento na nuvem.
 Esse contexto está representado na Figura \ref{fig:fig17}.

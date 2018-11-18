@@ -1,11 +1,49 @@
 \chapter{\label{chap:chap2} Fundamentação Teórica}
 
-Este capítulo apresentará alguns protocolos de comunicação que servirão de apoio para o desenvolvimento deste TCC. 
+Este capítulo apresentará alguns modelos de troca de mensagens entre aplicações e protocolos de comunicação que servirão de apoio para o desenvolvimento deste TCC. 
 Por fim, alguns trabalhos relacionados a área serão expostos, bem como o posicionamento deste perante aos demais.
 
 \section{Modelos para troca de mensagens em aplicações}
-% -Modelos para troca de mensagens em aplicações: cliente/servidor (sockets, RPC, RMI, MPI...), Publish/Subscribe, Webservices, Microservices 
-% client servidor/rpc/rmi/webservice/microservices/paas/saas/iaas/algoritmo distribuido/ eleicao e exclusao mutua/p2p
+
+Atualmente existem diversos modelos para troca de mensagens entre aplicações, dentre eles RPC, RMI, Web services e cliente/servidor \cite{Tanenbaum:2006:DSP:1202502}.
+Para um melhor embasamento no desenvolvimento do projeto, focaremos nos modelos publish/subscribe e P2P que serão expostos nas Subseções a seguir.
+
+\subsection{Publish/Subscribe}
+
+Neste modelo, o produtor da mensagem (publisher) a rotula de alguma forma e, muitas vezes, isso é feito associando um ou mais nomes de tópicos a mensagem.
+Em seguida, os destinatários da mensagem (subscriber) especificam os tópicos para os quais desejam receber as mensagens associadas\cite{Hwang:2011:DCC:2060077}.
+
+O uso de seleção de mensagem baseada em tópico ou conteúdo é denominado filtragem de mensagens.
+Observe que, em cada um desses casos, encontramos um relacionamento muitos-para-muitos entre editores e inscritos.
+O middleware de mensagens de publish/subscribe permite a implementação direta de modelos de notificação ou de programação baseada em eventos\cite{Hwang:2011:DCC:2060077}.
+Assim, por exemplo, as mensagens que contêm dados relacionados a um erro ou sucesso de operação são capturadas apenas pelos inscritos nesses tópicos.
+
+\subsection{P2P}
+
+
+P2P é, basicamente, uma técnica que aproveita recursos computacionais e de conteúdo disponível na Internet para concluir tarefas enormes, como distribuição de conteúdo.
+Os recursos na Internet têm disponibilidade intermitente, pois, são adicionados e removidos inesperadamente o tempo todo.
+A computação P2P elimina a coordenação por um servidor central e nenhum ponto tem uma visão global de todo o sistema.
+Em vez disso, os pares agem como servidores e clientes, compartilhando recursos e serviços diretamente uns com os outros\cite{Hwang:2011:DCC:2060077}.
+Segundo Kai Hwang, algumas das principais características do P2P estão descritos abaixo.
+
+\begin{itemize}
+    \item \textbf{Descentralização:} em um sistema de computação P2P puro, os pares são iguais e não há um servidor central para coordenar o sistema.
+    Cada par tem uma visão parcial de todo o sistema para construir a rede de sobreposição e controlar seus dados e recursos.
+
+    \item \textbf{Auto-organização:} significa que não é necessário um ponto central de gerenciamento para organizar os recursos de computação dos pares e os recursos de dados que se espalham pelos pares.
+    Os recursos nos sistemas de computação P2P são dinâmicos ou flutuam no sentido de que eles vêm e vão a qualquer momento, à vontade.
+    Seria muito caro dedicar um servidor para gerenciar esses sistemas.
+
+    \item \textbf{Escalabilidade:} o modelo P2P elimina o problema do ponto único de falha relacionado ao modelo cliente/servidor centralizado tradicional.
+    Cada par só mantém um número limitado de estados do sistema e compartilha recursos diretamente com os outros.
+    Esses recursos permitem a alta escalabilidade dos sistemas de computação P2P.
+
+    \item \textbf{Tolerância a falhas:} em uma rede P2P, todos os pares são criados iguais e nenhum ponto pode dominar o sistema ou se tornar um ponto único de falha para derrubar todo o sistema.
+    Recursos podem ser armazenados em vários pares.
+    Esses recursos facilitam a tolerância a falhas.
+
+\end{itemize}
 
 \section{Protocolos relacionados}
 
@@ -22,7 +60,7 @@ Além dos códigos, as mensagens podem conter outras informações, como o recur
 Por fim, um token é utilizado para que haja a correspondência entre requisição e resposta.
 
 A Figura \ref{fig:fig4} ilustra uma solicitação entre cliente e servidor, na qual o cliente deseja obter a temperatura medida pelo sensor atrelado ao servidor.
-Analisando a troca de mensagens, notamos que o cliente envia uma solicitação não confirmável com token 0x74 e código GET para acessar o recurso temperatura no servidor.
+Analisando a troca de mensagens, notamos que o cliente envia uma solicitação não confirmável com token 0x74 e código GET para acessar o recurso de temperatura no servidor.
 O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o mesmo token que recebeu na solicitação do cliente e o valor 22.5 C.
 
 \begin{figure}[htb!]
@@ -36,33 +74,33 @@ Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para
 Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na seção 10 da própria RFC-7252\cite{rfc7252},
 que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
 
-Além do modelo de comunicação cliente/servidor e da arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrão na web,
+Além do modelo de comunicação cliente/servidor e da arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrões na web,
 como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc2046}.
 
 Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
-Entre as diferenças está a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
-Apesar de, naturalmente, o protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
+Entre as diferenças estão a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
+Apesar do protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
 
 \textit{Constrained RESTful Environments (CoRE) Link Format}, que será abordado na seção a seguir, possibilidade de envio de solicitações multicast e unicast, \textit{service discovery}, cabeçalho com baixa sobrecarga de dados e segurança na forma de DTLS\cite{rfc6347}
-estão entre as principais caracteristicas do protocolo de aplicação restrita, CoAP.
+estão entre as principais características do protocolo de aplicação restrita, CoAP.
 
 \subsection{Constrained RESTful Environments (CoRE) Link Format}
 
-Segundo a RFC-6690, a finalidade desta especificação é realizar REST em nodos com recursos limitados, sendo tal característica importante em aplicações maquina-a-maquina\cite{rfc6690}.
+Segundo a RFC-6690, a finalidade desta especificação é realizar REST em nodos com recursos limitados, sendo tal característica importante em aplicações máquina-a-máquina\cite{rfc6690}.
 Em aplicação deste tipo é primordial que as configurações não dependam de interação de humanos, portanto, devem manter seu funcionamento sem configurações estáticas.
 
 
 A principal função desta especificação é fornecer identificadores, denominados URIs, para os recursos hospedados em servidores. 
 Para além, é possível que essas URIs possuam atributos relacionados aos recursos.
 Estes atributos dividem-se basicamente em dois: rt, \textit{resource type} e if \textit{interface description}.
-O primeiro é utilizado para para atribuir um nome que descreva de forma clara e enxuta um recurso,
-já o segundo tem por objetivo indicar a interface especifica que interagirá com o recurso destino.
+O primeiro é utilizado para atribuir um nome que descreva de forma clara e enxuta um recurso,
+já o segundo tem por objetivo indicar a interface específica que interagirá com o recurso destino.
 
-Um aspecto relevante ao CoRE, e de suma importancia para aplicações maquina-a-maquina, é o fato de possuir como URI padrão o prefixo \textit{/.well-known/core} , definido na RFC-5785\cite{rfc5785}.
+Um aspecto relevante ao CoRE, e de suma importância para aplicações máquina-a-máquina, é o fato de possuir como URI padrão o prefixo \textit{/.well-known/core} , definido na RFC-5785\cite{rfc5785}.
 Este prefixo é utilizado para que o servidor exponha suas políticas e recursos disponíveis.
 
 O protocolo CoAP prevê suporte à CoRE e ao prefixo \textit{/.well-known/core}.
-Contando com esses suportes, é possível traçarmos uma pequena analogia entre a arquitetura REST e o protocolo CoAP, pois tanto em REST quanto em CoAP, as URIs são utilizadas para a identificação de recursos.
+Contando com esses suportes, é possível traçarmos uma pequena analogia entre a arquitetura REST e o protocolo CoAP, pois, tanto em REST quanto em CoAP, as URIs são utilizadas para a identificação de recursos.
 Sendo assim, servidores CoAP ficam aguardando por requisições que utilizem tal URIs.
 
 Para exemplificarmos, abaixo está um ciclo de requisição e resposta entre um cliente e um servidor com nomenclatura \textit{example.net}.
@@ -85,8 +123,8 @@ Juntamente aos dados, o codigo 2.05 é retornado indicando que a operação tran
 
 \subsection{MQTT - Message Queue Telemetry Transport}
 
-O protocolo MQTT, inicialmente desenvolvido pela IBM, tornou-se um padrão para aplicações de IoT, pois mostrou-se escalável em ambientes com redes instáveis.
-Essa caracteristica dá-se pelo fato do protocolo implementar um modelo asíncrono de troca de mensagens, deste modo, o emissor mantém-se desacoplado do receptor.
+O protocolo MQTT, inicialmente desenvolvido pela IBM, tornou-se um padrão para aplicações de IoT, pois, se mostrou escalável em ambientes com redes instáveis.
+Essa caracteristica dá-se pelo fato do protocolo implementar um modelo assíncrono de troca de mensagens, deste modo, o emissor mantém-se desacoplado do receptor.
 Diferentemente de um modelo cliente/servidor, HTTP por exemplo, o protocolo faz uso da técnica \textit{publish/subscribe}.
 
 
@@ -99,7 +137,7 @@ O funcionamento básico do protocolo em questão é demonstrado em três passos.
     \item Em seguida, o broker encaminha a mensagem a todos os clientes que assinam esse tópico.
 \end{itemize}
 
-Baseado nas caracteristicas descritas, notamos que o protocolo necessita de um ponto central de comunicação entre os nodos do sistema.
+Baseado nas características descritas, notamos que o protocolo necessita de um ponto central de comunicação entre os nodos do sistema.
 Neste caso o broker faz com que o MQTT seja um protocolo centralizado, pois, caso ele fique inoperante toda a rede MQTT passa a ficar desatualizada.
 
 \section{Trabalhos Relacionados}
@@ -107,18 +145,18 @@ Neste caso o broker faz com que o MQTT seja um protocolo centralizado, pois, cas
 Spencer Lewson implementou um protocolo em nível de aplicação \cite{tanenbaum2011redes} capaz de realizar a comunicação entre nodos sob computação em névoa.
 A especificação do protocolo e um \textit{middleware} capaz de realizar o gerenciamento dos recursos dos dispositivos, são os principais componentes deste trabalho \cite{Spencer:2015}.
 
-Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorre via \textit{Bluetooth LE}.
+Sua implementação requer que haja um ponto central de comunicação entre os nodos, uma vez que a conectividade entre eles ocorrem via \textit{Bluetooth LE}.
 A existência desse ponto justifica-se pelas regras de implementação do \textit{Bluetooth LE}, na qual descreve dispositivos de duas naturezas: centrais e periféricos.
 Dispositivos centrais são responsáveis por descobrir dispositivos periféricos que estão interessados em criar conexão.
 Portanto, a característica do \textit{Bluetooth LE} faz com que a topologia de rede e a arquitetura do projeto não seja distribuída \cite{Spencer:2015}.
 
 A plataforma Iotivity \cite{iotivity}, mantida pela Linux Foundation, tem como cerne a criação de um padrão no qual os dispositivos conectam-se entre si e a Internet.
-Esta plataforma possui quatro funcionalidades chaves, sendo elas, descoberta de recursos, gerenciamento de dados e dispositivos e transmissão de dados.
+Esta plataforma possui quatro funcionalidades chaves, sendo elas, descoberta de recursos, gerenciamento de dados, gerenciamento de dispositivos e transmissão de dados.
 
 Focaremos na descoberta de recursos providos pela plataforma, pois, é o item que mais se assemelha a proposta deste trabalho de conclusão.
 Como primeiro passo para a execução desta funcionalidade, devemos registrar o recurso utilizando sua URI e IP.
 Após o registro, é possível especificarmos que este recurso é observável, ou seja, quando houver algum evento o nodo que o registrou como observável será notificado.
-Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos para manter o mapeamento de recursos em redes locais.
+Apesar de a plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos para manter o mapeamento de recursos em redes locais.
 
 \begin{table}[htb!]
     \centering
@@ -130,9 +168,9 @@ Apesar da plataforma Iotivity possuir outras funcionalidades, ela não possui me
     Bluetooth                      & não   & sim       & sim      & sim   & não                \\ \hline
     Lan                            & sim   & sim       & sim      & sim   & sim                \\ \hline
     Internet                       & sim   & não       & sim      & sim   & não                \\ \hline
-    Map. de recursos               & sim   & sim       & sim      & sim   & sim                \\ \hline
+    Map. de recursos               & sim   & sim       & sim      & não   & sim                \\ \hline
     Sincronização do map.          & não   & não       & não      & não   & sim                \\ \hline
-    Recursos observáveis           & n/a   & n/a       & sim      & sim   & não                \\ \hline
+    Recursos observáveis           & sim   & não       & sim      & sim   & não                \\ \hline
     Distribuído                    & não   & não       & não      & não   & sim                \\ \hline
     \end{tabular}
     \label{table:tab1}

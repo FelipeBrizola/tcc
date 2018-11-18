@@ -1,0 +1,21 @@
+\select@language {brazil}
+\select@language {brazil}
+\select@language {brazil}
+\contentsline {figure}{Figura\nobreakspace \numberline {1.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Organiza\IeC {\c c}\IeC {\~a}o arquitetural}}{10}
+\contentsline {figure}{Figura\nobreakspace \numberline {2.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Requisi\IeC {\c c}\IeC {\~a}o e resposta utilizando mensagens n\IeC {\~a}o confirm\IeC {\'a}veis}}{14}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Topologia LAN}}{18}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Arquitetura de um fog node}}{19}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.3\hfil \nobreakspace --\nobreakspace }{\ignorespaces Arquitetura Resource-Mapping}}{20}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.4\hfil \nobreakspace --\nobreakspace }{\ignorespaces Pilha de protocolos}}{20}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.5\hfil \nobreakspace --\nobreakspace }{\ignorespaces Detalhamento Resource Mapping}}{21}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.6\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo entrando na n\IeC {\'e}voa}}{23}
+\contentsline {figure}{Figura\nobreakspace \numberline {3.7\hfil \nobreakspace --\nobreakspace }{\ignorespaces Requisi\IeC {\c c}\IeC {\~a}o entre fog nodes}}{24}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Fog node container}}{29}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Topologia base para cen\IeC {\'a}rios de teste}}{30}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.3\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo marcado como parcialmente inativo}}{31}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.4\hfil \nobreakspace --\nobreakspace }{\ignorespaces Nodo removido da lista de recursos}}{31}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.5\hfil \nobreakspace --\nobreakspace }{\ignorespaces Edge device fora de opera\IeC {\c c}\IeC {\~a}o}}{32}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.6\hfil \nobreakspace --\nobreakspace }{\ignorespaces Estado da n\IeC {\'e}voa ap\IeC {\'o}s atualiza\IeC {\c c}\IeC {\~a}o de recursos}}{32}
+\contentsline {figure}{Figura\nobreakspace \numberline {4.7\hfil \nobreakspace --\nobreakspace }{\ignorespaces M\IeC {\'e}tricas alimentares na cria\IeC {\c c}\IeC {\~a}o de porcos}}{34}
+\contentsline {figure}{Figura\nobreakspace \numberline {A.1\hfil \nobreakspace --\nobreakspace }{\ignorespaces Fog node desligado enquanto curral permanece vazio}}{37}
+\contentsline {figure}{Figura\nobreakspace \numberline {A.2\hfil \nobreakspace --\nobreakspace }{\ignorespaces Fog node ligado enquanto curral permanece ocupado}}{37}
