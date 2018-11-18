@@ -26,3 +26,4 @@
 \contentsline {subsection}{\numberline {4.3.1}\MakeTextUppercase {Seguran\IeC {\c c}a residencial}}{31}
 \contentsline {subsection}{\numberline {4.3.2}\MakeTextUppercase {M\IeC {\'e}tricas no agroneg\IeC {\'o}cio}}{31}
 \contentsline {chapter}{\numberline {\hbox {}}\uppercase {Refer\^{e}ncias}}{33}
+\contentsline {chapter}{\numberline {}\uppercase {Anexo}\nobreakspace A\nobreakspace --\nobreakspace \normalfont Depura\IeC {\c c}\IeC {\~a}o das m\IeC {\'e}tricas no agroneg\IeC {\'o}cio}{35}

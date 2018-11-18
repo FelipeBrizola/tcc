@@ -346,6 +346,12 @@ INPUT ./fig17.png
 INPUT ./fig17.png
 INPUT main.bbl
 INPUT main.bbl
+INPUT fig18.png
+INPUT ./fig18.png
+INPUT ./fig18.png
+INPUT fig19.png
+INPUT ./fig19.png
+INPUT ./fig19.png
 INPUT main.aux
 INPUT cap1.aux
 INPUT cap1.aux
