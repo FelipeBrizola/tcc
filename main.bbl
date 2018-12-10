@@ -38,23 +38,11 @@
   2018.
 \bibAnnoteFile{archfog:2017}
 
-\bibitem{definition:panaceia}
-\enquote{Significado de panaceia.}
-  \urlprefix\url{https://www.dicio.com.br/panaceia/}, 2018.
-\bibAnnoteFile{definition:panaceia}
-
 \bibitem{rfc3986}
 Berners-Lee, T.; Fielding, R.; Masinter, L. \enquote{Rfc 3986, uniform resource
   identifier (uri): Generic syntax}.
   \urlprefix\url{http://rfc.net/rfc3986.html}, 2005.
 \bibAnnoteFile{rfc3986}
-
-\bibitem{Bonomi:2012}
-Bonomi, F.; Milito, R.; Zhu, J.; Addepalli, S. \enquote{Fog computing and its
-  role in the internet of things}. \capitalize{\bblin{}}: Proceedings of the
-  First Edition of the MCC Workshop on Mobile Cloud Computing, 2012, \bblpp{}
-  13--16.
-\bibAnnoteFile{Bonomi:2012}
 
 \bibitem{rfc2616}
 Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.; Masinter, L.; Leach, P.;

@@ -228,7 +228,7 @@ e-mails <rfbpiccoli at gmail dot com> e <marcelo dot cohen at pucrs dot br>^^J
 % Definições dependentes de idioma.
 %\addto\captionsbrazil{%
     \newcommand*{\PP@Uni}{Pontif\'{i}cia Universidade Cat\'{o}lica do Rio Grande do Sul}
-    \newcommand*{\PP@Fac}{Faculdade de Inform\'{a}tica}
+    \newcommand*{\PP@Fac}{Escola Polit\'{e}cnica}
     %\newcommand*{\PP@Dep}{Programa de P\'{o}s-Gradua\c{c}\~{a}o em Ci\^{e}ncia da Computa\c{c}\~{a}o}
     %\newcommand*{\PP@Dep}{Bacharelado em Ci\^{e}ncia da Computa\c{c}\~{a}o}
     \newcommand*{\PP@Dep}{Bacharelado em \PP@curso{}}

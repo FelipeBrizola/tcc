@@ -56,9 +56,9 @@ Abaixo elencaremos as funcionalidades de cada entidade.
 \end{figure}
 
 
-\subsection{Premissas}
+\section{Requisitos e limitações}
 
-Para que a solução opere corretamente, tanto no mapeamento quanto na sincronização de recursos, algumas premissas necessitam ser expostas.
+Para que a solução opere corretamente, tanto no mapeamento quanto na sincronização de recursos, algumas limitações e requisitos necessitam ser expostas.
 
 Como proposição inicial temos que o sistema operacional deve ser Unix e o usuário corrente deve dispor de privilégios de root.
 Além disso, a linguagem de programação Python em sua versão 2.7 com seu respectivo gerenciador de pacotes, \textit{PIP}\cite{pip}, devem estar instalados.
@@ -98,10 +98,11 @@ A Figura \ref{fig:fig12} apresenta, de forma detalhada, a estrutura dos dados co
 
 \begin{itemize}
 \item O campo Protocol Type é reservado para indicar a forma de encapsulamento do pacote.
+Dessa forma, o restante dos campos do pacote podem ser tratados de acordo com a definição dada pelo campo.
 \item Atualmente existem dois tipos de Messages Types possíveis, keep alive e acknowledgement.
 \item Sequence Number tem o intuito de identificar o pacote enviado.
 \item O campo Epoch é utilizado para indicar alterações nos recursos providos pelo fog node.
-Sendo assim, quando um recurso é adicionado ou removido de um fog node, o campo Epoch é acrescido em uma unidade.
+Sendo assim, quando um recurso é adicionado ou removido de um fog node, o campo Epoch é acrescido em uma unidade. Os detalhes de seu comportamento serão abordados na Seção 3.3.2.
 \item O campo Hash utiliza a função de criptografia MD5 para validar a integridade dos demais campos contidos no pacote.
 \end{itemize}
 
@@ -139,7 +140,7 @@ A topologia da névoa utilizada nas Figuras \ref{fig:fig5} e \ref{fig:fig6} é d
 A figura \ref{fig:fig5} demonstra o nodo FN5 entrando na névoa e, portanto, deverá anunciar-se por multicast indicando que possui recursos a serem disponibilizados.
 
 Após FN5 enviar mensagem de Olá por multicast, os nodos FN1, FN2 e FN4 realizam a Requisição CoAP diretamente ao FN5 afim de obter os recursos disponíbilizados por ele,
-já o nodo FN3, por não estar executando o protocolo de mapeamento, não.
+já o nodo FN3, por não estar executando o protocolo de mapeamento, não realiza a Requisição CoAP.
 
 \begin{figure}[H]
     \centering\includegraphics[width=.8\textwidth]{fig6.png}

@@ -11,8 +11,6 @@ Warning--entry type for "ciscoSystems" isn't style-file defined
 --line 90 of file bibliography.bib
 Warning--entry type for "edgeDevices" isn't style-file defined
 --line 107 of file bibliography.bib
-Warning--entry type for "definition:panaceia" isn't style-file defined
---line 115 of file bibliography.bib
 Warning--entry type for "archfog:2017" isn't style-file defined
 --line 122 of file bibliography.bib
 Warning--entry type for "dockersdk:2018" isn't style-file defined
@@ -33,7 +31,6 @@ Warning--entry type for "coapimpl:2018" isn't style-file defined
 --line 369 of file bibliography.bib
 Warning--entry type for "pip" isn't style-file defined
 --line 377 of file bibliography.bib
-Warning--to sort, need author or key in definition:panaceia
 Warning--to sort, need author or key in archfog:2017
 Warning--to sort, need author or key in dockersdk:2018
 Warning--to sort, need author or key in docker:2018
@@ -43,7 +40,6 @@ Warning--empty author in linuxalpine:2018
 Warning--empty author in docker:2018
 Warning--empty author in dockersdk:2018
 Warning--empty author in archfog:2017
-Warning--empty author in definition:panaceia
 Warning--empty numpages in Hwang:2011:DCC:2060077
 Warning--empty journal in Spencer:2015
 Warning--empty volume and number in Spencer:2015
@@ -52,45 +48,45 @@ Warning--empty numpages in Mell:2011
 Warning--empty url in Rekhter:1995
 Warning--empty numpages in tanenbaum2011redes
 Warning--empty numpages in Tanenbaum:2006:DSP:1202502
-You've used 28 entries,
+You've used 26 entries,
             2900 wiz_defined-function locations,
-            794 strings with 9876 characters,
-and the built_in function-call counts, 12382 in all, are:
-= -- 1027
-> -- 296
-< -- 4
-+ -- 128
-- -- 98
-* -- 791
-:= -- 1446
-add.period$ -- 74
-call.type$ -- 28
-change.case$ -- 132
+            783 strings with 9520 characters,
+and the built_in function-call counts, 11476 in all, are:
+= -- 949
+> -- 273
+< -- 3
++ -- 118
+- -- 90
+* -- 730
+:= -- 1342
+add.period$ -- 69
+call.type$ -- 26
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 74
-duplicate$ -- 1231
-empty$ -- 1161
-format.name$ -- 112
-if$ -- 2613
+cite$ -- 68
+duplicate$ -- 1149
+empty$ -- 1080
+format.name$ -- 103
+if$ -- 2416
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 235
-newline$ -- 131
-num.names$ -- 46
-pop$ -- 672
+int.to.str$ -- 26
+missing$ -- 219
+newline$ -- 123
+num.names$ -- 44
+pop$ -- 636
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 97
 quote$ -- 0
-skip$ -- 328
+skip$ -- 293
 stack$ -- 0
-substring$ -- 655
-swap$ -- 467
-text.length$ -- 4
+substring$ -- 609
+swap$ -- 428
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 18
-while$ -- 75
-width$ -- 30
-write$ -- 266
-(There were 31 warnings)
+type$ -- 98
+warning$ -- 16
+while$ -- 69
+width$ -- 28
+write$ -- 248
+(There were 28 warnings)

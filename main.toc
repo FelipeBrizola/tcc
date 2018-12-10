@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {1}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{10}
 \contentsline {section}{\numberline {1.1}\MakeTextUppercase {Contextualiza\IeC {\c c}\IeC {\~a}o}}{10}
 \contentsline {section}{\numberline {1.2}\MakeTextUppercase {Motiva\IeC {\c c}\IeC {\~a}o e justificativa}}{11}
-\contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{12}
+\contentsline {section}{\numberline {1.3}\MakeTextUppercase {Objetivo}}{11}
 \contentsline {chapter}{\numberline {2}\MakeTextUppercase { Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}}{13}
 \contentsline {section}{\numberline {2.1}\MakeTextUppercase {Modelos para troca de mensagens em aplica\IeC {\c c}\IeC {\~o}es}}{13}
 \contentsline {subsection}{\numberline {2.1.1}\MakeTextUppercase {Publish/Subscribe}}{13}
@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {2.3}\MakeTextUppercase {Trabalhos Relacionados}}{17}
 \contentsline {chapter}{\numberline {3}\MakeTextUppercase { Projeto}}{19}
 \contentsline {section}{\numberline {3.1}\MakeTextUppercase { Arquitetura }}{19}
-\contentsline {subsection}{\numberline {3.1.1}\MakeTextUppercase {Premissas}}{21}
-\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Formato de mensagens}}{21}
-\contentsline {section}{\numberline {3.3}\MakeTextUppercase {M\IeC {\'o}dulos}}{23}
-\contentsline {subsection}{\numberline {3.3.1}\MakeTextUppercase {Descoberta de recursos}}{23}
-\contentsline {subsection}{\numberline {3.3.2}\MakeTextUppercase {Gerenciamento de recursos}}{25}
+\contentsline {section}{\numberline {3.2}\MakeTextUppercase {Requisitos e limita\IeC {\c c}\IeC {\~o}es}}{21}
+\contentsline {section}{\numberline {3.3}\MakeTextUppercase {Formato de mensagens}}{21}
+\contentsline {section}{\numberline {3.4}\MakeTextUppercase {M\IeC {\'o}dulos}}{23}
+\contentsline {subsection}{\numberline {3.4.1}\MakeTextUppercase {Descoberta de recursos}}{23}
+\contentsline {subsection}{\numberline {3.4.2}\MakeTextUppercase {Gerenciamento de recursos}}{25}
 \contentsline {chapter}{\numberline {4}\MakeTextUppercase { Valida\IeC {\c c}\IeC {\~o}es}}{29}
 \contentsline {section}{\numberline {4.1}\MakeTextUppercase {Ambiente de simula\IeC {\c c}\IeC {\~a}o}}{29}
 \contentsline {section}{\numberline {4.2}\MakeTextUppercase {Cen\IeC {\'a}rios de teste}}{30}

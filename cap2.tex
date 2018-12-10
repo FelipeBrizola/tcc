@@ -69,7 +69,7 @@ O servidor por sua vez retorna o código de resposta 2.05, que indica sucesso, o
     {\label{fig:fig4} Requisição e resposta utilizando mensagens não confirmáveis.} \cite{rfc7252}
 \end{figure}
 
-A arquitetura REST, assim como no protocolo HTTP\cite{rfc2616}, foi utilizada na projetização do protocolo CoAP.
+A arquitetura REST, assim como no protocolo HTTP\cite{rfc2616}, foi utilizada na prototipação do protocolo CoAP.
 Como ambos compartilham da mesma arquitetura, realizar o mapeamento de HTTP para CoAP e vice-versa é bastante simples.
 Para realizar tal mapeamento basta utilizarmos o \textit{cross-proxy}, definido na seção 10 da própria RFC-7252\cite{rfc7252},
 que converte o método ou tipo de resposta, tipo de mídia e opções para os valores HTTP correspondentes.
@@ -77,7 +77,7 @@ que converte o método ou tipo de resposta, tipo de mídia e opções para os va
 Além do modelo de comunicação cliente/servidor e da arquitetura REST, o CoAP também dispõem de outros princípios comuns ao HTTP e que são conceitos padrões na web,
 como suporte a URIs\cite{rfc3986} e tipos de mídia da Internet(MIME)\cite{rfc2046}.
 
-Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, este possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
+Entre o HTTP e CoaP nem tudo são semelhanças, pois, obviamente, o CoAP possui particularidades para que consiga atender aos requisitos no qual se propõe a resolver.
 Entre as diferenças estão a troca de mensagens assíncronas utilizando transporte orientado a datagramas, como UDP.
 Apesar do protocolo UDP não prover confiabilidade, no CoAP é possível definir que as mensagens possuam tal aspecto.
 
@@ -157,6 +157,10 @@ Focaremos na descoberta de recursos providos pela plataforma, pois, é o item qu
 Como primeiro passo para a execução desta funcionalidade, devemos registrar o recurso utilizando sua URI e IP.
 Após o registro, é possível especificarmos que este recurso é observável, ou seja, quando houver algum evento o nodo que o registrou como observável será notificado.
 Apesar de a plataforma Iotivity possuir outras funcionalidades, ela não possui mecanismos para manter o mapeamento de recursos em redes locais.
+
+A Tabela \ref{table:tab1} faz comparações entre as principais funcionalidades providas, tanto pelos trabalhos relacionados quanto pelos protocolos elencados acima.
+O protocolo proposto é o único na Tabela \ref{table:tab1} capaz de de realizar a sincronização do mapeamento dos recursos com uma baixa complexidade de implementação.
+
 
 \begin{table}[htb!]
     \centering
